@@ -1,0 +1,19 @@
+{
+  "name": "brightme",
+  "version": "1.0.0",
+  "description": "- Álcool em gel\r - Álcool liquido (spray)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateusflorencio/brightme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateusflorencio/brightme/issues"
+  },
+  "homepage": "https://github.com/mateusflorencio/brightme#readme"
+}
