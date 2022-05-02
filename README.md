@@ -1,14 +1,58 @@
-## BRIGHTME
+# BRIGHTME
 
-###
+## Descrição
 
-# Front- END
+## Motivações
 
-#### Aromatizado
+# Front-End 🖼️
 
-- Álcool em gel
-- Álcool liquido (spray)
+Front-end será desenvolvido em html, css, javascrip e ejs.
+Foi inspirados em cores mais sóbrios para trazer harmonia e a paz que os produtos visam oferecer. Focado em atender diversos dispositivos, do desktop ao mobile.
 
-## Paletas de cores
+## Tools
 
-https://flatuicolors.com/palette/ru
+Foi criado padrão de projetos para facilitar o desenvolvimento em grupo. No pacote de desenvolvimento foi definido o arquivo **main.css** como core do css.
+
+#### Paletas de cores
+
+As paletas de cores iniciais são:
+
+- --main-yellow: #f1c40f
+
+- --main-grey: #c4c4c4;
+
+- --main-rosa: #e15f41;
+
+- --main-blue: #303952;
+
+- --main-green: ##27ae60;
+
+- --main-red: #d63031;
+
+#### Font family
+
+A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrádavel.
+
+#### Shortcuts
+
+- .card
+- .container
+- .bg-"color"
+- .t-"color"
+- .d-flex
+- all-center
+- w-100
+- h-100
+- btn-"type"
+- list
+- item-list
+
+# Back-End 🛠️
+
+Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
+
+## Rotas
+
+## Banco de Dados
+
+## Schemas
