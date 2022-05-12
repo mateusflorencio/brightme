@@ -1,81 +1,107 @@
 @import url(./main.css);
 
-h1 {
-    font-weight: bold;
-    font-size: 24px;
-    color: black;
+.div-content-products {
+  align-items: center;
+
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 20px;
+  height: 400px;
 }
 
-h2 {
-    font-weight: bold;
-    font-size: 20px;
-    color: black;
+.col-images {
+  height: 100%;
 }
 
-h3 {
-    font-size: 18px;
-    color: black;
+.div-img-product-main {
+  width: 250px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: auto;
+.img-product-main {
+  position: absolute;
+  max-height: 250px;
+}
+.div-picture-product {
+  width: 100%;
 }
 
-main {
-    align-items: center;
+.picture-produts-item {
+  width: 40px;
+  padding: 2px;
 
-    display: flex;
-    justify-content: space-around;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  border-radius: 10px;
+}
+/* coluna 2*/
+.col-info-product {
+  height: 100%;
+  padding-right: 40px;
+  padding-left: 20px;
+}
+.star em {
+  color: var(--main-yellow);
+  font-size: 20px;
+}
+/* coluna 3*/
+.col-buy {
+  height: 100%;
 }
 
-#coluna1 {
-    width: 30%;
-    border-radius: 20px;
-    border: 1px solid #C4C4C4;
-    width: 308px;
-    height: 440px;
-    flex-direction: column;
+.text-mod-payment {
+  font-size: 10px;
 }
 
-#alcooleemgelDestaque {
-    max-width: 200x;
-    max-height: 400px;
-    width: auto;
-    height: auto;
-    position: relative;
-    top: 40px;
-    left: 100px;
+.group-btn-buy {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
-#coluna2 {
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    justify-content: space-around;
+.btn-buy {
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-#coluna3 {
-    display: flex;
-    width: 30%;
-    flex-direction: column;
-    justify-content: space-around;
-    border-radius: 20px;
-    border: 1px solid #C4C4C4;
-    width: 308px;
-    height: 440px;
-    background: #FFFFFF;
+.btn-adicionar {
+  width: 100%;
 }
 
+.calculo-frete {
+  margin-top: 50px;
+}
+.input-cep {
+  display: flex;
+}
+
+/*Demais infos*/
 .carrossel {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.carrossel img {
-    max-width: 100px;
-    max-height: 120px;
-    width: auto;
-    height: auto;
+.div-carrossel-picture {
+  padding: 4px !important;
+  height: 100px;
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-carrossel-picture img {
+  height: 100%;
+  max-width: 90px;
+  max-height: 90px;
+  width: auto;
+  position: absolute;
 }
