@@ -15,7 +15,7 @@
     margin: 5px 0;
     width: 100%;
     height: 400px;
-    background: url(../image/imagens-descricao-produto/intro2.png) no-repeat center;
+    background: url(../image/imagens-descricao-produto/intro1.png) no-repeat center;
     color:#FFFF;
 }
 p {
@@ -33,6 +33,7 @@ p {
     line-height: 36px;
    
 }
+
 h3 {
     position: relative;
     width: 264px;
@@ -45,6 +46,7 @@ h3 {
     font-size: 60px;
     line-height: 90px;
 }
+
 #descobrir{
     position: relative;
     width: 150px;
@@ -63,6 +65,7 @@ h3 {
     line-height: 36px;
     color: #FFFF;
 }
+
 /*amostra kit*/
 div#amostra-kit {
     position: relative;
@@ -73,6 +76,7 @@ div#amostra-kit {
 
     background: #FF7E55;
 }
+
 img.kit {
     float: right;
     width: 171px;
@@ -92,6 +96,7 @@ img.kit {
     top: 0px; 
     background: #f2f2f2;
 }
+
 .feedback {
     position: relative;
     width: 820px;
@@ -100,6 +105,7 @@ img.kit {
     right: 100px;
     top: 30px;  
 }
+
 .ver-produtos {
     position: absolute;
     width: 150px;
@@ -141,6 +147,7 @@ hr {
     height: 150px;
     padding: 5px;
 }
+
 .titulo1{
     float: left;
     font-size: 18px;
@@ -149,6 +156,7 @@ hr {
     height: 150px;
     padding: 5px
 }
+
 .text1{
     float: left;
     font-size: 14px;
@@ -157,6 +165,7 @@ hr {
     height: 150px;
     padding: 5px
 }
+
 .materia1{
     float: left;
     border-radius: 1px;
@@ -165,6 +174,7 @@ hr {
     height: 150px;
     padding: 5px
 }
+
 .clear{
     clear: both;
 }
