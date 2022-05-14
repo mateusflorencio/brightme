@@ -7,6 +7,7 @@
 }
 
 :root {
+  --main-white: #fff;
   --main-yellow: #f1c40f;
   --main-grey: #868686;
   --main-rosa: #e15f41;
@@ -43,6 +44,9 @@
 }
 
 /* background */
+.bg-white {
+  background-color: var(--main-white);
+}
 .bg-rosa {
   background-color: var(--main-rosa);
 }
