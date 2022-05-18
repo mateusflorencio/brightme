@@ -1,1 +1,166 @@
 @import url(./main.css);
+@import url(./main.css);
+
+.content-banner-image {
+  background: url(../image/home/banner-home.png) no-repeat;
+  background-size: cover;
+  height: 500px;
+
+  display: flex;
+  align-items: center;
+}
+.banner-text {
+  margin: 40px 0px;
+  width: 50%;
+}
+
+/*tools*/
+
+.tools {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tools-contants {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+}
+.tools-boxes-pictures {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 20px;
+}
+/* feedback */
+.feedback-section {
+  height: 500px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.div-arrow {
+  display: flex;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.bi-caret-right-fill,
+.bi-caret-left-fill {
+  color: var(--main-grey);
+}
+
+.arrow-rigth {
+  display: flex;
+  position: relative;
+  right: 450px;
+  top: 150px;
+}
+
+.arrow-left {
+  display: flex;
+  position: relative;
+  left: 450px;
+  top: 190px;
+}
+
+.feedback-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 250px;
+  width: 70%;
+}
+
+.feedback-picture-cliente {
+  height: 140px;
+  width: 140px;
+}
+.content-left {
+  margin: 0 20px;
+}
+
+.feedback-text {
+  margin: 10px 0;
+}
+
+.star {
+  color: var(--main-yellow);
+}
+
+.texto-cliente {
+  flex-direction: column;
+}
+
+.btn-primary {
+  margin-top: 40px;
+}
+/*Blog*/
+
+.line-title-blog {
+  background-color: var(--main-rosa);
+  width: 300px;
+  height: 2px;
+  margin: 70px 20px;
+}
+
+.container-cards-blog {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card-content {
+  width: 300px;
+  height: auto;
+}
+
+.card-img-blog {
+  height: 200px;
+  border-bottom: 1px solid var(--main-grey);
+}
+
+.card-title-blog {
+  display: flex;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.card-resume-blog {
+  font-size: 14px;
+}
+
+/* about */
+
+.about {
+  margin-top: 70px;
+  height: 500px;
+}
+
+.about-rigth {
+  width: 50%;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.about-left {
+  background-image: url(../image/imagens-descricao-produto/quem\ somos.jpeg);
+  position: absolute;
+  background-size: cover;
+  width: 600px;
+  max-width: 600px;
+  height: 500px;
+  right: 0%;
+}
