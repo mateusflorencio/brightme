@@ -9,7 +9,7 @@
 :root {
   --main-white: #fff;
   --main-yellow: #f1c40f;
-  --main-grey: #868686;
+  --main-grey: #d4d4d4;
   --main-rosa: #e15f41;
   --main-blue: #303952;
   --main-green: #27ae60;
@@ -131,10 +131,6 @@
   display: flex;
 
   padding: 20px;
-}
-.card2 {
-  border: 1px solid var(--main-grey);
-  border-radius: 20px;
 }
 
 /* list */

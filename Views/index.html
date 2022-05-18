@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/styles/index.css">
     <title>Brightme</title>
 </head>
 
 <body>
-    <div class="content-banner-image ">
+    <div class=" content-banner-image ">
         <div class="content-banner container">
             <div class="banner-title t-white">
                 <h1>Brightme</h1>
@@ -42,77 +43,105 @@
 
     <!--Início Feedback-->
 
-    <div class="feedback bg-grey">
-
-        <input class="botao1" type="button" value="<">
-        <input class="botao2" type="button" value=">">
-
-        <div class="feedback-button"><button class="btn-primary">Ver Produtos</button></div>
-
-
-        <div class="feedback-centro card2">
-
-            <div class="msg-cliente">
-                <img class="imagem-perfil" src="../public/image/profile-icon.svg" alt="">
+    <section class="feedback-section bg-grey">
+        <div class="container feedback-container">
+            <div class="arrow-left">
+                <div class="div-arrow all-center">
+                    <em class="bi bi-caret-right-fill"></em> </div>
             </div>
-            <div class="texto-cliente">
-                <div>
-                    <p>User Name</p><br>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, vitae aliquid. Possimus cumque
-                        quaerat, mollitia beatae accusamus ducimus tempora repellendus tempore sunt deleniti laborum
-                        voluptatem inventore deserunt voluptatum nobis sit.</p>
-
-                    <img class="img-votacao" src="../public/image/istockphoto-1191661889-612x612.jpg" alt="">
-
-
+            <div class="arrow-rigth">
+                <div class="div-arrow all-center">
+                    <em class="bi bi-caret-left-fill"></em>
                 </div>
-
-
-
             </div>
+
+            <div class="feedback-content card bg-white ">
+                <div class="content-rigth  all-center ">
+                    <div class="feedback-picture-cliente card bg-grey "></div>
+                </div>
+                <div class="content-left">
+                    <strong>User Name</strong><br>
+                    <p class="feedback-text t-grey">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Dolor,
+                        vitae
+                        aliquid. Possimus cumque quaerat, mollitia beatae accusamus ducimus tempora
+                        repellendus
+                        tempore sunt deleniti.</p>
+                    <div class="star"> <em class="bi bi-star-fill"></em>
+                        <em class="bi bi-star-fill"></em>
+                        <em class="bi bi-star-fill"></em>
+                        <em class="bi bi-star-fill"></em>
+                        <em class="bi bi-star-fill"></em>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-primary">ver produtos</button>
         </div>
-    </div>
+    </section>
     <!--fim Feedback-->
+    <!--Inicio blog-->
 
-    <div class="blog">
-        <hr>
-        <div class="title-blog">Blog</div>
-        <hr class="linha2">
-        <div class="conteiner-blog">
-            <div class="blog-box1">
-                <div class="tools-boxes-pictures2 bg-white"></div>
+    <section class="container">
+        <div class="d-flex all-center">
+
+            <div class="line-title-blog"></div>
+            <h2 class="">Blog</h2>
+            <div class="line-title-blog"></div>
+        </div>
+
+        <div class="container-cards-blog">
+            <a href="/home" class="card card-content bg-white link">
+                <div class="card-img-blog">
+                    <img src="" alt="">
+                </div>
                 <div>
-                    <p class="title-content1">Lorem ipsum dolor</p>
-                    <p class="text-content1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam
+                    <p class="card-title-blog">Lorem ipsum dolor</p>
+                    <p class="card-resume-blog">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                        quibusdam
                         provident eius sint, incidunt dicta iure maxime quas magni. Soluta voluptatibus corporis
                         inventore asperiores velit, voluptatum ipsum minus laborum dolorem.</p>
                 </div>
-
-            </div>
-            <div class="blog-box2">
-                <div class="tools-boxes-pictures2 bg-white"></div>
+            </a>
+            <a href="/home" class="card card-content bg-white link">
+                <div class="card-img-blog">
+                    <img src="" alt="">
+                </div>
                 <div>
-                    <p class="title-content2">Lorem ipsum dolor</p>
-                    <p class="text-content2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam
+                    <p class="card-title-blog">Lorem ipsum dolor</p>
+                    <p class="card-resume-blog">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                        quibusdam
                         provident eius sint, incidunt dicta iure maxime quas magni. Soluta voluptatibus corporis
                         inventore asperiores velit, voluptatum ipsum minus laborum dolorem.</p>
                 </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre nós -->
+    <section class="about bg-rosa">
+        <div class="container d-flex">
+            <div class="about-rigth t-white">
+                <h4 class="about-title">Lorem ipsum</h4><br>
+                <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum assumenda
+                    sit
+                    ad
+                    dolore suscipit quia possimus esse nam, porro non fuga corrupti, voluptates sapiente maiores ex,
+                    numquam <br> <br>
+                    mollitia quis maxime
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est aut dignissimos ea veritatis fuga
+                    possimus <br> <br>
+                    nesciunt unde magni! Doloremque atque beatae odio obcaecati aut consectetur exercitationem rerum
+                    reprehenderit suscipit optio!.</p><br>
 
             </div>
-        </div>
-    </div>
-    <div class="end">
-        <div class="content-end">
-            <p class="title-end">Lorem ipsum</p><br>
-            <p class="text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum assumenda sit ad dolore suscipit quia possimus esse nam, porro non fuga corrupti, voluptates sapiente maiores ex, numquam mollitia quis maxime.</p><br>
-            <p class="text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sequi cumque quae ab sed quia. Quae quam pariatur harum quo explicabo vitae neque adipisci nisi delectus, ab, fuga architecto facilis.</p><br>
-            <p class="text-end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem consectetur mollitia ut dolorem, ab laboriosam eos molestiae magnam reiciendis aut alias modi inventore quis, repellendus consequuntur tempora sit sapiente nostrum!</p><br>
-        </div>
-        <div>
-            <img class="img-fim" src="../public/image/imagens-descricao-produto/quem somos.jpeg" alt="">
-        </div>
-    </div>
 
+            <div class="about-left">
+
+            </div>
+
+        </div>
+    </section>
 </body>
 
 </html>

@@ -35,167 +35,131 @@
   border-radius: 20px;
 }
 /* feedback */
-.feedback {
-    display: flex;
-    height: 450px;
+.feedback-section {
+  height: 500px;
 }
 
-.feedback-centro{
+.feedback-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
   align-items: center;
-  position: absolute;
-  width: 850px;
-  height: 285px;
-  margin: 59px 248px 176px 248px;
-  padding: 20px;
+  justify-content: center;
 
-  background-color: var(--main-white);
-
+  height: 100%;
 }
 
-.imagem-perfil {
-  width: 150px;
-  height: 150px;
+.div-arrow {
+  display: flex;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
 
+.bi-caret-right-fill,
+.bi-caret-left-fill {
+  color: var(--main-grey);
 }
-img.img-votacao{
-  width: 119px;
-  height: 31px;
+
+.arrow-rigth {
+  display: flex;
+  position: relative;
+  right: 450px;
+  top: 150px;
 }
-.texto-cliente{
+
+.arrow-left {
+  display: flex;
+  position: relative;
+  left: 450px;
+  top: 190px;
+}
+
+.feedback-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 250px;
+  width: 70%;
+}
+
+.feedback-picture-cliente {
+  height: 140px;
+  width: 140px;
+}
+.content-left {
+  margin: 0 20px;
+}
+
+.feedback-text {
+  margin: 10px 0;
+}
+
+.star {
+  color: var(--main-yellow);
+}
+
+.texto-cliente {
   flex-direction: column;
 }
-.botao1, .botao2 {
 
-  background-color: var(--main-white);
-  
-  
-  
-  border-color: var(--main-white);
-  border-radius: 30px;
-  
-  
-  color:var(--main-grey);
-  font-size: 30px;
-  text-align: center;
-  margin: 0 15px;
-  width: 52px;
-  height: 52px;
-
-}
-
-.botao1 {
-  
-  position:absolute;
-  margin-top: 190px;
-  margin-left: 150px;
-}
-
-.botao2 {
- 
-  position:absolute;
-  margin-top: 190px;
-  margin-left: 1150px;
-  
-}
-.feedback-button {
-  
-  position: absolute;
-  margin-top: 388px;
-  margin-left: 575px;
-  
+.btn-primary {
+  margin-top: 40px;
 }
 /*Blog*/
 
-.conteiner-blog{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0px 15px;
-}
-.title-blog{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  font-size: 24px;
-}
-
-hr {
-  margin-top: 5px;
-  border-color: var(--main-rosa);
-}
-.linha2 {
-  margin-bottom: 25px;
-}
-
-.tools-boxes-pictures2 {
-  width: 350px;
-  height: 238px;
-
-  border-radius: 20px;
+.line-title-blog {
   background-color: var(--main-rosa);
-}
-.blog-box1{
-  width: 350px;
-  height: 238;
-}
-.blog-box2 {
-  width: 350px;
-  height: 238;
-}
-.title-content1 {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 300px;
+  height: 2px;
+  margin: 70px 20px;
 }
 
-.text-content2{
-  text-align: justify;
+.container-cards-blog {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card-content {
+  width: 300px;
+  height: auto;
+}
+
+.card-img-blog {
+  height: 200px;
+  border-bottom: 1px solid var(--main-grey);
+}
+
+.card-title-blog {
+  display: flex;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.card-resume-blog {
   font-size: 14px;
 }
-.title-content2 {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-.text-content1{
-  text-align: justify;
-  font-size: 14px;
-}
-.end {
-  background-color: var(--main-rosa);
-  color: var(--main-white);
-  
-  display: flex;
-  justify-content: space-between;
+/* about */
 
-  margin-top: 101px;
-
-}
-.content-end{
-  width: 400px;
-  height: 150px;
-
-  text-align: justify;
-  margin-top: 50px;
-  margin-left: 350px;
-}
-.img-fim{
-  width: 500px;
+.about {
+  margin-top: 70px;
   height: 500px;
 }
-.title-end{
-  font-size: 24px;
+
+.about-rigth {
+  width: 50%;
+  margin-right: 50px;
+  margin-top: 50px;
 }
-.text-end{
-  font-size: 14px;
-  text-align: justify;
+.about-left {
+  background-image: url(../image/imagens-descricao-produto/quem\ somos.jpeg);
+  position: absolute;
+  background-size: cover;
+  width: 600px;
+  max-width: 600px;
+  height: 500px;
+  right: 0%;
 }
