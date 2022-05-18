@@ -1,7 +1,14 @@
 @import url(./main.css);
+<<<<<<< HEAD
 
 .content-banner-image {
   background: url(../image/imagens-descricao-produto/intro1.png) no-repeat;
+=======
+@import url(./main.css);
+
+.content-banner-image {
+  background: url(../image/home/banner-home.png) no-repeat;
+>>>>>>> 1235b13e5a0b44810778fe0dd7445b6c140243a1
   background-size: cover;
   height: 500px;
 
