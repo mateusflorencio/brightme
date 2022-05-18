@@ -132,6 +132,10 @@
 
   padding: 20px;
 }
+.card2 {
+  border: 1px solid var(--main-grey);
+  border-radius: 20px;
+}
 
 /* list */
 

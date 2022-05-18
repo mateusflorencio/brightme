@@ -36,6 +36,166 @@
 }
 /* feedback */
 .feedback {
-  height: 400px;
+    display: flex;
+    height: 450px;
+}
+
+.feedback-centro{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 850px;
+  height: 285px;
+  margin: 59px 248px 176px 248px;
+  padding: 20px;
+
+  background-color: var(--main-white);
+
+}
+
+.imagem-perfil {
+  width: 150px;
+  height: 150px;
+
+}
+img.img-votacao{
+  width: 119px;
+  height: 31px;
+}
+.texto-cliente{
+  flex-direction: column;
+}
+.botao1, .botao2 {
+
+  background-color: var(--main-white);
+  
+  
+  
+  border-color: var(--main-white);
+  border-radius: 30px;
+  
+  
+  color:var(--main-grey);
+  font-size: 30px;
+  text-align: center;
+  margin: 0 15px;
+  width: 52px;
+  height: 52px;
+
+}
+
+.botao1 {
+  
+  position:absolute;
+  margin-top: 190px;
+  margin-left: 150px;
+}
+
+.botao2 {
+ 
+  position:absolute;
+  margin-top: 190px;
+  margin-left: 1150px;
+  
+}
+.feedback-button {
+  
+  position: absolute;
+  margin-top: 388px;
+  margin-left: 575px;
+  
 }
 /*Blog*/
+
+.conteiner-blog{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 15px;
+}
+.title-blog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-size: 24px;
+}
+
+hr {
+  margin-top: 5px;
+  border-color: var(--main-rosa);
+}
+.linha2 {
+  margin-bottom: 25px;
+}
+
+.tools-boxes-pictures2 {
+  width: 350px;
+  height: 238px;
+
+  border-radius: 20px;
+  background-color: var(--main-rosa);
+}
+.blog-box1{
+  width: 350px;
+  height: 238;
+}
+.blog-box2 {
+  width: 350px;
+  height: 238;
+}
+.title-content1 {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.text-content2{
+  text-align: justify;
+  font-size: 14px;
+}
+.title-content2 {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.text-content1{
+  text-align: justify;
+  font-size: 14px;
+}
+.end {
+  background-color: var(--main-rosa);
+  color: var(--main-white);
+  
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 101px;
+
+}
+.content-end{
+  width: 400px;
+  height: 150px;
+
+  text-align: justify;
+  margin-top: 50px;
+  margin-left: 350px;
+}
+.img-fim{
+  width: 500px;
+  height: 500px;
+}
+.title-end{
+  font-size: 24px;
+}
+.text-end{
+  font-size: 14px;
+  text-align: justify;
+}
