@@ -1,0 +1,8 @@
+@import url(./main.css);
+
+.div-error {
+  height: 100vh;
+  font-size: 300px;
+  display: flex;
+  flex-direction: column;
+}

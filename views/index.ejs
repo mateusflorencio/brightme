@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/index.css">
     <title>Brightme</title>
 </head>
+<%- include('./partials/header') %>
 
 <body>
     <div class=" content-banner-image ">
@@ -76,7 +77,7 @@
                 </div>
             </div>
 
-            <button class="btn-primary">ver produtos</button>
+            <a href="/produtos" class="btn-primary all-center link t-white">ver produtos</a>
         </div>
     </section>
     <!--fim Feedback-->
@@ -142,6 +143,8 @@
 
         </div>
     </section>
+
+    <%- include('./partials/footer') %>
 </body>
 
 </html>
