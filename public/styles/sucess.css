@@ -1,1 +1,13 @@
 @import url(./main.css);
+
+.content-sucess {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: 200px 0;
+}
+.div-btn-sucess a {
+  margin: 20px;
+}

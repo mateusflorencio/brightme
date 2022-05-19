@@ -10,6 +10,7 @@
   --main-white: #fff;
   --main-yellow: #f1c40f;
   --main-grey: #d4d4d4;
+  --main-grey-700: #979797;
   --main-rosa: #e15f41;
   --main-blue: #303952;
   --main-green: #27ae60;
@@ -63,6 +64,10 @@
   background-color: var(--main-grey);
 }
 
+.bg-grey-700 {
+  background-color: var(--main-grey-700);
+}
+
 .bg-red {
   background-color: var(--main-red);
 }
@@ -86,6 +91,10 @@
 
 .t-grey {
   color: var(--main-grey);
+}
+
+.t-grey-700 {
+  color: var(--main-grey-700);
 }
 
 .t-red {
