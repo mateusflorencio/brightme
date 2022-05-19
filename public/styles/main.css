@@ -7,8 +7,9 @@
 }
 
 :root {
+  --main-white: #fff;
   --main-yellow: #f1c40f;
-  --main-grey: #868686;
+  --main-grey: #d4d4d4;
   --main-rosa: #e15f41;
   --main-blue: #303952;
   --main-green: #27ae60;
@@ -43,6 +44,9 @@
 }
 
 /* background */
+.bg-white {
+  background-color: var(--main-white);
+}
 .bg-rosa {
   background-color: var(--main-rosa);
 }
@@ -149,7 +153,6 @@
 .header {
   height: 70px;
   background: var(--main-rosa);
-  margin-bottom: 40px;
 }
 
 .nav_menu {
@@ -178,7 +181,6 @@
 /* footer */
 .footer {
   height: 270px;
-  margin-top: 40px;
 }
 
 .line {
