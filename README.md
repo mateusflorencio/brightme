@@ -53,7 +53,7 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 # Back-End 🛠️
 
-## Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
+Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
 
 ## Rotas
 
@@ -67,7 +67,7 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 #### Pagina de listagem de produtos e filtro
 
-## '/produtos'
+'/produtos'
 
 ## Banco de Dados
 
