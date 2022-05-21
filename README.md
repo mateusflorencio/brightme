@@ -17,15 +17,19 @@ Foi criado padrão de projetos para facilitar o desenvolvimento em grupo. No pac
 
 As paletas de cores iniciais são:
 
+- main-white: #fff;
+
 - --main-yellow: #f1c40f
 
-- --main-grey: #c4c4c4;
+- --main-grey: #d4d4d4;
+
+- --main-grey-700: #979797;
 
 - --main-rosa: #e15f41;
 
 - --main-blue: #303952;
 
-- --main-green: ##27ae60;
+- --main-green: #27ae60;
 
 - --main-red: #d63031;
 
@@ -49,9 +53,21 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 # Back-End 🛠️
 
-Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
+## Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
 
 ## Rotas
+
+#### Home
+
+'/'
+
+#### Sucesso de compra
+
+'/sucess'
+
+#### Pagina de listagem de produtos e filtro
+
+## '/produtos'
 
 ## Banco de Dados
 
