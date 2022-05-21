@@ -1,0 +1,8 @@
+@import url(./main.css);
+
+.col-userPanel {
+    height: 550px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }

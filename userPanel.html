@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/styles/login.css">
+    <link rel="stylesheet" href="./public/styles/registerUser.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Login| Brightme</title>
+    <title>Painel Usuário| Brightme</title>
 </head>
 
 <header class="header">
@@ -32,40 +32,50 @@
 </header>
 
 <body>
+
     <section class="container">
 
-        <section class="col-login card">
-            <div class="login">
-                <h1 class="title">Entre na sua conta</h1>
+        <section class="col-userPanel card">
+
+            <div class="favorites">
+                <h1 class="title">Meus Favoritos</h1>
             </div>
-        
-            <form class="loginFillOut"></form>
+
+            <div class="myRequests">
+                <h1 class="title">Meus Pedidos</h1>
+            </div>
+
+            <div class="infoAccount">
+                <h1 class="title">Informações da Conta</h1>
+
+            <form class="emailChange">
+
+                <label for="email">Alterar e-mail</label><br>
+                <div class="input-newEmail"></div><input type="email" name="email" id="email" placeholder="Insira seu novo e-mail"><br>
             
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-            
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha">
-        
-        <div class="group-btn-login">
-            <button class="btn-login btn-primary" type="submit">
-            Entrar
-            </button>
+                <button class="btn-register btn-secondary" type="submit">
+                    Alterar e-mail
+                </button><br>
 
-            <button class="btn-register btn-tertiary" type="submit">
-            Cadastre-se
-            </button>
-        </div>
+                <label for="passwordChange">Alterar senha</label><br>
+                <div class="input-newPassword"></div><input type="password" name="password" id="password" placeholder="Insira sua nova senha"><br>
+                <div class="input-newPasswordAgain"></div><input type="password" name="password" id="password" placeholder="Insira sua nova senha outra vez"><br>
+                
+                <button class="btn-register btn-secondary" type="submit">
+                Alterar senha
+                </button><br>
+                
+                <form class="addressChange">
+                <label for="address">Alterar endereço</label><br>
+                <div class="input-newAddress"></div><input type="textt" name="address" id="address" placeholder="Insira seu novo endereço"><br>
+                        
+                <button class="btn-register btn-secondary" type="submit">
+                Alterar endereço
+                </button><br>
 
-    </form>
+            </div>
 
-    <div class="forgot">
-        <p class="forgot">Esqueci minha senha</h1>
-    </div>
-    
-        </section>
-
-
+            </section>
     </section>
 
     <footer class="bg-blue footer">

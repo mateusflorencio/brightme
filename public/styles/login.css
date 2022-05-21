@@ -21,6 +21,8 @@ body{
         position:sticky;
         top: 100px;
         left: 700px;
+        margin-top: 20px;
+        margin-bottom: 20px;
       }
     
       .group-btn-login {
