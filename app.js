@@ -7,8 +7,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/IndexRoute');
 const listarProdutosRoute = require('./routes/ListarProdutosRoute')
 const sucessRoute = require('./routes/Sucess')
-const DescricaoProdutoRoute = require ("./routes/DescricaoProdutoRoute")
-const LoginRoute = require ("./routes/LoginRoute")
+const DescricaoProdutoRoute = require("./routes/DescricaoProdutoRoute")
+const UserRoute = require("./routes/user/UsersRoute")
 
 const app = express();
 
@@ -25,12 +25,12 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes
 app.use('/', indexRouter);
 app.use('/produtos', listarProdutosRoute)
 app.use('/sucess', sucessRoute)
-
-app.use ('/produto', DescricaoProdutoRoute)
-app.use ('/login', LoginRoute)
+app.use('/produto', DescricaoProdutoRoute)
+app.use('/user', UserRoute)
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

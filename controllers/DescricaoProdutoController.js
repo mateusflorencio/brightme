@@ -1,6 +1,6 @@
 const DescricaoProdutoController = {
-    index: (req,res) => {
-        return res.render ("produto")
+    index: (_req, res) => {
+        return res.render("descricao-produto")
     }
 }
 

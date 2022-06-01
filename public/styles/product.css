@@ -1,5 +1,8 @@
 @import url(./main.css);
 
+.margin_tb {
+  margin: 40px 0;
+}
 .div-content-products {
   align-items: center;
 

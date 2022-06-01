@@ -69,6 +69,26 @@ Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes
 
 '/produtos'
 
+#### Descrição produto
+
+'/produto/prduto1'
+
+#### Login
+
+'/user/login'
+
+#### Login
+
+'/user/register'
+
+#### Conta do usuário
+
+'/user/account'
+
+#### Pagina de erro
+
+'/error'
+
 ## Banco de Dados
 
 ## Schemas
