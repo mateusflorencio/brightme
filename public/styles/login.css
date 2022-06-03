@@ -1,1 +1,70 @@
 @import url(./main.css);
+
+
+body{
+    background-image: url(../image/imagens-descricao-produto/Brightme3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+      .title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+      .col-login{
+        height: 40%;
+        width: 30%;
+        background: var(--main-grey);
+        opacity: 0.9;
+        position:sticky;
+        top: 100px;
+        left: 700px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    
+      .group-btn-login {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+      }
+      
+      .btn-login {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      
+      .btn-register {
+        width: 100%;
+      }
+     
+      input [type="text"], input[type="email"], input[type="password"], textarea{
+        width: 100%;
+        resize: none;
+        height: 35px;
+      }
+    
+      .forgot {
+        margin-top: 5px;
+        font-size: 12px;
+      }
+    
+    .btn-tertiary {
+      color: #ffffff;
+      background: var(--main-blue);
+      height: 40px;
+      width: 260px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    
+
+
+    .bg-blue footer {
+            flex-shrink: 0; 
+    }
+

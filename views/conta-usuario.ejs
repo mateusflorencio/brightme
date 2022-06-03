@@ -5,13 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/account.css">
-    <title>Nome usuario</title>
+    <link rel="stylesheet" href="./styles/conta_usuario.css">
+    <title>Painel Usuário| Brightme</title>
 </head>
 
 <body>
 
     <%- include('./partials/header') %>
+
+    <section class="container">
+
+        <section class="col-userPanel card">
+
+            <div class="favorites">
+                <p class="title">Meus Favoritos</p>
+            </div>
+            <br>
+
+            <div class="myRequests">
+                <p class="title">Meus Pedidos</p>
+                <br>
+
+                <p class="latestRequests">
+                    <ul class="requests">
+                        <li>Pedido Nº 12345</li>
+                        <li>Pedido Nº 51902</li>
+                        <li>Pedido Nº 33343</li>
+                    </ul>
+                </p>
+
+            </div>
+            <br>
+
+            <div class="infoAccount">
+                <p class="title">Informações da Conta</p>
+                <br>
+
+                <form class="emailChange">
+
+                    <label for="email">Alterar e-mail</label><br>
+                    <div class="input-newEmail"></div><input type="email" name="email" id="email"
+                        placeholder="Insira seu novo e-mail"><br>
+
+                    <button class="btn-register btn-secondary" type="submit">
+                        Alterar e-mail
+                    </button><br>
+
+                    <label for="passwordChange">Alterar senha</label><br>
+                    <div class="input-newPassword"></div><input type="password" name="password" id="password"
+                        placeholder="Insira sua nova senha"><br>
+                    <div class="input-newPasswordAgain"></div><input type="password" name="password" id="password"
+                        placeholder="Insira sua nova senha outra vez"><br>
+
+                    <button class="btn-register btn-secondary" type="submit">
+                        Alterar senha
+                    </button><br>
+
+                    <form class="addressChange">
+                        <label for="address">Alterar endereço</label><br>
+                        <div class="input-newAddress"></div><input type="textt" name="address" id="address"
+                            placeholder="Insira seu novo endereço"><br>
+
+                        <button class="btn-register btn-secondary" type="submit">
+                            Alterar endereço
+                        </button><br>
+
+            </div>
+
+        </section>
+    </section>
 
     <%- include('./partials/footer') %>
 </body>

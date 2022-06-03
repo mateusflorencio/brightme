@@ -1,0 +1,92 @@
+@import url(./main.css);
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-registerPersonalData {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 550px;
+    width: 45%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .col-mod-payment {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 550px;
+    width: 45%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+.registerPersonalData {
+    text-align: center;
+    /* margin-bottom: 10px; */
+    background-color: var(--main-grey)
+}
+
+.method-payment {
+    text-align: center;
+    /* margin-bottom: 10px; */
+    background-color: var(--main-grey)
+}
+
+.btn-register, .btn-payment {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+
+  input {
+    width: 100%;
+    resize:none;
+    height: 35px;
+  }
+
+  .btn-tertiary {
+    color: #ffffff;
+    background: var(--main-blue);
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  .btn-quaternary {
+    color: #ffffff;
+    background: var(--main-green);
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  .paymentMethods {
+    width: auto;
+    height: auto;
+}
+
+.input-validade {
+    display: flex;
+}
+
+.site_seguro {
+    width: auto;
+    height: auto;
+}
+
+  .bg-blue footer {
+    flex-shrink: 0; 
+}

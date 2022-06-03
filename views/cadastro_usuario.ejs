@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/cadastro_usuario.css">
+    <title>Cadastro| Brightme</title>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <section class="container">
+
+        <section class="col-registerPersonalData card">
+            <div class="registerPersonalData">
+                <h1 class="title">Confirme seus dados</h1>
+            </div>
+
+            <form class="register">
+                <label for="name">Nome Completo</label><br>
+                <div class="input-name"></div><input type="text" name="nome" id="nome"
+                    placeholder="Insira seu nome"><br>
+
+                <label for="email">E-mail</label><br>
+                <div class="input-email"></div><input type="email" name="email" id="email"
+                    placeholder="Insira seu e-mail"><br>
+
+                <label for="celular">Celular com DDD</label><br>
+                <div class="input-celular"></div><input type="number" name="celular" id="celular"
+                    placeholder="(DDD) xxxxxxxxx"><br>
+
+                <label for="Address">Endereço</label><br>
+                <div class="input-address"></div><input type="text" name="address" id="address"
+                    placeholder="Insira seu endereço, nº e complemento"><br>
+
+                <label for="City">Cidade</label><br>
+                <div class="input-city"></div><input type="text" name="city" id="city"
+                    placeholder="Insira a cidade"><br>
+
+                <label for="UF">UF</label><br>
+                <select name="UF" id="UF">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+
+                <br>
+
+                <label for="CEP">CEP</label><br>
+                <div class="input-cep"></div><input type="number" name="cep" id="cep"
+                    placeholder="Insira o seu CEP"><br>
+
+                <button class="btn-register btn-tertiary" type="submit">
+                    Salvar
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="col-mod-payment card">
+
+            <div class="method-payment">
+                <h1 class="title">Selecionar forma de pagamento</h1>
+            </div>
+
+            <img class="paymentMethods" src="./public/image/payment.png" alt="Formas de pagamento">
+
+            <form class="payment">
+                <label for="cardNumber">Número do Cartão</label><br>
+                <div class="input-cardNumber"></div><input type="number" name="cardNumber" id="cardNumber"
+                    placeholder="Digite o número do cartão"><br>
+
+                <label for="name">Nome impresso no cartão</label><br>
+                <div class="input-name"></div><input type="text" name="name" id="name"
+                    placeholder="Escreva o nome impresso no cartão"><br>
+
+                <label for="validade">Validade</label><br>
+                <div class="input-validade"><input type="number" name="mes" id="mes" placeholder="Mês"><input
+                        type="number" name="ano" id="ano" placeholder="Ano"></div>
+
+                <label for="cvv">Digite o CVV</label><br>
+                <div class="input-cvv"></div><input type="number" name="cvv" id="cvv" placeholder="CVV"><br>
+
+                <label for="Parcelamento">Parcelamento</label><br>
+                <select name="parcelamento" id="parcelamento">
+                    <option value="À vista">À vista</option>
+                    <option value="2X sem juros">2X sem juros</option>
+                    <option value="3X sem juros">3X sem juros</option>
+                    <br>
+                </select>
+                <p>
+                    <button class="btn-payment btn-quaternary" type="submit">
+                        Salvar
+                    </button>
+
+            </form>
+
+            <img class="site_seguro" src="./public/image/site_seguro.png" alt="Ambiente seguro">
+
+
+        </section>
+
+        </div>
+    </section>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
