@@ -1,41 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/list.css">
-    <title>Brightme</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de compras</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
-<%- include('./partials/header') %>
-
 <body>
-    <section class="container d-flex">
-        <div class="col content-left">
-            <div class="card">
-                filtros
-            </div>
-        </div>
-        <div class="col content-right">
-            <h2>kits Promocionais</h2>
-            <div class="box-general-product">
-                <div class="card box-product">
-                    <div class="image-product"><img width="70px"
-                            src="./image/imagens-descricao-produto/Alcool em gel.jpeg" alt=""></div>
-                    <div class="title-product">kit com essencias amadeirado</div>
-                    <div class="line"></div>
-                    <div class="price-quantity d-flex all-center">
-                        <div class="menos t-white all-center bg-grey">-</div>
-                        <div class="price t-white bg-green all-center ">valor</div>
-                        <div class="mais t-white bg-grey all-center">+</div>
-                    </div>
+  <main>
+    <section class="coluna-esquerda">
 
-                </div>
-            </div>
+        <div>
+          <ul>
+            <h4>Tipo</h4>
+            <li><input type="checkbox"> <label>Kit</label></li>
+            <li><input type="checkbox"> <label>Alcool</label></li>
+            <li><input type="checkbox"> <label>Aromatizante</label></li>
+          </ul>
         </div>
+        <div>
+            <h4>Preço</h4>
+            <input type="text" size="1" placeholder="min">
+            <input type="text" size="1" placeholder="max">
+        </div>
+        <div>
+          <ul>
+            <h4>Aroma</h4>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+            <li><input type="checkbox"> <label>Morango</label></li>
+          </ul>
+        </div>
+      
     </section>
-    <%- include('./partials/footer') %>
-</body>
 
+    <section class="coluna-direita">
+
+      <h2>Kits Promocionais</h2>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Alcool em gel.jpeg" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="caixa-extra">
+        
+      <h2>Os mais pedidos</h2>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caixa-produto">
+        <div class="caixa">
+          <div class="produto">
+            <img src="../public/image/imagens-descricao-produto/Brightme2.png" alt="Alcool em Gel de 60ml">
+            <p>Kit com essências amadeirado</p>
+          </div>
+          <div class="preco">
+            <span class="menos">-</span>
+            <span class="valor">R$ 35,00</span>
+            <span class="mais">+</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    
+    
+  </main>
+  <footer>
+    <div class="circulo1">
+      <div class=" seta-esquerda"></div>
+    </div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <div class="circulo2">
+      <div class="seta-direita"></div>
+    </div>
+  </footer>
+</body>
 </html>
