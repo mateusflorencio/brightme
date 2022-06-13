@@ -118,6 +118,7 @@
   font-size: 18px;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .btn-secondary {
@@ -128,6 +129,7 @@
   font-size: 18px;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 /* cards */
