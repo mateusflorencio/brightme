@@ -1,0 +1,165 @@
+@import url(./main.css);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+}
+
+/* ------- LADO ESQUERDO ------------ */
+
+ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.coluna-esquerda {
+  width: 200px;
+  height: 100%;
+  margin: 90px 20px 20px 20px;
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+  border-radius: 20px;
+  margin-left: 400px;
+}
+
+h4 {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+/* ------- LADO DIREITO ------------ */
+
+/* IMAGENS */
+
+.coluna-direita,
+.caixa-extra {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  width: 800px;
+}
+
+.coluna-direita {
+  margin-left: 40px;
+  align-items: center;
+}
+
+h2 {
+  width: 800px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+
+img {
+  width: 140px;
+}
+
+.caixa {
+  border: 1px solid #d4d4d4;
+  border-radius: 20px;
+}
+
+.produto {
+  text-align: center;
+  padding: 20px 20px 0 20px;
+}
+
+p {
+  padding: 20px;
+  max-width: 180px;
+}
+
+.preco {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid #d4d4d4;
+  padding: 25px;
+}
+
+.mais,
+.menos {
+  background-color: gray;
+  color: white;
+  font-size: 40px;
+  padding: 0 10px;
+  display: flex;
+  height: 35px;
+  align-items: center;
+}
+
+.valor {
+  background-color: green;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.caixa:hover {
+  box-shadow: 0 0 10px #b2b0b0;
+}
+
+/* ------ FOOTER ----- */
+
+footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+footer span {
+  border: 1px solid #d4d4d4;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.seta-direita {
+  width: 0;
+  height: 0;
+  border-left: 15px solid gray;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+}
+
+.seta-esquerda {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 15px solid gray;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+}
+
+.circulo1:hover,
+.circulo2:hover {
+  border: 1px solid #d4d4d4;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  box-shadow: 0 0 10px #b2b0b0;
+  justify-content: center;
+  align-items: center;
+}
+
+.circulo1:hover {
+  padding-left: 0;
+}
+
+.circulo2:hover {
+  padding-right: 0;
+}

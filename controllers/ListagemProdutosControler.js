@@ -1,6 +1,6 @@
 const listagemDeProdutoController = {
-    listarProdutos: (_req, res) => {
-        res.render('listagem-produtos')
+    index: (_req, res) => {
+        res.render('products')
     }
 }
 
