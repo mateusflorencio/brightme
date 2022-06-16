@@ -1,8 +1,11 @@
-    const btnMobile = document.getElementsById('btn-mobile');
-    const navMenu = document.getElementById("nav_menu")
+    const btnMobile = document.querySelector("#btn-mobile");
+    
 
-    toggleMenu.onclick = function(event) {
-    navMenu.classList.toggle('active');
-    } 
-    btnMobile.addEventListener(toggleMenu);
-
+    function toggleMenu(){
+        const navMenu = document.getElementById("nav_menu");
+         navMenu.classList.toggle('active');
+         console.log("scooby", toggleMenu)
+    };
+    console.log("scooby", toggleMenu)
+    btnMobile.addEventListener("click", toggleMenu);
+    
