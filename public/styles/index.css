@@ -4,7 +4,7 @@
 .content-banner-image {
   background: url(../image/home/banner-home.png) no-repeat;
   background-size: cover;
-  height: 75vh;
+  height: 28rem;
   display: flex;
   align-items: center;
 }
@@ -21,11 +21,13 @@
   right: 5rem;
   width: 50%;
 }
-
+.banner-button{
+  margin-top: 0;
+}
 /*tools*/
 
 .tools {
-  height: 45vh;
+  height: 40vh;
   display: flex;
   align-items: center;
 }
@@ -44,7 +46,7 @@
 }
 /* feedback */
 .feedback-section {
-  height: 500px;
+  height: 65vh;
 }
 
 .feedback-container {
@@ -60,9 +62,9 @@
 .div-arrow {
   display: flex;
   background: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
 }
 
 .bi-caret-right-fill,
@@ -172,6 +174,18 @@
   right: 0%;
 }
 @media (max-width: 500px){
+
+  .content-banner{
+    margin: 0.9rem;
+    width: 100%;
+  }
+  .banner-text {
+  
+    text-align: justify;
+    margin-top: 1rem;
+    right: 5rem;
+    width: 85%;
+  }
   .tools{
     height: 75vh;
   }
