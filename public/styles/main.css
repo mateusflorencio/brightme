@@ -264,6 +264,7 @@ nav #nav_menu {
 
   #nav_menu .div_menu ul {
     display: block;
+    padding-left: 2rem;
   }
 
   #nav_menu .div_menu ul li{

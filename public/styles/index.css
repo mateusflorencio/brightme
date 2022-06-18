@@ -5,12 +5,20 @@
   background: url(../image/home/banner-home.png) no-repeat;
   background-size: cover;
   height: 75vh;
-
   display: flex;
   align-items: center;
 }
+
+.content-banner{
+  margin: 3rem;
+  width: 100%;
+}
 .banner-text {
-  margin: 2.2rem 0;
+
+  text-align: justify;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  right: 5rem;
   width: 50%;
 }
 
@@ -20,16 +28,15 @@
   height: 45vh;
   display: flex;
   align-items: center;
-  flex-direction: row;
 }
 
-.tools-contants {
+.tools .tools-contants {
   display: flex;
   flex-direction: row;
-
   justify-content: space-around;
+  
 }
-.tools-boxes-pictures {
+.tools .tools-boxes-pictures {
   width: 150px;
   height: 150px;
 
@@ -164,11 +171,18 @@
   height: 500px;
   right: 0%;
 }
-@media (max-width = 600px){
-  body {
-
-    width: 100%;
-    height:100%
+@media (max-width: 500px){
+  .tools{
+    height: 75vh;
+  }
+  .tools .tools-contants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
+  }
+  .tools .tools-boxes-pictures:nth-child(2){
+    margin: 0.5rem 0;
   }
 }
