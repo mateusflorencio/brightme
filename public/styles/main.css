@@ -329,6 +329,17 @@ nav #nav_menu {
     transform: rotate(-135deg);
     top: -7px;
   }
+.div-category, .line {
+    display: none;
+  }
+  .div-info {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .div_redes_sociais{
+ 
+    justify-content: center;
+  }
  
 }
 

@@ -219,18 +219,20 @@
     width: 92%;
     height: 50vh;
     text-align: justify;
-    margin-top: -3.5rem;
+   
+
+    margin-top: -3.0rem;
     margin-bottom: 2rem;
   }
   .arrow-rigth{
     right: 28px;
-    top: 315px;
+    top: 322px;
     margin-right: 0;
     margin-left: 0;
   }
   .arrow-left{
     left: 28px;
-    top: 355px;
+    top: 362px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -241,5 +243,19 @@
     flex-direction: column;
     gap: 0.8rem;
 
+}
+.about{
+  height: 89vh;
+}
+.about-rigth {
+  padding-left: 1rem;
+  align-items: center;
+  text-align: justify;
+ width: 18rem;
+ font-size: 16px;
+}
+.about-left{
+  width: 8rem;
+  height: 36.2rem;
 }
 }
