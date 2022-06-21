@@ -44,6 +44,7 @@ body{
         width: 100%;
         resize: none;
         height: 35px;
+        border-radius: 10% solid;
       }
     
       .forgot {
@@ -61,10 +62,22 @@ body{
       border: none;
     }
 
+
     
 
 
     .bg-blue footer {
             flex-shrink: 0; 
     }
+    
+  @media (max-width:500px) {
+    .col-login {
+     right: 100rem;
+     left: 10rem;
+     width: 50%;
+    }
+    .btn-register{
+      width: 100%;
+    }
+  }
 
