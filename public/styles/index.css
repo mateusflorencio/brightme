@@ -75,7 +75,7 @@
 .arrow-rigth {
   display: flex;
   position: relative;
-  right: 550px;
+  right: 40%;
   top: 150px;
   cursor: pointer;
 }
@@ -83,7 +83,7 @@
 .arrow-left {
   display: flex;
   position: relative;
-  left: 550px;
+  left: 40%;
   top: 190px;
   cursor: pointer;
 }
@@ -109,8 +109,15 @@
   margin: 10px 0;
 }
 
-.star {
-  color: var(--main-yellow);
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
 }
 
 .texto-cliente {
@@ -201,4 +208,38 @@
   .tools .tools-boxes-pictures:nth-child(2){
     margin: 0.5rem 0;
   }
+  .feedback-section{
+    height: 75vh;
+  }
+  .feedback-picture-cliente{
+    width: 8rem;
+    height: 8rem;
+  }
+  .feedback-content{
+    width: 92%;
+    height: 50vh;
+    text-align: justify;
+    margin-top: -3.5rem;
+    margin-bottom: 2rem;
+  }
+  .arrow-rigth{
+    right: 28px;
+    top: 315px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .arrow-left{
+    left: 28px;
+    top: 355px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container-cards-blog {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+
+}
 }
