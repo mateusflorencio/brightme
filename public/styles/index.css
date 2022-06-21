@@ -75,15 +75,17 @@
 .arrow-rigth {
   display: flex;
   position: relative;
-  right: 450px;
+  right: 550px;
   top: 150px;
+  cursor: pointer;
 }
 
 .arrow-left {
   display: flex;
   position: relative;
-  left: 450px;
+  left: 550px;
   top: 190px;
+  cursor: pointer;
 }
 
 .feedback-content {
