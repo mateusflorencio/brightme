@@ -2,6 +2,9 @@
 
 .rigth {
   width: 20%;
+  margin-right: 20px;
+  max-height: 500px;
+  margin-top: 55px;
 }
 
 .input-price {
@@ -17,5 +20,9 @@
   margin-right: 10px;
 
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }

@@ -12,7 +12,8 @@
 
 <body>
   <%- include('./partials/header') %>
-    <section class="container mt-40">
+
+    <section class="container mt-40 d-flex">
       <section class="rigth filter card">
         <h3>Tipo </h3>
         <div class="d-flex mt-20">
@@ -43,8 +44,48 @@
           <div class="selection"></div>Melancia
         </div>
       </section>
-    </section>
+      <section class="left ">
+        <h2>Kits promocionais</h2>
+        <div class="d-flex mt-20">
+          <%- include('./partials/card-promo-product') %>
+            <%- include('./partials/card-promo-product') %>
+              <%- include('./partials/card-promo-product') %>
+                <%- include('./partials/card-promo-product') %>
+        </div>
+        <div class="d-flex mt-40">
+          <%- include('./partials/card-promo-product') %>
+            <%- include('./partials/card-promo-product') %>
+              <%- include('./partials/card-promo-product') %>
+                <%- include('./partials/card-promo-product') %>
+        </div>
+        <h2 class="mt-40">Os mais pedidos</h2>
+        <div class="d-flex mt-20">
+          <%- include('./partials/card-promo-product') %>
+            <%- include('./partials/card-promo-product') %>
+              <%- include('./partials/card-promo-product') %>
+                <%- include('./partials/card-promo-product') %>
+        </div>
+        <div class="d-flex mt-40">
+          <%- include('./partials/card-promo-product') %>
+            <%- include('./partials/card-promo-product') %>
+              <%- include('./partials/card-promo-product') %>
+                <%- include('./partials/card-promo-product') %>
+        </div>
 
+      </section>
+    </section>
+    <section class="container mt-40">
+      <div class="d-flex all-center">
+        <div class="selection">
+          < </div>
+            <div class="selection">1</div>
+            <div class="selection">2</div>
+            <div class="selection">3</div>
+            <div class="selection">
+              > </div>
+        </div>
+    </section>
+    <div class="mt-40"></div>
     <%- include('./partials/footer') %>
 </body>
 
