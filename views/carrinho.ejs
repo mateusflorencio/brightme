@@ -17,7 +17,7 @@
         <section class="promo container">
             <h3 class="promo-title mt-40">Que tal aproveitar essas promoções</h3>
 
-            <div class="d-flex">
+            <div class="d-flex mt-40">
 
                 <%- include('./partials/card-promo-product') %>
                     <%- include('./partials/card-promo-product') %>
@@ -29,7 +29,7 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container mt-40">
             <div class="d-flex">
                 <h4 class="">Meu carrinho</h4>
                 <div class="line-cart bg-rosa all-center"></div>
@@ -103,14 +103,16 @@
             </div>
             <div>
                 <h3 class="mt-40">Calcule frete e prazo da entrega</h3>
-                <input class="input-cep mt-20" type="text" name="cep" id="cep"> <a class="link">Não sei meu cep</a>
+                <input class="input-cep mt-20" type="text" name="cep" id="cep"> <a
+                    href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
+                    rel="noopener noreferrer" class="link">Não sei meu cep !</a>
             </div>
             </div>
         </section>
         <section class="promo container">
             <h3 class="promo-title mt-40"> Você tambem pode gostar...</h3>
 
-            <div class="d-flex">
+            <div class="d-flex mt-40">
                 <%- include('./partials/card-promo-product') %>
                     <%- include('./partials/card-promo-product') %>
                         <%- include('./partials/card-promo-product') %>
@@ -118,8 +120,10 @@
                                 <%- include('./partials/card-promo-product') %>
             </div>
         </section>
+        <div class="mt-40">
+            <%- include('./partials/footer') %>
+        </div>
 
-        <%- include('./partials/footer') %>
 </body>
 
 </html>
