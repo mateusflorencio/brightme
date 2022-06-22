@@ -9,7 +9,7 @@ const contaUsuarioRouter = require('./routes/user/ContaUsuario');
 const blogRouter = require('./routes/BlogRoute')
 const carrinhoRouter = require('./routes/CarrinhoRoute');
 const decricaoProdutoRouter = require('./routes/DescricaoProdutoRoute')
-const FinalizarCompraRouter = require('./routes/FinalizarCompraRoute')
+const FinalizarCompraRouter = require('./routes/PagamentoRoute')
 const listarProdutosRoute = require('./routes/ListarProdutosRoute')
 const loginRouter = require('./routes/LoginRoute')
 const sucessRoute = require('./routes/Sucess');
@@ -36,7 +36,7 @@ app.use('/blog', blogRouter)
 app.use('/carrinho', carrinhoRouter)
 app.use('/conta', contaUsuarioRouter)
 app.use('/produto', decricaoProdutoRouter)
-app.use('/finalizar', FinalizarCompraRouter)
+app.use('/pagamento', FinalizarCompraRouter)
 app.use('/login', loginRouter)
 
 

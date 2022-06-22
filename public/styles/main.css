@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,7 +38,7 @@
 }
 
 .w-100 {
-  width: 100%;
+  width: 100% !important;
 }
 
 .h-100 {
@@ -48,6 +49,7 @@
 .bg-white {
   background-color: var(--main-white);
 }
+
 .bg-rosa {
   background-color: var(--main-rosa);
 }
@@ -110,6 +112,19 @@
 }
 
 /* botões */
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 18px;
+  border-radius: 10px;
+  height: 40px;
+}
+
 .btn-primary {
   color: #ffffff;
   background: var(--main-rosa);
@@ -158,6 +173,15 @@
 .link {
   text-decoration: none;
   color: black;
+  cursor: pointer;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 /* menu */
@@ -222,10 +246,34 @@
 .div_redes_sociais {
   margin-top: 20px;
 }
+
 .footer_inst {
   margin-right: 10px;
 }
+
 .div-info {
   margin-top: 30px;
   margin-left: 20px;
+}
+
+/* card-promo-product */
+.promo-cards {
+  width: 190px;
+  margin: 20px 5px;
+  background-color: white;
+}
+
+.promo-cards:hover {
+  box-shadow: 0px 10px 13px -7px #000000;
+  cursor: pointer;
+}
+
+.promo-card-price {
+  padding: 5px 10px;
+  height: 30px;
+}
+
+.line-cart {
+  height: 2px;
+  width: 70%;
 }

@@ -1,1 +1,49 @@
 @import url(./main.css);
+
+
+
+.left {
+  width: 650px;
+  margin-right: 20px;
+}
+
+.div-cart {
+  align-items: center;
+}
+
+.div-img-cart {
+  width: 150px;
+  height: 150px;
+}
+
+.div-title-card {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  width: 350px;
+}
+
+.input-cupom {
+  border: 1px var(--main-grey) solid;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 10px;
+  padding: 10px;
+
+  width: 320px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+}
+
+.input-cep {
+  width: 259px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: var(--main-grey);
+  margin-right: 20px;
+}
