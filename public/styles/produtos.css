@@ -1,1 +1,21 @@
 @import url(./main.css);
+
+.rigth {
+  width: 20%;
+}
+
+.input-price {
+  width: 100px;
+}
+
+.selection {
+  border: 1px solid var(--main-grey);
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+
+  margin-right: 10px;
+
+  cursor: pointer;
+
+}
