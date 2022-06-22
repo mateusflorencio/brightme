@@ -52,6 +52,7 @@ textarea {
 .forgot {
   margin-top: 5px;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .btn-tertiary {
@@ -64,13 +65,6 @@ textarea {
   border: none;
 }
 
-
-
-
-
-.bg-blue footer {
-  flex-shrink: 0;
-}
 
 @media (max-width:500px) {
   .col-login {

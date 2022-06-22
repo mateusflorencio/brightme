@@ -67,7 +67,26 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 #### Pagina de listagem de produtos e filtro
 
-## '/produtos'
+'/produtos'
+
+### Pagina de produto
+'/produto'
+
+### Conta do usuário
+'/conta'
+
+### Pagamento
+'/pagamento'
+
+### Login
+'/login'
+
+### BLog
+
+'/blog'
+
+### Carrinho
+'/carrinho'
 
 ## Banco de Dados
 
