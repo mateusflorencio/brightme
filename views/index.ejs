@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="../../script/script.js" defer></script>
     <title>Brightme</title>
 </head>
 
@@ -29,16 +30,10 @@
 
     <!--Fim banner intro-->
     <div class="tools bg-rosa">
-        <div class="container tools-contants">
-            <div class="tools-boxes-pictures bg-white">
-
-            </div>
-            <div class="tools-boxes-pictures bg-white">
-
-            </div>
-            <div class="tools-boxes-pictures bg-white">
-
-            </div>
+        <div class="tools-contants container">
+            <div class="tools-boxes-pictures bg-white"></div>
+            <div class="tools-boxes-pictures bg-white"></div>
+            <div class="tools-boxes-pictures bg-white"></div>
         </div>
     </div>
     <!--fim tools-->
@@ -69,12 +64,20 @@
                         aliquid. Possimus cumque quaerat, mollitia beatae accusamus ducimus tempora
                         repellendus
                         tempore sunt deleniti.</p>
-                    <div class="star"> <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                    </div>
+                        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                        <div class="estrelas">
+                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                          <label for="cm_star-1"><i class="fa"></i></label>
+                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                          <label for="cm_star-2"><i class="fa"></i></label>
+                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                          <label for="cm_star-3"><i class="fa"></i></label>
+                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                          <label for="cm_star-4"><i class="fa"></i></label>
+                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                          <label for="cm_star-5"><i class="fa"></i></label>
+                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                        </div>
                 </div>
             </div>
 
@@ -146,6 +149,7 @@
     </section>
 
     <%- include('./partials/footer') %>
+   
 </body>
 
 </html>
