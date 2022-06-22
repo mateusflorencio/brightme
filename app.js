@@ -4,15 +4,15 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/IndexRoute');
-const contaUsuarioRouter = require('./routes/user/ContaUsuario');
-const blogRouter = require('./routes/BlogRoute')
-const carrinhoRouter = require('./routes/CarrinhoRoute');
-const decricaoProdutoRouter = require('./routes/DescricaoProdutoRoute')
-const FinalizarCompraRouter = require('./routes/PagamentoRoute')
-const listarProdutosRoute = require('./routes/ListarProdutosRoute')
-const loginRouter = require('./routes/LoginRoute')
-const sucessRoute = require('./routes/Sucess');
+const indexRouter = require('./routes/index-route');
+const contaUsuarioRouter = require('./routes/user/conta-usuario');
+const blogRouter = require('./routes/blog-route')
+const carrinhoRouter = require('./routes/carrinho-route');
+const produtoRouter = require('./routes/produto-route')
+const pagamentoRouter = require('./routes/pagamento-route')
+const produtosRouter = require('./routes/produtos-route')
+const loginRouter = require('./routes/login-route')
+const sucessRouter = require('./routes/sucess');
 
 const app = express();
 
@@ -30,13 +30,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/produtos', listarProdutosRoute)
-app.use('/sucess', sucessRoute)
+app.use('/produtos', produtosRouter)
+app.use('/sucess', sucessRouter)
 app.use('/blog', blogRouter)
 app.use('/carrinho', carrinhoRouter)
 app.use('/conta', contaUsuarioRouter)
-app.use('/produto', decricaoProdutoRouter)
-app.use('/pagamento', FinalizarCompraRouter)
+app.use('/produto', produtoRouter)
+app.use('/pagamento', pagamentoRouter)
 app.use('/login', loginRouter)
 
 

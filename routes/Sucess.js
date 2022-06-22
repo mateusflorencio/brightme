@@ -1,6 +1,4 @@
-const express = require("express");
-
-const routes = express.Router()
+const routes = require("express").Router()
 
 routes.get('/', (_req, res) => {
     res.render('page-success')
