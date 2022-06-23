@@ -43,13 +43,13 @@ As paletas de cores iniciais são:
 
 A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrádavel.
 
-#### Shortcuts
+#### Shortcuts Class
 
-- .card
-- .container
-- .bg-"color"
-- .t-"color"
-- .d-flex
+- card
+- container
+- bg-"color"
+- t-"color"
+- d-flex
 - all-center
 - w-100
 - h-100
