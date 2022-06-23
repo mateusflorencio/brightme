@@ -1,0 +1,21 @@
+/* card-product */
+.promo-cards {
+  width: 190px;
+  background-color: white;
+  margin-right: 10px !important;
+}
+
+.promo-cards:hover {
+  box-shadow: 0px 10px 13px -7px #000000;
+  cursor: pointer;
+}
+
+.promo-card-price {
+  padding: 5px 10px;
+  height: 30px;
+}
+
+.line-cart {
+  height: 2px;
+  width: 70%;
+}

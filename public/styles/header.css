@@ -1,0 +1,132 @@
+/* menu */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background: var(--main-rosa);
+  margin: 0;
+}
+
+.li-item {
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.account {
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+#btn-mobile {
+  display: none;
+}
+
+#nav_menu {
+  display: flex;
+  color: white;
+  align-items: center;
+
+}
+
+@media (max-width:1000px) {
+
+  #nav_menu .div_menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: var(--main-rosa);
+    transition: 0.5s ease-in;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  #nav_menu .div_menu ul {
+    display: block;
+    padding-left: 2rem;
+  }
+
+  #nav_menu .div_menu ul li {
+    padding: 0.8rem;
+  }
+
+  #nav_menu li .account {
+    border: none;
+    padding: 0;
+  }
+
+  #nav_menu #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #nav_menu.active .div_menu,
+  #nav_menu.active .div_menu ul {
+    margin-top: 0;
+    height: 45vh;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  #nav_menu.active .list_menu {
+    display: flow-root;
+  }
+
+  #nav_menu.active .list_menu li {
+    padding: 0.8rem;
+  }
+
+  #nav_menu.active li .account {
+    border: none;
+    padding: 0;
+  }
+
+  #hamburger {
+    border-top: 2px solid white;
+    width: 20px;
+  }
+
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  #nav_menu.active #hamburger {
+    border-top-color: transparent;
+  }
+
+  #nav_menu.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  #nav_menu.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}

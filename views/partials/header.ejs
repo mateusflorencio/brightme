@@ -1,20 +1,24 @@
 <header class="header">
-    <nav class="nav_menu container">
+    <div class="container space-around w-100">
         <div class="brand">
-            <a href="/"><img height="60px" src="./image/logos-bg.png" alt="logo" class="brand-img"></a>
+            <a href="/"><img height="60px" src="../image/logos-bg.png" alt="logo" class="brand-img"></a>
         </div>
-        <div class="div_menu">
-            <ul class="list_menu d-flex list">
-                <li class="t-white"><a href="" class="li-item item_list t-white">Álcool Em Gel</a></li>
-                <li><a href="" class="li-item item_list t-white">Kits Promocionais</a></li>
-                <li><a href="" class="li-item item_list t-white">Sobre Nós</a></li>
-                <li><a href="blog" class="li-item item_list t-white">Blog</a></li>
+        <nav id="nav_menu" class="d-flex">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+                aria-expanded="false"><span id="hamburger"></span></button>
+
+            <ul class="list_menu d-flex list m-10">
+                <li><a href="" class="item_list t-white m-10">Álcool Em Gel</a></li>
+                <li><a href="" class="item_list t-white m-10">Kits Promocionais</a></li>
+                <li><a href="" class="item_list t-white m-10">Sobre Nós</a></li>
+                <li><a href="blog" class="item_list t-white m-10">Blog</a></li>
             </ul>
-        </div>
-        <div class="d-flex ">
-            <a href="/login " class="account">Entrar</a>
-            <div class="cart all-center"><a href="/carrinho"><img height="20px" src="../image/cart.png" alt=""></a>
+
+            <div class="d-flex ">
+                <a href="/login " class="account">Entrar</a>
+                <div class="cart all-center"><a href="/carrinho"><img height="20px" src="../image/cart.png" alt=""></a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>

@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('./header.css');
+@import url('./footer.css');
+@import url('./card-product.css');
 
 * {
   box-sizing: border-box;
@@ -39,10 +42,6 @@
 
 .w-100 {
   width: 100% !important;
-}
-
-.h-100 {
-  height: 100%;
 }
 
 /* background */
@@ -187,104 +186,15 @@
   cursor: pointer;
 }
 
-.mt-40 {
-  margin-top: 40px;
+/* margin */
+.m-10 {
+  margin: 10px;
 }
 
 .mt-20 {
   margin-top: 20px;
 }
 
-/* menu */
-.header {
-  height: 70px;
-  background: var(--main-rosa);
-}
-
-.nav_menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 100%;
-  color: white;
-}
-
-.li-item {
-  margin-right: 30px;
-  font-size: 16px;
-}
-
-.account {
-  border: 1px solid #fff;
-  padding: 10px;
-  border-radius: 5px;
-  margin-right: 20px;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* footer */
-.footer {
-  height: 270px;
-}
-
-.line {
-  height: 240px;
-  width: 1px;
-  background-color: white;
-  margin-top: 17px;
-}
-
-.div-content-footer {
-  justify-content: center;
-  align-content: center;
-}
-
-.div-category {
-  margin-top: 30px;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: end;
-}
-
-.ul_footer {
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-.div_redes_sociais {
-  margin-top: 20px;
-}
-
-.footer_inst {
-  margin-right: 10px;
-}
-
-.div-info {
-  margin-top: 30px;
-  margin-left: 20px;
-}
-
-/* card-promo-product */
-.promo-cards {
-  width: 190px;
-  margin-right: 15px;
-  background-color: white;
-}
-
-.promo-cards:hover {
-  box-shadow: 0px 10px 13px -7px #000000;
-  cursor: pointer;
-}
-
-.promo-card-price {
-  padding: 5px 10px;
-  height: 30px;
-}
-
-.line-cart {
-  height: 2px;
-  width: 70%;
+.mt-40 {
+  margin-top: 40px;
 }

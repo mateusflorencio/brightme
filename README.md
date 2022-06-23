@@ -23,7 +23,7 @@ Foi criado padrão de projetos para facilitar o desenvolvimento em grupo. No pac
 
 As paletas de cores iniciais são:
 
-- main-white: #fff;
+- --main-white: #fff;
 
 - --main-yellow: #f1c40f
 
@@ -67,6 +67,7 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 ## Será desenvolvido com Node.js e todos os poderes do Javascript e o npm como gerenciador de pacote.
 
+
 ## Rotas
 
 #### Home
@@ -80,7 +81,6 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 #### Pagina de listagem de produtos e filtro
 
 '/produtos'
-
 ### Pagina de produto
 '/produto'
 
