@@ -44,14 +44,9 @@ textarea {
 }
 
 
-@media (max-width:500px) {
-  .col-login {
-    right: 100rem;
-    left: 10rem;
-    width: 50%;
-  }
+@media (max-width:1000px) {
 
-  .btn-register {
-    width: 100%;
+  .util {
+    justify-content: center;
   }
 }
