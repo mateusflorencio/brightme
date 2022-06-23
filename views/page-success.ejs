@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/sucess.css">
+    <link rel="stylesheet" href="./styles/page-sucess.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
 
     <title>Sucesso</title>
@@ -14,18 +14,18 @@
 <body>
     <%- include('./partials/header') %>
 
-    <div class="container content-sucess">
-        <div class="title-sucess ">
-            <h3 class="t-green">Compra Finalizada</h3>
+        <div class="container content-sucess">
+            <div class="title-sucess ">
+                <h3 class="t-green">Compra Finalizada</h3>
+            </div>
+            <div class="t-grey-700">Acompanhe o status dp seu item em Minha Conta</div>
+            <div class="div-btn-sucess">
+                <a href="/" class="link btn-primary link all-center t-white">Inicio</a>
+                <a href="/conta" class="link btn-secondary link all-center">Minha Conta</a>
+            </div>
         </div>
-        <div class="t-grey-700">Acompanhe o status dp seu item em Minha Conta</div>
-        <div class="div-btn-sucess">
-            <a href="/" class="link btn-primary link all-center t-white">Inicio</a>
-            <a href="/conta" class="link btn-secondary link all-center">Minha Conta</a>
-        </div>
-    </div>
 
-    <%- include('./partials/footer') %>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>
