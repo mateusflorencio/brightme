@@ -1,13 +1,8 @@
 @import url(./main.css);
 
-.div-content-products {
-  align-items: center;
-
+.container-display {
   display: flex;
   justify-content: space-around;
-
-  margin-top: 20px;
-  height: 400px;
 }
 
 .col-images {
@@ -26,6 +21,7 @@
   position: absolute;
   max-height: 250px;
 }
+
 .div-picture-product {
   width: 100%;
 }
@@ -39,69 +35,15 @@
 
   border-radius: 10px;
 }
+
 /* coluna 2*/
-.col-info-product {
+.col-info {
   height: 100%;
   padding-right: 40px;
   padding-left: 20px;
 }
+
 .star em {
   color: var(--main-yellow);
   font-size: 20px;
-}
-/* coluna 3*/
-.col-buy {
-  height: 100%;
-}
-
-.text-mod-payment {
-  font-size: 10px;
-}
-
-.group-btn-buy {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-}
-
-.btn-buy {
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.btn-adicionar {
-  width: 100%;
-}
-
-.calculo-frete {
-  margin-top: 50px;
-}
-.input-cep {
-  display: flex;
-}
-
-/*Demais infos*/
-.carrossel {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.div-carrossel-picture {
-  padding: 4px !important;
-  height: 100px;
-  width: 100px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.div-carrossel-picture img {
-  height: 100%;
-  max-width: 90px;
-  max-height: 90px;
-  width: auto;
-  position: absolute;
 }
