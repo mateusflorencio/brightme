@@ -47,13 +47,19 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 - all-center
 - w-100
 - h-100
+- btn
 - btn-"type"
 - list
+- link
+- mt-20 : margin-top: 20px
+- mt-40 : margin-top: 40px
 - item-list
+- w-100 : width: 100%
+- h-100 : heigth: 100%
 
 # Back-End 🛠️
 
-## Será desenvolvido com node e todos os poderes do javascript, utilizando pacotes como express e afins.
+## Será desenvolvido com Node.js e todos os poderes do Javascript e o npm como gerenciador de pacote.
 
 ## Rotas
 
@@ -87,6 +93,14 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 ### Carrinho
 '/carrinho'
+
+# FrontEnd
+
+O Figma foi utilizado para prototipar o projeto.
+
+Como foi decido utilizar o ejs para renderizar as views.
+
+link protótipó: https://www.figma.com/file/Q0SAknsw6ue4HVEsKK9Yu1/Home?node-id=0%3A1
 
 ## Banco de Dados
 
