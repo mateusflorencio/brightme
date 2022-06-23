@@ -40,10 +40,6 @@
   align-items: center;
 }
 
-.input-cep {
-  width: 259px;
-  height: 40px;
-  border-radius: 10px;
-  border-color: var(--main-grey);
-  margin-right: 20px;
+.h-35 {
+  height: 35px;
 }
