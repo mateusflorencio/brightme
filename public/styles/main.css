@@ -147,6 +147,17 @@
   cursor: pointer;
 }
 
+.btn-tertiary {
+  color: #ffffff;
+  background: var(--main-blue);
+  height: 40px;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
 /* cards */
 .card {
   display: flex;

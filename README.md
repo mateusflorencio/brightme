@@ -99,7 +99,6 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 ### Carrinho
 '/carrinho'
-
 # Banco de Dados
 
 ## Schemas

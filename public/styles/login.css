@@ -12,57 +12,35 @@ body {
   margin-bottom: 10px;
 }
 
-.col-login {
-  height: 40%;
-  width: 30%;
+.util {
+  justify-content: end;
+}
+
+.container-form {
+  height: 400px;
+  width: 300px;
   background: var(--main-grey);
   opacity: 0.9;
-  position: sticky;
-  top: 100px;
-  left: 700px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
-.group-btn-login {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
-
-.btn-login {
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.btn-register {
-  width: 100%;
-}
-
-input [type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-  width: 100%;
-  resize: none;
   height: 35px;
-  border-radius: 10% solid;
+  margin-top: 10px;
 }
 
 .forgot {
-  margin-top: 5px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
 
-.btn-tertiary {
-  color: #ffffff;
-  background: var(--main-blue);
-  height: 40px;
-  width: 260px;
-  font-size: 18px;
-  border-radius: 10px;
-  border: none;
+.div-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 

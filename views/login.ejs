@@ -13,32 +13,35 @@
 
 <body>
     <%- include('./partials/header') %>
-        <section class="container">
-            <section class="col-login card">
-                <div class="login">
+        <section class="container util mt-40 d-flex h-100">
+            <section class="left">
+                <div class="card container-form">
                     <h1 class="title">Entre na sua conta</h1>
-                </div>
-                <form class="loginFillOut"></form>
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <form class="loginFillOut">
+                        <label for="email">E-mail</label>
+                        <input class="card w-100" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                        <div class="mt-20"></div>
+                        <label for="password">Senha</label>
+                        <input class="card w-100" type="password" name="password" id="password"
+                            placeholder="Digite sua senha">
+                        <div class="mt-20"></div>
+                        <button class="w-100 btn-primary" type="submit">
+                            Entrar
+                        </button>
+                        <button class="w-100 btn-tertiary mt-20" type="submit">
+                            Cadastre-se
+                        </button>
 
-                <div class="group-btn-login">
-                    <button class="btn-login btn-primary" type="submit">
-                        Entrar
-                    </button>
-                    <button class="btn-register btn-tertiary" type="submit">
-                        Cadastre-se
-                    </button>
-                </div>
-                </form>
-                <div class="forgot">
-                    <p class="forgot">Esqueci minha senha</h1>
+                    </form>
+                    <p class="mt-20 forgot">Esqueci minha senha!</p>
                 </div>
             </section>
         </section>
+
+
         <%- include('./partials/footer') %>
+
+
 </body>
 
 </html>
