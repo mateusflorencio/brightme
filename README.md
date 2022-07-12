@@ -105,3 +105,22 @@ Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 
 ## Schemas
 ![modelo banco de dados](./public/image/readme/DER.png)
+
+
+### A principio são 14 modelos
+
+1.  [x] cliente
+2.  [x] telefone
+3.  [x] endereco
+4.  [x] categoria
+5.  [x] fabricante
+6.  [x] image
+7.  [x] adm
+8.  [x] estoque
+9.  [x] produto
+10. [x] promocao
+11. [x] kit
+12. [x] pedido
+13. [x] status
+13. [x] ordemPedido
+14. [x] cupom
