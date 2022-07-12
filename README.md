@@ -99,6 +99,9 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 
 ### Carrinho
 '/carrinho'
-# Banco de Dados
+# Banco de Dados 🎲
+## Mysql será utilizado como banco de dado
+Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 
 ## Schemas
+![modelo banco de dados](./public/image/readme/DER.png)
