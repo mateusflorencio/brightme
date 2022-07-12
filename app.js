@@ -3,18 +3,20 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const {configSequelize} = require('./src/data/db');
 
-const indexRouter = require('./routes/index-route');
-const contaUsuarioRouter = require('./routes/user/conta-usuario');
-const blogRouter = require('./routes/blog-route')
-const carrinhoRouter = require('./routes/carrinho-route');
-const produtoRouter = require('./routes/produto-route')
-const pagamentoRouter = require('./routes/pagamento-route')
-const produtosRouter = require('./routes/produtos-route')
-const loginRouter = require('./routes/login-route')
-const sucessRouter = require('./routes/sucess');
+const indexRouter = require('./src/routes/index-route');
+const contaUsuarioRouter = require('./src/routes/user/conta-usuario');
+const blogRouter = require('./src/routes/blog-route')
+const carrinhoRouter = require('./src/routes/carrinho-route');
+const produtoRouter = require('./src/routes/produto-route')
+const pagamentoRouter = require('./src/routes/pagamento-route')
+const produtosRouter = require('./src/routes/produtos-route')
+const loginRouter = require('./src/routes/login-route')
+const sucessRouter = require('./src/routes/sucess');
 
 const app = express();
+configSequelize.start();
 
 // view engine setup
 app.set('view engine', 'ejs');
