@@ -30,4 +30,4 @@ close: async function close(){
   }}
 }
 
-module.exports = configSequelize
+module.exports = {configSequelize, sequelize}

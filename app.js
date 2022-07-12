@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const {configSequelize} = require('./src/data/db');
 
 const indexRouter = require('./src/routes/index-route');
 const contaUsuarioRouter = require('./src/routes/user/conta-usuario');
@@ -15,6 +16,7 @@ const loginRouter = require('./src/routes/login-route')
 const sucessRouter = require('./src/routes/sucess');
 
 const app = express();
+configSequelize.start();
 
 // view engine setup
 app.set('view engine', 'ejs');
