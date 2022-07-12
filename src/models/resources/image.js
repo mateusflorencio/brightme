@@ -1,15 +1,15 @@
-const { INTEGER, STRING } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { sequelize } = require('../../data/db')
 
 const Image = sequelize.define('image',{
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   url: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false
   }
 })

@@ -1,19 +1,19 @@
-const { INTEGER, BOOLEAN } = require('sequelize')
+const { DataTypes} = require('sequelize')
 const { sequelize } = require('../../data/db')
 
 const Cupom = sequelize.define('cupom', {
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   codigo: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   ativo: {
-    type: BOOLEAN,
+    type: DataTypes.BOOLEAN,
     allowNull: false
   }
 })

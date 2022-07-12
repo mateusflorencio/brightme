@@ -1,4 +1,4 @@
-const { INTEGER } = require('sequelize')
+const { DataTypes, HasOne } = require('sequelize')
 const { sequelize } = require('../data/db')
 import Cliente from './cliente'
 
@@ -10,13 +10,13 @@ const Telefone = sequelize.define('telefone',{
     type: INTEGER
   },
   numero: {
-    type: INTEGER(12),
+    type: DataTypes.INTEGER,
     allowNull: false,
     unique: true
   },
   usuario: {
     references: {
-      model: this.hasOne(Cliente),
+      model: HasOne(Cliente),
       key: 'id'
     }
   }

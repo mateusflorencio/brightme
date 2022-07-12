@@ -1,18 +1,18 @@
-const { INTEGER, STRING } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { sequelize } = require('../../data/db')
 
 const Administrador = sequelize.define('administrador',{
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   nome: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
-  tipo: STRING
+  tipo: DataTypes.STRING
 })
 
 module.exports = Administrador

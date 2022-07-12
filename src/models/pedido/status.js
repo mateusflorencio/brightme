@@ -10,8 +10,7 @@ const Status = sequelize.define('status', {
   },
   status: {
     type: DataTypes.STRING,
-    allowNull: false,
-    defaultValue: 'processo não iniciado'
+    allowNull: false
   },
   data: {
     type: DataTypes.DATE,

@@ -1,57 +1,60 @@
-const { INTEGER, STRING, DATEONLY, BOOLEAN} = require('sequelize')
+const { DataTypes, HasMany, HasOne} = require('sequelize')
 const { sequelize } = require('../../data/db')
 const { Categoria, Fabricante, Image} = require('../')
 
 const Produto = sequelize.define('produto', {
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   nome: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
   preco: {
-    type: INTEGER,
+    type: DataTypes.DOUBLE,
     allowNull: false
   },
   descricao: {
-    type: STRING
+    type: DataTypes.STRING
   },
   titulo:{
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
   ativo: {
-    type: BOOLEAN,
-    allowNull: false
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false
   },
-  image: {
+  images: {
     references: {
-      model: Image,
+      model: HasMany(Image),
       key: 'id'
     }
   },
   categoria: {
     references: {
-      model: Categoria,
+      model: HasMany(Categoria),
       key: 'id'
     }
   },
   fabricante: {
     references: {
-      model: Fabricante,
+      model: HasOne(Fabricante),
       key: 'id'
     }
   },
   dataEntrada: {
-    type: DATEONLY
+    type: DataTypes.DATEONLY,
+    allowNull: false
   },
   dataSaida: {
-    type: DATEONLY
-  },
+    type: DataTypes.DATEONLY,
+    allowNull: false
+  }
 })
 
 module.exports = Produto

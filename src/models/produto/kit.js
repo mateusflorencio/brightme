@@ -1,38 +1,37 @@
-const { INTEGER, BOOLEAN, STRING } = require('sequelize')
+const { DataTypes, HasMany } = require('sequelize')
 const { sequelize } = require('../../data/db')
 const { Produto } = require('../')
 
 const Promocao = sequelize.define('promocao', {
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   preco: {
-    type: DOUBLE,
+    type: DataTypes.DOUBLE,
     allowNull: false
   },
   descricao: {
-    type: STRING
+    type: DataTypes.STRING
   },
   titulo:{
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
   ativo: {
-    type: BOOLEAN,
-    allowNull: false
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false
   },
   produtos: {
     references: {
-      model: Produto,
+      model: HasMany(Produto),
       key: 'id'
     }
   },
-  descontoPorcentagem: {
-    type: INTEGER
-  }
+  descontoPorcentagem: DataTypes.INTEGER
 })
 
 module.exports = Promocao

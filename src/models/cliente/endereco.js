@@ -1,47 +1,40 @@
-const { STRING } = require('sequelize')
-const { INTEGER, Sequelize } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { sequelize } = require('../../data/db')
 const Cliente = require('./cliente')
 
 const Endereco = sequelize.define('endereco', {
   id:{
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey:true,
     autoIncrement: true
   },
   cep:{
-    type: INTEGER(9),
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   numero: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull:false
   },
   logradouro: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull:false
   },
   bairro: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull:false
   },
-  complemento: STRING
-  ,
+  complemento: DataTypes.STRING,
   estado: {
-    type: STRING,
-    allowNull:false
-  },
-  estado: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull:false
   },
   municipio: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull:false
   },
-  referecia: STRING
+  referecia: DataTypes.STRING
 })
-
 
 module.exports = Endereco

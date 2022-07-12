@@ -1,9 +1,9 @@
-const { INTEGER, STRING } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { sequelize } = require('../../data/db')
 
-const Fabricante = sequelize.define('fabricante',{
+const Fabricante = sequelize.define('fabricante', {
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
@@ -12,7 +12,7 @@ const Fabricante = sequelize.define('fabricante',{
     type: STRING,
     allowNull: false
   },
-  nome: STRING
+  sede: DataTypes.STRING
 })
 
 module.exports = Fabricante

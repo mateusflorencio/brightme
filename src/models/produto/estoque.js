@@ -1,21 +1,21 @@
-const { INTEGER } = require('sequelize')
+const { DataTypes } = require('sequelize')
 const { sequelize } = require('../../data/db')
-const Produto = require('./produto')
+const { Produto } = require('../')
 
 const Estoque = sequelize.define('estoque',{
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     allowNull: false,
     primaryKey: true
   },
   quantidade: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   produtos: {
     references: {
-      model: Produto,
+      model: this.hasMany(Produto),
       key: 'id'
     },
     allowNull: false
