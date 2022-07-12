@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const {configSequelize} = require('./src/data/db');
+const methodOverride = require('method-override')
+const { configSequelize } = require('./src/data/db');
 
 const indexRouter = require('./src/routes/index-route');
 const contaUsuarioRouter = require('./src/routes/user/conta-usuario');
@@ -30,6 +31,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('X-HTTP-Method-Override'))
 
 //routes
 app.use('/', indexRouter);

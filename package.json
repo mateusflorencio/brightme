@@ -29,7 +29,8 @@
     "mysql2": "^2.3.3",
     "pug": "^2.0.4",
     "sequelize": "^6.21.3",
-    "tedious": "^14.7.0"
+    "tedious": "^14.7.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
