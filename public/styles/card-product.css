@@ -1,21 +1,22 @@
-/* card-product */
+/* card-product. VOCÊ TAMBÉM PODE GOSTAR DE... */
+
 .promo-cards {
-  width: 190px;
+  width: 19rem;
   background-color: white;
-  margin-right: 10px !important;
+  margin-right: 1rem !important;
 }
 
 .promo-cards:hover {
-  box-shadow: 0px 10px 13px -7px #000000;
+  box-shadow: 0 1rem 1.3rem -0.7rem #000000;
   cursor: pointer;
 }
 
 .promo-card-price {
-  padding: 5px 10px;
-  height: 30px;
+  padding: 0.5rem 1rem;
+  height: 3rem;
 }
 
 .line-cart {
-  height: 2px;
+  height: 2rem;
   width: 70%;
 }
