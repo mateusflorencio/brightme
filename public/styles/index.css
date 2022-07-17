@@ -1,11 +1,15 @@
 @import url(./main.css);
 
+/* BANNER PRINCIPAL */
+
 .background-image {
   background: url(../image/home/banner-home.png) no-repeat;
   background-size: cover;
   height: 28rem;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 1440px;
 }
 
 .content-banner {
@@ -14,7 +18,6 @@
 }
 
 .banner-text {
-
   text-align: justify;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
@@ -26,41 +29,35 @@
   margin-top: 0;
 }
 
-/*tools*/
+/* PORTIFOLIO */
 
-.tools {
+.all-center{
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.portifolio-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.1rem;
+  width: 90%;
+  max-width: 1440px;
   height: 40vh;
-  display: flex;
-  align-items: center;
+  border-radius: 2rem;
 }
 
-.tools .tools-contants {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+/* FEEDBACK - AVALIAÇÃO CLIENTES */
 
-}
-
-.tools .tools-boxes-pictures {
-  width: 150px;
-  height: 150px;
-
-  border-radius: 20px;
-}
-
-/* feedback */
 .feedback-section {
-  height: 65vh;
+  height: 60vh;
 }
 
 .feedback-container {
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
-  height: 100%;
+  height: 50vh;
 }
 
 .div-arrow {
@@ -79,16 +76,16 @@
 .arrow-rigth {
   display: flex;
   position: relative;
-  right: 40%;
-  top: 150px;
+  right: 45%;
+  top: 12rem;
   cursor: pointer;
 }
 
 .arrow-left {
   display: flex;
   position: relative;
-  left: 40%;
-  top: 190px;
+  left: 45%;
+  top: 14rem;
   cursor: pointer;
 }
 
@@ -96,22 +93,21 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  height: 250px;
-  width: 70%;
+  height: 25rem;
+  width: 70vw;
 }
 
 .feedback-picture-cliente {
-  height: 140px;
-  width: 140px;
+  height: 14rem;
+  width: 14rem;
 }
 
 .content-left {
-  margin: 0 20px;
+  margin: 0 2rem;
 }
 
 .feedback-text {
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
 .estrelas input[type=radio] {
@@ -132,16 +128,17 @@
 }
 
 .btn-primary {
-  margin-top: 40px;
+  margin-top: 0.6rem;
+  text-align: center;
 }
 
-/*Blog*/
+/*BLOG*/
 
 .line-title-blog {
   background-color: var(--main-rosa);
-  width: 300px;
-  height: 2px;
-  margin: 70px 20px;
+  width: 30rem;
+  height: 0.2rem;
+  margin: 7rem 2rem;
 }
 
 .container-cards-blog {
@@ -151,135 +148,39 @@
 }
 
 .card-content {
-  width: 300px;
+  width: 30rem;
   height: auto;
 }
 
 .card-img-blog {
-  height: 200px;
-  border-bottom: 1px solid var(--main-grey);
+  height: 20rem;
+  border-bottom: 0.1rem solid var(--main-grey);
 }
 
 .card-title-blog {
   display: flex;
-  margin: 20px 0;
-  font-size: 16px;
+  margin: 2rem 0;
 }
 
-.card-resume-blog {
-  font-size: 14px;
-}
-
-/* about */
+/* ABOUT - SOBRE NÓS */
 
 .about {
-  margin-top: 70px;
-  height: 500px;
+  margin-top: 7rem;
+  height: 55vh;
 }
 
 .about-rigth {
+  padding: 0 2rem 0 2rem;
   width: 50%;
-  margin-right: 50px;
-  margin-top: 50px;
+  margin-top: 2rem;
 }
 
 .about-left {
   background-image: url(../image/imagens-descricao-produto/quem\ somos.jpeg);
   position: absolute;
   background-size: cover;
-  width: 600px;
-  max-width: 600px;
-  height: 500px;
+  width: 100%;
+  max-width: 50vw;
+  height: 55vh;
   right: 0%;
-}
-
-@media (max-width: 500px) {
-
-  .content-banner {
-    margin: 0.9rem;
-    width: 100%;
-  }
-
-  .banner-text {
-
-    text-align: justify;
-    margin-top: 1rem;
-    right: 5rem;
-    width: 85%;
-  }
-
-  .tools {
-    height: 75vh;
-  }
-
-  .tools .tools-contants {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  .tools .tools-boxes-pictures:nth-child(2) {
-    margin: 0.5rem 0;
-  }
-
-  .feedback-section {
-    height: 75vh;
-  }
-
-  .feedback-picture-cliente {
-    width: 8rem;
-    height: 8rem;
-  }
-
-  .feedback-content {
-    width: 92%;
-    height: 50vh;
-    text-align: justify;
-
-
-    margin-top: -3.0rem;
-    margin-bottom: 2rem;
-  }
-
-  .arrow-rigth {
-    right: 28px;
-    top: 322px;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .arrow-left {
-    left: 28px;
-    top: 362px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .container-cards-blog {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.8rem;
-
-  }
-
-  .about {
-    height: 89vh;
-  }
-
-  .about-rigth {
-    padding-left: 1rem;
-    align-items: center;
-    text-align: justify;
-    width: 18rem;
-    font-size: 16px;
-  }
-
-  .about-left {
-    width: 8rem;
-    height: 36.2rem;
-  }
 }

@@ -7,12 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/blog.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
+    <script src="../../public/script/menu.js" defer></script>
     <title>Blog</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
-    That's a blog
+    <section class="container">
+        <div class="d-flex all-center">
+            <div class="line-title-blog"></div>
+            <h2 class="">Blog Renegerativo</h2>
+            <div class="line-title-blog"></div>
+        </div>
+        <div class="container-cards-blog">
+            <a href="/home" class="card card-content bg-white link">
+                <div class="card-img-blog all-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30EjcCFBZtiuUgG-OFbqTpyzMop7Iz4qb7w&usqp=CAU" height= 100rem alt="economia regenativa">
+                </div>
+                <div>
+                    <p class="card-title-blog">O que é a economia regenerativa?</p>
+                    <p class="card-resume-blog">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                        quibusdam
+                        provident eius sint, incidunt dicta iure maxime quas magni. Soluta voluptatibus corporis
+                        inventore asperiores velit, voluptatum ipsum minus laborum dolorem.</p>
+                </div>
+            </a>
+            <a href="/home" class="card card-content bg-white link">
+                <div class="card-img-blog all-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC357X0mzJyfA5KN_6FcTkBRfh58l6om0XOA&usqp=CAU" height= 100rem alt="produto regenerativo">
+                </div>
+                <div>
+                    <p class="card-title-blog">Como um produto pode ser regenerativo?</p>
+                    <p class="card-resume-blog">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                        quibusdam
+                        provident eius sint, incidunt dicta iure maxime quas magni. Soluta voluptatibus corporis
+                        inventore asperiores velit, voluptatum ipsum minus laborum dolorem.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+        </div>
+
+    </div>
+
 
     <%- include('./partials/footer') %>
 </body>

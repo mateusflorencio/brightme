@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/produto.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="../../public/script/menu.js" defer></script>
+
     <title>Alcool em gel</title>
 </head>
 <%- include('./partials/header') %>
@@ -18,6 +19,7 @@
             <h1>Alcool 70º</h1>
             <br>
 
+            <!-- COLUNA 1 -->
             <div class="container-display">
                 <div class="col-images">
                     <div class="div-img-product-main card">
@@ -30,10 +32,9 @@
                             src="./image/imagens-descricao-produto/Duo_gel_liquido_3.jpeg" alt="">
                         <img class="picture-produts-item card"
                             src="./image/imagens-descricao-produto/Duo_gel_liquido_2.jpeg" alt="">
-                        <img class="picture-produts-item card"
-                            src="./image/imagens-descricao-produto/Duo_gel_liquido_1.jpeg" alt="">
                     </div>
                 </div>
+                <!-- COLUNA 2 -->
                 <section class="col-info">
 
                     <div class="star">
@@ -49,29 +50,30 @@
                     <h4 class="mt-20">Elimina 99,9% de vírus, fungos e bactérias</h3><br>
                         <p>
                             O grande diferencial do gel higienizante da Brightme é que ele não deixa sua
-                            pele ressecada.. Ele
-                            possui extrato de aloe vera e glicerina, que hidrata suas mãos com um frescor agradável..
+                            pele ressecada. Ele
+                            possui extrato de aloe vera e glicerina, que hidrata suas mãos com um frescor agradável, além de hidratar a sua pele.
                         </p>
 
                 </section>
+                <!-- COLUNA 3 -->
                 <section class="col-buy card">
 
                     <h2>R$xx,xx</h2>
-                    <p class="t-grey-700" style="font-size: 12px;">diversas formas de pagamentos disponíveis</p>
+                    <p class="t-grey-700" style="font-size: 1.2rem;">Diversas formas de pagamentos disponíveis</p>
 
                     <div class="mt-40">
                         <button class="w-100 btn-primary">
-                            comprar
+                            Comprar
                         </button>
                         <button class="w-100 btn-secondary mt-20">
-                            adicionar
+                            Adicionar
                         </button>
                     </div>
                     <form class="mt-40">
                         <label for="frete">Calcule o Frete</label><br>
-                        <div class="d-flex"><input class="card" style="height:35px;margin-right: 10px;" type="text"
+                        <div class="d-flex"><input class="card" style="height:3.5rem; margin-right: 1rem;" type="text"
                                 name="frete" id="frete" placeholder="Insira o CEP">
-                            <button class="btn" style="width:40px;height: 45px;" type="submit">ok</button>
+                            <button class="btn" style="width:4rem; height: 4.5rem;" type="submit">OK</button>
                         </div>
 
                     </form>
@@ -79,6 +81,7 @@
 
             </div>
             <br>
+            <!-- VOCÊ PODE GOSTAR DE -->
             <h2 class="mt-40">Você também pode gostar de......</h2>
             <br>
             <div class="d-flex">
@@ -86,7 +89,6 @@
                     <%- include('./partials/card-product') %>
                         <%- include('./partials/card-product') %>
                             <%- include('./partials/card-product') %>
-                                <%- include('./partials/card-product') %>
             </div>
         </section>
         <br>

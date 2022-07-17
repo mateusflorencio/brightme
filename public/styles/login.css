@@ -9,31 +9,32 @@ body {
 
 .title {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.1rem;
 }
 
 .util {
-  justify-content: end;
+  justify-content: right;
 }
 
 .container-form {
-  height: 400px;
-  width: 300px;
+  display: flex;
+  height: 40rem;
+  width: 30rem;
   background: var(--main-grey);
   opacity: 0.9;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 input[type="email"],
 input[type="password"],
 textarea {
-  height: 35px;
-  margin-top: 10px;
+  height: 3.5rem;
+  margin-top: 1rem;
 }
 
 .forgot {
-  font-size: 14px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -41,11 +42,4 @@ textarea {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-@media (max-width:1000px) {
-
-  .util {
-    justify-content: center;
-  }
 }
