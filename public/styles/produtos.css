@@ -49,3 +49,15 @@
 .active {
   background-color: var(--main-grey);
 }
+
+/* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+}

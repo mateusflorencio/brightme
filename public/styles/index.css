@@ -36,14 +36,26 @@
   font-size: 1.2rem;
 }
 
-.portifolio-box {
+.portifolio-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0.1rem;
-  width: 90%;
+  /* width: 100%;
+  max-width: 1440px; */
+}
+
+.portifolio-box{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-gap: 2rem;
+  width: 100%;
   max-width: 1440px;
-  height: 40vh;
+  /* height: auto; */
   border-radius: 2rem;
+  /* float:inline-end;  */
+}
+
+.portifolio-box .img{
+  width: 100%;
+  height: auto;
 }
 
 /* FEEDBACK - AVALIAÇÃO CLIENTES */

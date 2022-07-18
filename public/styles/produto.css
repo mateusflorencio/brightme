@@ -56,3 +56,14 @@
 .col-buy.card {
 height: 85%;
 }
+
+/* VOCÊ TAMBÉM PODE GOSTAR DE */
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+  width: 100%;
+  max-width: 1440px;
+
+}

@@ -1,7 +1,7 @@
 @import url(./main.css);
 
 body {
-  background-image: url(../image/imagens-descricao-produto/Brightme3.jpg);
+  background-image: url(../image/imagens-descricao-produto/Duo_gel_liquido_3.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   flex-direction: column;
@@ -36,10 +36,4 @@ textarea {
 .forgot {
   font-size: 1rem;
   cursor: pointer;
-}
-
-.div-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
