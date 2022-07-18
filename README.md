@@ -124,3 +124,5 @@ Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 13. [x] status
 13. [x] ordemPedido
 14. [x] cupom
+
+### Para fácil visualização do banco o _localhost:8080_ pode ser acessado.
