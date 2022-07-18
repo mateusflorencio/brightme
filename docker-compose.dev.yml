@@ -10,11 +10,11 @@ services:
     restart: always
 
     environment:
-      MYSQL_DATABASE: any_db
-      MYSQL_ROOT_PASSWORD: any_password_root
+      MYSQL_DATABASE: ${DEV_DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DEV_DB_ROOT_PASSWORD}
 
     ports:
-      - '3306:3306'
+      - 3306:3306
 
   adminer:
     image: adminer
