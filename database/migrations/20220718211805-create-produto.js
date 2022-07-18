@@ -28,15 +28,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       categoriaId: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
-        allowNull: false
+        type: Sequelize.INTEGER
       },
       fabricanteId: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
       imgId: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

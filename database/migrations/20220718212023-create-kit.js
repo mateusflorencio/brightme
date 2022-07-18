@@ -13,7 +13,7 @@ module.exports = {
         defaultValue: false
       },
       produtoId: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       titulo: {
@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       imageId: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

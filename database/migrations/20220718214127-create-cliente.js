@@ -37,7 +37,7 @@ module.exports = {
         unique: true
       },
       enderecoId: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.INTEGER
       },
       ordemDeServicoId: {
         type: Sequelize.INTEGER
