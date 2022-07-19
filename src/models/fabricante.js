@@ -20,5 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Fabricante',
   });
+
+  Fabricante.associate = (models) => {
+    Fabricante.hasMany(models.Produto, {as: 'fabricante'})
+  }
   return Fabricante;
 };
