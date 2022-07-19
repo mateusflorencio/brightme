@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
   Pedido.associate = (models) => {
     Pedido.belongsToMany(models.Produto,{through: 'ProdutoPedido', foreignKey: 'pedidoId' })
     Pedido.hasOne(models.OrdemDeServico,{ as: 'pedido'})
-  }
-  
+    Pedido.hasOne(models.Cupom, { foreignKey: 'cupomId'})
+  };
+
   return Pedido;
 };

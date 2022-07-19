@@ -22,5 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Cupom',
   });
+
+  Cupom.associate = (models) => {
+    Cupom.belongsToMany(models.Produto)
+  }
   return Cupom;
 };
