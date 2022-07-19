@@ -10,7 +10,9 @@ npx sequelize-cli model:generate --name Categoria --attributes nome:STRING
 
 npx sequelize-cli model:generate --name Estoque --attributes nome:STRING,quantidade:INTEGER
 
-npx sequelize-cli model:generate --name Produto --attributes ativo:BOOLEAN,nome:STRING,preco:DOUBLE,titulo:STRING,descricao:STRING,categoriaId:INTEGER,fabricanteId:INTEGER,imgId:INTEGER,estoqueId:INTEGER,promocaoId:INTEGER
+npx sequelize-cli model:generate --name Produto --attributes ativo:BOOLEAN,nome:STRING,preco:DOUBLE,titulo:STRING,descricao:STRING,categoriaId:INTEGER,fabricanteId:INTEGER,imgId:INTEGER,estoqueId:INTEGER,promocaoId:INTEGER,kitId:INTEGER
+
+npx sequelize-cli model:generate --name KitProdutos --attributes ativo:BOOLEAN,produtosId:INTEGER,kitId:INTEGER
 
 npx sequelize-cli model:generate --name Cupom --attributes ativo:BOOLEAN,codigo:INTEGER,porcentagen:INTEGER,desconto:DOUBLE
 
