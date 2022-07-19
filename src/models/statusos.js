@@ -19,5 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'StatusOS',
   });
+
+  StatusOS.associate = (models) => {
+    StatusOS.hasMany(models.OrdemDeServico)
+  }
+
   return StatusOS;
 };
