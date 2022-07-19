@@ -19,9 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     preco: DataTypes.DOUBLE,
     titulo: DataTypes.STRING,
     descricao: DataTypes.STRING,
-    categoriaId: DataTypes.ARRAY(DataTypes.INTEGER),
+    categoriaId: DataTypes.INTEGER,
     fabricanteId: DataTypes.INTEGER,
-    imgId: DataTypes.ARRAY(DataTypes.INTEGER)
+    imgId: DataTypes.INTEGER,
+    estoqueId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Produto',
@@ -29,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Produto.associate = (models) => {
     Produto.belongsTo(models.Categoria, { foreignKey: 'categoriaId', as: 'categoria'})
+    Produto.belongsTo(models.Estoque, { foreignKey: 'estoqueId', as: 'estoque'})
   }
-
   return Produto;
 };
