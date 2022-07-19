@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Kit extends Model {
+  class KitProdutos extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,20 +13,20 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Kit.init({
+  KitProdutos.init({
     ativo: DataTypes.BOOLEAN,
-    produtoId: DataTypes.ARRAY(DataTypes.INTEGER),
-    titulo: DataTypes.STRING,
-    descricao: DataTypes.STRING,
-    imageId: DataTypes.ARRAY(DataTypes.INTEGER)
+    produtosId: DataTypes.INTEGER,
+    kitId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Kit',
+    modelName: 'KitProdutos',
   });
 
-  Kit.associate = (models) => {
-    Kit.hasMany(models.Produto, { as: 'produtos'})
+  KitProdutos.associate = function (models) {
+    KitProdutos.belongsTo(models.Produtos, { foreignKey: 'produtosId' });
+    KitProdutos.belongsTo(models.Kit, {
+      foreignKey: 'kitId',
+    });
   };
-
-  return Kit;
+  return KitProdutos;
 };
