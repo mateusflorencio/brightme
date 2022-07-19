@@ -22,5 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'OrdemDeServico',
   });
+
+  OrdemDeServico.associate = (models) => {
+    OrdemDeServico.belongsTo(models.Pedido, {foreignKey: 'pedidoId', as: 'pedido'})
+  }
   return OrdemDeServico;
 };
