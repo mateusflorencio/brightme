@@ -21,10 +21,16 @@ module.exports = (sequelize, DataTypes) => {
     complemento: DataTypes.STRING,
     UF: DataTypes.STRING,
     municipio: DataTypes.STRING,
-    referencia: DataTypes.STRING
+    referencia: DataTypes.STRING,
+    clienteId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Endereco',
   });
+
+  Endereco.associate = (models) => {
+    Endereco.belongsTo(models.Cliente, { foreignKey: 'clienteId'})
+  };
+
   return Endereco;
 };

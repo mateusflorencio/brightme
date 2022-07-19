@@ -19,10 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     senha: DataTypes.STRING,
     email: DataTypes.STRING,
     telefone: DataTypes.INTEGER,
-    imageId: DataTypes.INTEGER,
-    cpf: DataTypes.STRING,
-    enderecoId: DataTypes.ARRAY(DataTypes.INTEGER),
-    ordemDeServicoId: DataTypes.INTEGER
+    cpf: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Cliente',
@@ -30,6 +27,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Cliente.associate = (models) => {
     Cliente.hasMany(models.OrdemDeServico)
+    Cliente.hasMany(models.Endereco)
   }
+  
   return Cliente;
 };

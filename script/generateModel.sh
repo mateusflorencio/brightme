@@ -20,7 +20,7 @@ npx sequelize-cli model:generate --name Promocao --attributes ativo:BOOLEAN,prod
 
 npx sequelize-cli model:generate --name Kit --attributes ativo:BOOLEAN,produtoId:INTEGER,titulo:STRING,descricao:STRING,imageId:INTEGER
 
-npx sequelize-cli model:generate --name Endereco --attributes cep:INTEGER,numero:INTEGER,logradouro:STRING,bairro:STRING,complemento:STRING,UF:STRING,municipio:STRING,referencia:STRING
+npx sequelize-cli model:generate --name Endereco --attributes cep:INTEGER,numero:INTEGER,logradouro:STRING,bairro:STRING,complemento:STRING,UF:STRING,municipio:STRING,referencia:STRING,clienteId:INTEGER
 
 npx sequelize-cli model:generate --name StatusOS --attributes status:STRING
 
@@ -30,6 +30,6 @@ npx sequelize-cli model:generate --name Pedido --attributes produtoId:INTEGER,su
 
 npx sequelize-cli model:generate --name OrdemDeServico --attributes pedidoId:INTEGER,enderecoId:INTEGER,statusOPId:INTEGER,clienteId:INTEGER
 
-npx sequelize-cli model:generate --name Cliente --attributes nome:STRING,sobrenome:STRING,senha:STRING,email:STRING,telefone:INTEGER,imageId:INTEGER,cpf:STRING,enderecoId:INTEGER,ordemDeServicoId:INTEGER
+npx sequelize-cli model:generate --name Cliente --attributes nome:STRING,sobrenome:STRING,senha:STRING,email:STRING,telefone:INTEGER,cpf:STRING --force
 
 npx sequelize-cli model:generate --name PedidoProduto --attributes produtoId:INTEGER,pedidoId:INTEGER
