@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
     Produto.belongsTo(models.Estoque, { foreignKey: 'estoqueId', as: 'estoque'})
     Produto.belongsTo(models.Fabricante, { foreignKey: 'fabricanteId', as: 'fabrica'})
     Produto.belongsToMany(models.Kit, { through: 'KitProdutos', foreignKey: 'kitId', as: 'kitProdutos'})
-    Produto.belongsTo(models.Promocao, { foreignKey: 'promocaoId', as: 'promocao'})
+    Produto.belongsTo(models.Produto, { foreignKey: 'promocaoId', as: 'promocao'})
+    Produto.belongsToMany(models.Pedido, { through: 'PedidoProduto', foreignKey: 'produtoId'})
   };
   
   return Produto;
