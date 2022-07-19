@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
   Cliente.associate = (models) => {
     Cliente.hasMany(models.OrdemDeServico)
     Cliente.hasMany(models.Endereco)
+    Cliente.hasOne(models.Image)
   }
-  
+
   return Cliente;
 };
