@@ -27,3 +27,6 @@ npx sequelize-cli model:generate --name Pedido --attributes produtoId:INTEGER,su
 npx sequelize-cli model:generate --name OrdemDeServico --attributes pedidoId:INTEGER,enderecoId:INTEGER,statusOPId:INTEGER,clienteId:INTEGER
 
 npx sequelize-cli model:generate --name Cliente --attributes nome:STRING,sobrenome:STRING,senha:STRING,email:STRING,telefone:INTEGER,imageId:INTEGER,cpf:STRING,enderecoId:INTEGER,ordemDeServicoId:INTEGER
+
+
+npx sequelize-cli model:generate --name Telefone --attributes numero:INTEGER
