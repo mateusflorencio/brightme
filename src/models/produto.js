@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     categoriaId: DataTypes.INTEGER,
     fabricanteId: DataTypes.INTEGER,
     imgId: DataTypes.INTEGER,
-    estoqueId: DataTypes.INTEGER
+    estoqueId: DataTypes.INTEGER,
+    promocaoId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Produto',
@@ -32,6 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     Produto.belongsTo(models.Categoria, { foreignKey: 'categoriaId', as: 'categoria'})
     Produto.belongsTo(models.Estoque, { foreignKey: 'estoqueId', as: 'estoque'})
     Produto.belongsTo(models.Fabricante, { foreignKey: 'fabricanteId', as: 'fabrica'})
-  }
+    Produto.belongsTo(models.Promocao, { foreignKey: 'promocaoId', as: 'promocao'})
+  };
+
   return Produto;
 };
