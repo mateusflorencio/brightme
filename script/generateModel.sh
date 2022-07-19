@@ -24,10 +24,12 @@ npx sequelize-cli model:generate --name Endereco --attributes cep:INTEGER,numero
 
 npx sequelize-cli model:generate --name StatusOS --attributes status:STRING
 
+npx sequelize-cli model:generate --name StatusOS --attributes status:STRING
+
 npx sequelize-cli model:generate --name Pedido --attributes produtoId:INTEGER,subtotal:DOUBLE,cupomId:INTEGER,total:DOUBLE,frete:DOUBLE
 
 npx sequelize-cli model:generate --name OrdemDeServico --attributes pedidoId:INTEGER,enderecoId:INTEGER,statusOPId:INTEGER,clienteId:INTEGER
 
 npx sequelize-cli model:generate --name Cliente --attributes nome:STRING,sobrenome:STRING,senha:STRING,email:STRING,telefone:INTEGER,imageId:INTEGER,cpf:STRING,enderecoId:INTEGER,ordemDeServicoId:INTEGER
 
-npx sequelize-cli model:generate --name Telefone --attributes numero:INTEGER
+npx sequelize-cli model:generate --name PedidoProduto --attributes produtoId:INTEGER,pedidoId:INTEGER
