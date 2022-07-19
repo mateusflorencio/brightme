@@ -14,10 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Image.init({
-    url: DataTypes.STRING
+    url: DataTypes.STRING,
+    relacaoId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Image',
   });
+
+  Image.associate = (models) => {
+    Image.belongsTo(models.Pedido, { foreignKey: 'relacaoId'})
+  };
+
   return Image;
 };

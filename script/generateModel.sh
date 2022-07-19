@@ -1,6 +1,6 @@
 #! bin/sh/zsh
 
-npx sequelize-cli model:generate --name Image --attributes url:STRING
+npx sequelize-cli model:generate --name Image --attributes url:STRING,relacaoId:INTEGER
 
 npx sequelize-cli model:generate --name Adiministrador --attributes nome:STRING
 
