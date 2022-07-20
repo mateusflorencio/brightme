@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   KitProdutos.associate = function (models) {
-    KitProdutos.belongsTo(models.Produtos, { foreignKey: 'produtosId' });
+    KitProdutos.belongsTo(models.Produto, { foreignKey: 'produtosId' });
     KitProdutos.belongsTo(models.Kit, {
       foreignKey: 'kitId',
     });
