@@ -1,15 +1,33 @@
 const db = require('../models/index')
-const { encrypt } = require('./util/encrypter')
+const { senhaEstaCerta } = require('./util/encrypter')
 const Cliente = db.Cliente
 
 
-const ClienteRepository = {
-  login: async function () {
-  },
-  create: async function (obj) {
+class ClienteRepository {
+  async findByEmail(email){
+      const result = await Cliente.findOne({where:{email}})
+      return result? result : false
+  }
 
-  const hashedPassword = await encrypt(obj.senha)
-  return await Cliente.create(Object.assign({},obj,{senha: hashedPassword}))
+  async login (email,  senha) {
+    
+    const cliente = await this.findByEmail(email)
+    console.log(cliente);
+    
+    if(!cliente){
+     return {error:'email not found'}
+    }
+
+    const senhaEstaCertaResult = await senhaEstaCerta(senha, cliente.senha)
+    if(!senhaEstaCertaResult){
+      return {error:'senha incorreta'}
+    }
+    return true
+  }
+
+  async create (obj) {
+    const hashedPassword = await encrypt(obj.senha)
+    return await Cliente.create(Object.assign({},obj,{senha: hashedPassword}))
   }
 }
 

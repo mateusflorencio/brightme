@@ -3,8 +3,9 @@ const { validacaoCreate } = require('../controllers/validacoes/validacao')
 const routes = require('express').Router();
 
 
-routes.get('/login', clienteController.login)
+routes.get('/login', clienteController.loginView)
 routes.post('/login',clienteController.login)
-routes.post('/create', validacaoCreate(), clienteController.create)
+routes.get('/cadastro', clienteController.createView)
+routes.post('/cadastro', validacaoCreate(), clienteController.create)
 
 module.exports = routes

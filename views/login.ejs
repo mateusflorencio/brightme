@@ -22,15 +22,18 @@
                         <input class="card w-100" type="email" name="email" id="email" placeholder="Digite seu e-mail">
                         <div class="mt-20"></div>
                         <label for="password">Senha</label>
-                        <input class="card w-100" type="password" name="password" id="password"
+                        <input class="card w-100" type="password" name="senha" id="senha"
                             placeholder="Digite sua senha">
-                        <div class="mt-20"></div>
+                            <% if (errors) { %>
+                                <label><%= errors.error %></label>
+                              <% } %>
+                        <br>
                         <button class="w-100 btn-primary" type="submit">
                             Entrar
                         </button>
-                        <button class="w-100 btn-tertiary mt-20" type="submit">
+                        <a href="cadastro" class="link btn bg-blue t-white mt-20" type="submit">
                             Cadastre-se
-                        </button>
+                        </a>
                     </form>
                     <p class="mt-20 forgot">Esqueci minha senha!</p>
                 </div>
