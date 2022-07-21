@@ -10,7 +10,6 @@ class ClienteRepository {
   }
 
   async login (email,  senha) {
-    
     const cliente = await this.findByEmail(email)
     console.log(cliente);
     

@@ -10,25 +10,26 @@ localStorage = new LocalStorage('./scratch')
 
 const clienteController = {
     createView: (_req, res) => {
-        res.render('cadastro')
+        res.status(200).render('cadastro',{errors:{}})
     },
     create: async (req, res) => {
         let {nome, sobrenome, senha, email, telefone, cpf} = req.body
         cpf = validarCpf.cpf.generate()
-
+        let errors = ''
+        
         try {
         if(!validarCpf.cpf.isValid(cpf)){
-            return res.status(400).json({ errors: 'cpf inválido' });
+            return res.status(400).render('cadastro',{errors:{errors}})
         }
 
-        const errors = await validationResult(req);
+        errors = await validationResult(req);
         if (!errors.isEmpty()) {
-            return  res.status(400).json({ errors: errors.array() });
+            return  res.status(400).render('cadastro',{errors:errors.array()})
         }
 
         const usuarioJaExisteResult = await usuarioJaExiste(email,cpf)
         for (const item of usuarioJaExisteResult) {
-            if(item!= false) return res.status(400).json({errors: usuarioJaExisteResult})
+            if(item!= false) return res.status(400).render('cadastro',{errors:{errors}})
         }
 
         const newCliente = new NewClienteDto(nome, sobrenome,senha,email,telefone,cpf)
@@ -36,11 +37,11 @@ const clienteController = {
 
         return res.status(201).render('index')
         } catch (error) {
-            return  res.status(500).json({ errors: error});
+            return  res.status(500).render('error', {errors: error});
         }
     },
     loginView: (_req, res) => {
-       res.render('login',{error: {}})
+       res.render('login',{errors: {}})
     },
     login: async (req, res) =>{
         try {
@@ -48,13 +49,13 @@ const clienteController = {
             const result = await clienteRepository.login(email, senha)
 
             if(result.error){
-             return res.render('login', {errors: {error:result.error}})
+             return res.render('login', {errors: result})
             }
 
             return res.status(200).redirect('/')
 
         } catch (error) {
-            res.status(500).render(error)
+            res.status(500).render('error',{errors: error})
         }
     }
 }
