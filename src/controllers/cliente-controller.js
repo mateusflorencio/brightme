@@ -9,10 +9,10 @@ var LocalStorage = require('node-localstorage').LocalStorage
 localStorage = new LocalStorage('./scratch')
 
 const clienteController = {
-    createView: (_req, res) => {
+    cadastroView: (_req, res) => {
         res.status(200).render('cadastro',{errors:{}})
     },
-    create: async (req, res) => {
+    cadastro: async (req, res) => {
         let {nome, sobrenome, senha, email, telefone, cpf} = req.body
         cpf = validarCpf.cpf.generate()
         let errors = ''
