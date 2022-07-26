@@ -1,61 +1,70 @@
-const validarCpf = require('cpf-cnpj-validator')
+const { cpf } = require('cpf-cnpj-validator')
 const { validationResult } = require('express-validator')
-const { ClienteRepository, usuarioJaExiste } = require('../repository/index')
+const { buscarCLiente, ClienteRepository } = require('../repository/index')
 const NewClienteDto = require('../models/dto/new-cliente-dto')
-
-const clienteRepository = new ClienteRepository()
+const Error = require('./error')
 
 var LocalStorage = require('node-localstorage').LocalStorage
 localStorage = new LocalStorage('./scratch')
 
 const clienteController = {
     cadastroView: (_req, res) => {
-        res.status(200).render('cadastro',{errors:{}})
+        res.status(200).render('cadastro', { error: '' })
     },
     cadastro: async (req, res) => {
-        let {nome, sobrenome, senha, email, telefone, cpf} = req.body
-        cpf = validarCpf.cpf.generate()
-        let errors = ''
-        
+        let { nome, sobrenome, senha, email, telefone, CPF } = req.body
+        CPF = CPF.replace(/\W/g, '')
+        telefone = telefone.replace(/\W/g, '')
+
+        const errorValidator = validationResult(req)
+
         try {
-        if(!validarCpf.cpf.isValid(cpf)){
-            return res.status(400).render('cadastro',{errors:{errors}})
-        }
+            if (!errorValidator.isEmpty()) {
+                return res.status(400).render('cadastro', { error: errorValidator.errors })
+            }
 
-        errors = await validationResult(req);
-        if (!errors.isEmpty()) {
-            return  res.status(400).render('cadastro',{errors:errors.array()})
-        }
+            const CPFResutl = cpf.isValid(CPF)
+            if (!CPFResutl) {
+                const errorCPF = new Error('CPF', 'Este CPF não é válido', '')
+                return res.status(400).render('cadastro', { error: [errorCPF] })
+            }
 
-        const usuarioJaExisteResult = await usuarioJaExiste(email,cpf)
-        for (const item of usuarioJaExisteResult) {
-            if(item!= false) return res.status(400).render('cadastro',{errors:{errors}})
-        }
+            const buscarCLienteResult = await buscarCLiente(email, CPF, telefone)
+            if (buscarCLienteResult) {
+                return res.status(400).render('cadastro', { error: buscarCLienteResult })
+            }
 
-        const newCliente = new NewClienteDto(nome, sobrenome,senha,email,telefone,cpf)
-        const result = await clienteRepository.create(newCliente)
+            const newCliente = new NewClienteDto(nome, sobrenome, senha, email,telefone, CPF)
+            const result = await ClienteRepository.cadastro(newCliente)
 
-        return res.status(201).render('index')
-        } catch (error) {
-            return  res.status(500).render('error', {errors: error});
+            if (!result) {
+               return res.status(500).render('cadastro', { error: new Error('cadastro', 'error ao criar novo usuário, por favor tente novamente', '') })
+            }
+
+            return res.status(201).render('index')
+
+        } catch (err) {
+            const error = new Error('error service', err, '500')
+            console.log(err)
+            return res.status(500).render('cadastro', { error: error })
         }
     },
     loginView: (_req, res) => {
-       res.render('login',{errors: {}})
+        res.render('login', { errors: {} })
     },
-    login: async (req, res) =>{
+    login: async (req, res) => {
         try {
             const { email, senha } = req.body
             const result = await clienteRepository.login(email, senha)
 
-            if(result.error){
-             return res.render('login', {errors: result})
+            if (result.error) {
+                return res.render('login', { errors: result })
             }
 
             return res.status(200).redirect('/')
 
         } catch (error) {
-            res.status(500).render('error',{errors: error})
+            res.status(500).render('error', { errors: error })
         }
     }
 }
