@@ -20,3 +20,7 @@
 .padding-left{
   padding: 0 0 0 1rem;
 }
+
+.padding-small{
+  padding: 1rem;
+}

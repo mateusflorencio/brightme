@@ -12,7 +12,6 @@ function criarMascaraCpf(){
 
 function criarMascaraTelefone(){
   const valorInput = document.getElementById('telefone').value
-  console.log(valorInput);
 
   let mark = `(${valorInput.slice(0,2)})${valorInput.slice(2,7)}-${valorInput.slice(7)}`
 
@@ -27,7 +26,7 @@ function senhaEstaCorreta(){
   const span = document.querySelector('.aviso__senha')
 
   if( senha !== confirmacaoSenha){
-    span.innerHTML = 'Senhas não confere'}
+    span.innerHTML = '<p class="aviso__senha t-red">Senhas não confere !</p>'}
 
   if( senha === confirmacaoSenha)
   span.innerHTML = ''

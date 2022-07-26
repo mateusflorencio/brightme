@@ -17,8 +17,13 @@
 
             <div class="card bg-white">
                 <h1 class="title">Cadastre-se</h1>
+                <% if (error) { %>
+                   <% for(const n of error) { %>
+                   <span class="t-red padding-left"> <%= n.param %> :  <%= n.msg %> </span>
+                    <% } %>
+                  <% } %>
                 <div>
-                    <form method="post" class="d-flex form__cadastro">
+                    <form method="POST" class="d-flex form__cadastro">
                         <div class="left">
                             <label for="email" class="mt-40">Seu melhor email</label> <br>
                             <input class="card w-100" id="email" type="email" name="email"> <br>
@@ -28,7 +33,7 @@
                                 placeholder="Seu melhor numero"><br>
 
                             <label for="confirmacaoSenha">Confirme sua senha</label>
-                            <input class="card w-100" type="password" name="senha" id="confirmacaoSenha" oninput="senhaEstaCorreta()">
+                            <input class="card w-100" type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Repita seu senha" oninput="senhaEstaCorreta()">
                             <p class="aviso__senha"></p>
                             <br>
                         </div>
@@ -41,10 +46,10 @@
                             <input class="card w-100 bg-white" type="text" name="sobrenome" id="sobrenome"><br>
                             <div class="d-flex w-100">
                                 <div class="w-100">
-                                    <label for="cpf">CPF</label>
-                                    <input class="card w-100" type="text" name="cpf" id="cpf" maxlength="14"
-                                        oninput="criarMascaraCpf()" placeholder="123.456.789.00">
-                                    <p class="aviso__senha"></p>
+                                    <label for="CPF">CPF</label>
+                                    <input class="card w-100" type="text" name="CPF" id="cpf" maxlength="14"
+                                        oninput="criarMascaraCpf()" placeholder="123.456.789-00">
+                                    <p class="aviso__senha t-red"></p>
                                     <br>
                                 </div>
                                 <div class=" padding-left w-100">
@@ -56,14 +61,14 @@
                         </div>
                 </div>
 
-                <button class="btn bg-rosa padding-left t-white" type="submit">Cadastrar</button>
+                <button class="btn bg-rosa padding-left t-white " type="submit">Cadastrar</button>
                 <br>
                 <a class="btn link t-white padding-left bg-blue" href="/user/login">Login</a>
 
                 </form>
 
 
-                <a href="esqueci-minha-senha" class="mt-20 link">Esqueci minha senha!</a>
+                <a href="esqueci-minha-senha" class="link padding-small">Esqueci minha senha!</a>
             </div>
         </section> <br><br>
 
