@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       telefone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       cpf: {
         type: Sequelize.STRING
