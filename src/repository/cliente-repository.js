@@ -1,4 +1,3 @@
-const Error = require('../controllers/error')
 const db = require('../models/index')
 const Cliente = db.Cliente
 const { encrypt, senhaEstaCerta } = require('./util/encrypter')
