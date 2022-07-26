@@ -1,7 +1,7 @@
 const ClienteRepository = require('./cliente-repository')
-const {usuarioJaExiste} = require('./protocols')
+const { buscarCLiente } = require('./protocols-cliente')
 
 
 module.exports = {
-  ClienteRepository, usuarioJaExiste
+  ClienteRepository, buscarCLiente
 };
