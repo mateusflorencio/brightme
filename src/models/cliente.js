@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     sobrenome: DataTypes.STRING,
     senha: DataTypes.STRING,
     email: DataTypes.STRING,
-    telefone: DataTypes.INTEGER,
+    telefone: DataTypes.STRING,
     cpf: DataTypes.STRING
   }, {
     sequelize,
@@ -30,6 +30,6 @@ module.exports = (sequelize, DataTypes) => {
     Cliente.hasMany(models.Endereco)
     Cliente.hasOne(models.Image)
   }
-
+  
   return Cliente;
 };
