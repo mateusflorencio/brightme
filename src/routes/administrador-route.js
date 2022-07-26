@@ -1,4 +1,4 @@
-const admController = require('../controllers/admistrador-controller')
+const admController = require('../controllers/administrador-controller')
 const routes = require('express').Router()
 
 
