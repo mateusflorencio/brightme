@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/administrador.css">
+  <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
+  <script src="./script/administrador.js" defer></script>
+  <title>Painel administrativo</title>
+</head>
+
+<body>
+  <!-- <%- include('./partials/header') %> -->
+    <!-- Modals-->
+    <div class="fundoModal"></div>
+
+    <div class="modal" id="editarProduto">modalEditarProduto <button class="btn t-red btn__fechar-modal"
+        onclick="fecharModal('editarProduto')">x</button></div>
+
+    <div class="modal" id="deleteProduto">modalDeleteProduto <button class="btn t-red btn__fechar-modal"
+        onclick="fecharModal('deleteProduto')">x</button> </div>
+
+    <div class="modal" id="adicionarProduto">modalAdicionarProduto <button class="btn t-red btn__fechar-modal"
+        onclick="fecharModal('adicionarProduto')">x</button></div>
+
+    <div class="modal" id="adicionarCategoria">modalAdicionarCategoria <button class="btn t-red btn__fechar-modal"
+        onclick="fecharModal('adicionarCategoria')">x</button></div>
+
+    <!-- Inicio -->
+    <div class="container__section mt-20 d-flex">
+      <!-- listage de pedidos -->
+      <section class="rigth">
+        <label class="titulo-large">Pedidos</label>
+        <div class="lista__order mt-20">
+          <ul>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+            <li class="list">
+              <h5>2545664654</h5>
+              <p>Kit com 4 gel laranja</p>
+              <p>Pago</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="left">
+
+        <!--- Btn -->
+        <div class="btn_add d-flex">
+          <button class="btn bg-blue t-white mg-1 w-100" onclick="abrirModal('adicionarProduto')">+ Produto</button>
+          <button class="btn bg-green t-white mg-1  w-100"onclick="abrirModal('adicionarCategoria')">+ Categoria</button>
+        </div>
+
+        <!-- Ads -->
+        <div class="ads"><img src="" alt=""></div>
+        <!-- Administracao de produtos -->
+        <div class="produtos__info w-100 bg-grey mt-20">
+          <div class="produto__info w-100 d-flex">
+            <h4>Produto 1</h4>
+            <p>20</p>
+            <div class="d-flex">
+              <div class="bg-green w-100" onclick="abrirModal('editarProduto')"><img src="./image/pencil-square.svg" alt="">
+              </div>
+              <div class="bg-red w-100" onclick="abrirModal('deleteProduto')"><img src="./image/trash.svg" alt=""></div>
+            </div>
+          </div>
+
+          <div class="produto__info w-100 d-flex">
+            <h4>Produto 1</h4>
+            <p>20</p>
+            <div class="d-flex">
+              <div class="bg-green w-100" onclick="editarProduto(this)"><img src="./image/pencil-square.svg" alt="">
+              </div>
+              <div class="bg-red w-100" onclick="deleteProduto(this)"><img src="./image/trash.svg" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <br>
+   <!-- <%- include('./partials/footer') %>--> 
+</body>
+
+</html>

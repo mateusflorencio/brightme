@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const methodOverride = require('method-override')
 
+const administradorRouter = require('./src/routes/administrador-route')
 const indexRouter = require('./src/routes/index-route')
 const blogRouter = require('./src/routes/blog-route')
 const carrinhoRouter = require('./src/routes/carrinho-route')
@@ -34,6 +35,7 @@ app.use(methodOverride('X-HTTP-Method-Override'))
 //routes
 app.use('/', indexRouter)
 
+app.use('/administrador', administradorRouter)
 app.use('/produtos', produtosRouter)
 app.use('/sucess', sucessRouter)
 app.use('/blog', blogRouter)
