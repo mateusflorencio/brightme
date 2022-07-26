@@ -1,10 +1,12 @@
 const db = require('../models/index')
 const Categoria = db.Categoria
+const Error = require('../controllers/error')
+const e = require('method-override')
 
 module.exports = class CategoriaRepository {
 
   async buscarCategoriaId(id) {
-    const data = await Categoria.findOne({where:{id}})
+    const data = await Categoria.findOne({ where: { id } })
     return data
   }
 
@@ -14,7 +16,11 @@ module.exports = class CategoriaRepository {
   }
 
   async criarNovaCategoria(nome) {
-    const data = await Categoria.create({nome})
-    return data
+    try {
+      return await Categoria.create({nome})
+    } catch (error) {
+      return {error: new Error('', error.parent.sqlMessage)}
+    }
+
   }
 }
