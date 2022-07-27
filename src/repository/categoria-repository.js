@@ -1,7 +1,7 @@
 const db = require('../models/index')
 const Categoria = db.Categoria
 const Error = require('../controllers/error')
-const e = require('method-override')
+const response = require('./response')
 
 module.exports = class CategoriaRepository {
 
@@ -11,15 +11,18 @@ module.exports = class CategoriaRepository {
   }
 
   async buscarTodasCategorias() {
-    const data = await Categoria.findAll()
-    return data
+    try {
+      return response(await Categoria.findAll())
+    } catch (error) {
+      return response('', new Error('', error.parent.sqlMessage))
+    }
   }
 
   async criarNovaCategoria(nome) {
     try {
-      return await Categoria.create({nome})
+      return await Categoria.create({ nome })
     } catch (error) {
-      return {error: new Error('', error.parent.sqlMessage)}
+      return { error: new Error('', error.parent.sqlMessage) }
     }
 
   }
