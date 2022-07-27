@@ -1,10 +1,11 @@
 @import url(./main.css);
 
-.container__section{
+.container__section {
   width: 1000px;
   max-width: 90%;
   margin: auto;
 }
+
 .mg-1 {
   margin: 0.7rem;
 }
@@ -21,7 +22,8 @@
 .titulo-large {
   font-size: 1.72rem;
 }
-.lista__order ul li{
+
+.lista__order ul li {
   border-bottom: 1px solid rgba(93, 93, 93, 0.529);
   margin-right: 2rem;
 }
@@ -32,7 +34,7 @@
   background-color: var(--main-grey);
 }
 
-.produto__info{
+.produto__info {
   border-bottom: 1px solid rgba(93, 93, 93, 0.529);
 }
 
@@ -60,14 +62,16 @@
   position: absolute;
   z-index: 10;
   width: 90%;
-  height: 60%;
+  min-width: 60%;
   background: rgb(245, 243, 243);
   right: 7vh;
   box-shadow: 5px 5px 15px 5px #6c6a6a;
   top: calc(50% - 200px);
+  padding: 2rem;
 
   display: none;
 }
+
 .btn__fechar-modal {
   position: absolute;
   right: 0;
@@ -76,25 +80,34 @@
   font-size: 2rem;
 }
 
-@media (max-width: 1020px){
-  .container__section{
+.modal__categoria {
+  justify-content: space-around;
+}
+
+@media (max-width: 1020px) {
+  .container__section {
     flex-direction: column;
   }
 
-  .btn_add{
+  .btn_add {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
   }
 
-  .rigth,.left{
+  .rigth,
+  .left {
     width: 100%;
   }
 
-  .modal{
+  .modal {
     right: 0;
     margin: 2rem;
-    top:auto;
+    top: auto;
+  }
+
+  .modal__categoria {
+    flex-direction: column;
   }
 }
