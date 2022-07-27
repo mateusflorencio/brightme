@@ -3,7 +3,9 @@ const CategoriaRepository = require('../repository/categoria-repository')
 const catRepo = new CategoriaRepository()
 
 module.exports = AdministradorController = {
-
+  loginView(_req, res) {
+    res.render('adm-login')
+  },
   async index(_req, res) {
     try {
 
