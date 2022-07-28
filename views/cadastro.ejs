@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/cadastro.css">
+    <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
+    <script src="../../script/cadastro.js" defer></script>
+    <title>Cadastro</title>
+</head>
+
+<body class="bg-blue ">
+    <%- include('./partials/header') %>
+        <section class="container mt-40 ">
+
+            <div class="card bg-white">
+                <h1 class="title">Cadastre-se</h1>
+                <% if (error) { %>
+                   <% for(const n of error) { %>
+                   <span class="t-red padding-left"> <%= n.param %> :  <%= n.msg %> </span>
+                    <% } %>
+                  <% } %>
+                <div>
+                    <form method="POST" class="d-flex form__cadastro">
+                        <div class="left">
+                            <label for="email" class="mt-40">Seu melhor email</label> <br>
+                            <input class="card w-100" id="email" type="email" name="email"> <br>
+
+                            <label for="senha" class="mt-40">Senha</label> <br>
+                            <input class="card w-100" type="password" name="senha" id="senha"
+                                placeholder="Seu melhor numero"><br>
+
+                            <label for="confirmacaoSenha">Confirme sua senha</label>
+                            <input class="card w-100" type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Repita seu senha" oninput="senhaEstaCorreta()">
+                            <p class="aviso__senha"></p>
+                            <br>
+                        </div>
+
+                        <div class="rigth">
+                            <label for="nome" class="mt-40 w-100">Nome</label> <br>
+                            <input class="card w-100" type="text" name="nome" id="nome"> <br>
+
+                            <label for="sobrenome" class="mt-40">Sobrenome</label><br>
+                            <input class="card w-100 bg-white" type="text" name="sobrenome" id="sobrenome"><br>
+                            <div class="d-flex w-100">
+                                <div class="w-100">
+                                    <label for="CPF">CPF</label>
+                                    <input class="card w-100" type="text" name="CPF" id="cpf" maxlength="14"
+                                        oninput="criarMascaraCpf()" placeholder="123.456.789-00">
+                                    <p class="aviso__senha t-red"></p>
+                                    <br>
+                                </div>
+                                <div class=" padding-left w-100">
+                                    <label for="telefone">Telefone</label>
+                                    <input class="card w-100" type="text" name="telefone" id="telefone"
+                                        maxlength="14" oninput="criarMascaraTelefone()" placeholder="(11)99999-9999"> <br>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <button class="btn bg-rosa padding-left t-white " type="submit">Cadastrar</button>
+                <br>
+                <a class="btn link t-white padding-left bg-blue" href="/user/login">Login</a>
+
+                </form>
+
+
+                <a href="esqueci-minha-senha" class="link padding-small">Esqueci minha senha!</a>
+            </div>
+        </section> <br><br>
+
+
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>
