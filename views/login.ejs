@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="../../styles/login.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
     <script src="../../public/script/menu.js" defer></script>
 
@@ -14,25 +14,27 @@
 
 <body>
     <%- include('./partials/header') %>
-        <section class="container util mt-40 d-flex h-100">
+        <section class="container util mt-40 d-flex h-100" >
             <section class="left">
                 <div class="card container-form">
                     <h1 class="title">Entre na sua conta</h1>
-                    <form class="loginFillOut">
+                    <form class="loginFillOut" method="post">
                         <label for="email">E-mail</label>
                         <input class="card w-100" type="email" name="email" id="email" placeholder="Digite seu e-mail">
                         <div class="mt-20"></div>
                         <label for="password">Senha</label>
-                        <input class="card w-100" type="password" name="password" id="password"
+                        <input class="card w-100" type="password" name="senha" id="senha"
                             placeholder="Digite sua senha">
-                        <div class="mt-20"></div>
+                            <% if (errors) { %>
+                                <label><%= errors.error %></label>
+                              <% } %>
+                        <br>
                         <button class="w-100 btn-primary" type="submit">
                             Entrar
                         </button>
-                        <button class="w-100 btn-tertiary mt-20" type="submit">
+                        <a href="cadastro" class="link btn bg-blue t-white mt-20" type="submit">
                             Cadastre-se
-                        </button>
-
+                        </a>
                     </form>
                     <p class="mt-20 forgot">Esqueci a minha senha</p>
                 </div>

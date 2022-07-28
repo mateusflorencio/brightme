@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/produto.css">
+
+    <link rel="stylesheet" href="../../styles/produto.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="../../public/script/menu.js" defer></script>
 
@@ -15,9 +17,13 @@
 <%- include('./partials/header') %>
 
     <body>
-        <section class="container mt-40">
-            <h1>Alcool 70º</h1>
-            <br>
+        <% if(produto){ %>
+            <%= produto %>
+                <% } %>
+                    <section class="container mt-40">
+                        <h1>Alcool 70º</h1>
+                        <br>
+
 
             <!-- COLUNA 1 -->
             <div class="container-display">
@@ -37,15 +43,17 @@
                 <!-- COLUNA 2 -->
                 <section class="col-info">
 
-                    <div class="star">
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                        <em class="bi bi-star-fill"></em>
-                    </div>
 
-                    <h2 class="mt-20">ÁLCOOL EM GEL 70º COM ÓLEOS ESSENCIAIS</h2>
+                                <div class="star">
+                                    <em class="bi bi-star-fill"></em>
+                                    <em class="bi bi-star-fill"></em>
+                                    <em class="bi bi-star-fill"></em>
+                                    <em class="bi bi-star-fill"></em>
+                                    <em class="bi bi-star-fill"></em>
+                                </div>
+
+                                <h2 class="mt-20">ÁLCOOL EM GEL 70º COM ÓLEOS ESSENCIAIS</h2>
+
 
                     <h4 class="mt-20">Elimina 99,9% de vírus, fungos e bactérias</h3><br>
                         <p>
@@ -76,8 +84,10 @@
                             <button class="btn" style="width:4rem; height: 4.5rem;" type="submit">OK</button>
                         </div>
 
-                    </form>
-                </section>
+
+                                </form>
+                            </section>
+
 
             </div>
             <br>
@@ -93,6 +103,7 @@
         <br>
         <br>
         <%- include('./partials/footer') %>
+
     </body>
 
 </html>

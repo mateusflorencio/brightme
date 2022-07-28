@@ -125,8 +125,10 @@ Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 13. [x] ordemPedido
 14. [x] cupom
 
+### Para fácil visualização do banco o _localhost:8080_ pode ser acessado.
 
-## RESPONSIVIDADE
+
+# RESPONSIVIDADE
 
 CSS Units:
 
@@ -144,3 +146,5 @@ rem = multiplicado pelo root
 C) Uso de Media Queries. Os Media Queries foram cadastrados no mani.css para seguir a relavância de acordo com a mudança das telas, tanto para o menu sanduíche como para os textos
 
 D) Criação do script menu.js. Essencial mantê-lo para que o menu sanduíche funcione. Foi adicionado em todos os arquivos .ejs
+
+

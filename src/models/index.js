@@ -1,30 +1,37 @@
-// path cliente
-const Cliente = require('./cliente/cliente')
-const Telefone = require('./cliente/telefone')
-const Endereco = require('./cliente/endereco')
+'use strict'
 
-// path pedido
-const Cupom = require('./pedido/cupom')
-const OrdemDePedido = require('./pedido/ordem-de-pedido')
-const Pedido = require('./pedido/pedido')
-const Status = require('./pedido/status')
+const fs = require('fs')
+const path = require('path')
+const Sequelize = require('sequelize')
+const basename = path.basename(__filename)
+const env = process.env.NODE_ENV || 'development'
+const config = require(__dirname + '/../../config/database.js')[env]
+const db = {}
 
-//path produto
-const Categoria = require('./produto/categoria')
-const Estoque = require('./produto/estoque')
-const Fabricante = require('./produto/fabricante')
-const Produto = require('./produto/produto')
-const Promocao = require('./produto/promocao')
-
-//path resources
-const Image = require('./resources/image')
-
-// path user
-const Administrador = require('./user/adm')
-
-module.exports = {
-  Cliente, Telefone, Endereco, Categoria, Estoque,
-  Fabricante, Produto, Image, Administrador, Cupom, 
-  OrdemDePedido, Pedido, Status
+let sequelize
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config)
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config)
 }
 
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach(file => {
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+    db[model.name] = model;
+  });
+
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
