@@ -2,22 +2,22 @@
 
 .rigth {
   width: 20%;
-  margin-right: 20px;
-  max-height: 500px;
-  margin-top: 55px;
+  margin-right: 2rem;
+  max-height: 50rem;
+  margin-top: 5.5rem;
 }
 
 .input-price {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .selection {
-  border: 1px solid var(--main-grey);
-  border-radius: 5px;
-  width: 20px;
-  height: 20px;
+  border: 0.1rem solid var(--main-grey);
+  border-radius: 0.5rem;
+  width: 2rem;
+  height: 2rem;
 
-  margin-right: 10px;
+  margin-right: 1rem;
 
   cursor: pointer;
 
@@ -27,12 +27,12 @@
 }
 
 .selection-page {
-  border: 1px solid var(--main-grey);
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
+  border: 0.1rem solid var(--main-grey);
+  border-radius: 0.5rem;
+  width: 3rem;
+  height: 3rem;
 
-  margin-right: 10px;
+  margin-right: 1rem;
 
   cursor: pointer;
 
@@ -48,4 +48,16 @@
 
 .active {
   background-color: var(--main-grey);
+}
+
+/* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
 }

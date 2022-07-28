@@ -126,3 +126,25 @@ Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 14. [x] cupom
 
 ### Para fácil visualização do banco o _localhost:8080_ pode ser acessado.
+
+
+# RESPONSIVIDADE
+
+CSS Units:
+
+A) Layout Fluido. Uso de:
+% - Porcentagem. Por exemplo: colocar as imagens em 100% para se adaptarem ao box em que estão
+auto - automática
+vh - viewport Height
+vw - viewport Width
+
+B) Textos Fluidos. Uso de rem no font-size para que o texto se adapte à tela
+A cada 1 rem será considerado 10px
+em - multiplicado pelo pai
+rem = multiplicado pelo root
+
+C) Uso de Media Queries. Os Media Queries foram cadastrados no mani.css para seguir a relavância de acordo com a mudança das telas, tanto para o menu sanduíche como para os textos
+
+D) Criação do script menu.js. Essencial mantê-lo para que o menu sanduíche funcione. Foi adicionado em todos os arquivos .ejs
+
+

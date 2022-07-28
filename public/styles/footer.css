@@ -1,12 +1,13 @@
 * footer */ .footer {
-  height: 270px;
+  height: 14rem;
 }
 
 .line {
-  height: 240px;
-  width: 1px;
+  height: 13rem;
+  width: 0.1rem;
   background-color: white;
-  margin-top: 17px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .div-content-footer {
@@ -15,44 +16,27 @@
 }
 
 .div-category {
-  margin-top: 30px;
-  margin-right: 20px;
+  margin-top: 2rem;
+  margin-right: 2rem;
   display: flex;
   flex-direction: column;
   text-align: end;
 }
 
 .ul_footer {
-  font-size: 14px;
-  margin-top: 20px;
+  font-size: 1rem;
+  margin-top: 2rem;
 }
 
 .div_redes_sociais {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .footer_inst {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 .div-info {
-  margin-top: 30px;
-  margin-left: 20px;
-}
-
-@media (max-width:1000px) {
-
-  .div-category,
-  .line {
-    display: none;
-  }
-
-  .div-info {
-    margin-top: 4rem;
-    text-align: center;
-  }
-
-  .div_redes_sociais {
-    justify-content: center;
-  }
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
