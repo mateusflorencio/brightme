@@ -1,6 +1,5 @@
-module.exports = ( res, err) => {
-  const error = err ? err : false
+module.exports = ( res ) => {
   const resposta = res ? res : false
 
-  return resposta ? resposta : error
+  return resposta ? resposta : false
 }

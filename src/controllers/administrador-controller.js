@@ -1,10 +1,24 @@
+const AdministradorRepository = require('../repository/administrador-repository')
 const CategoriaRepository = require('../repository/categoria-repository')
+const Error = require('./error')
 
 const catRepo = new CategoriaRepository()
 
 module.exports = AdministradorController = {
   loginView(_req, res) {
-    res.render('adm-login')
+    res.status(200).render('adm-login', { error: '' })
+  },
+  async login(req, res) {
+    const { id, senha } = req.body
+    try {
+      const result = await AdministradorRepository.login(id, senha)
+      if (result.error || !result) {
+        return res.status(404).render('adm-login', { error: 'Id ou senha inválido' })
+      }
+      return res.status(200).redirect('/administrador')
+    } catch (error) {
+      res.status(500).render('administrador', { error: error })
+    }
   },
   async index(_req, res) {
     try {
@@ -38,6 +52,15 @@ module.exports = AdministradorController = {
 
     } catch (error) {
       res.status(500).json(error)
+    }
+  },
+  async criarAdm(req, res) {
+    const { nome, senha, ROLE } = req.body
+    try {
+      const result = await AdministradorRepository.cadastro({ nome, senha, ROLE })
+      res.status(201).json(result)
+    } catch (error) {
+      res.status(500).json({ err: error })
     }
   }
 }
