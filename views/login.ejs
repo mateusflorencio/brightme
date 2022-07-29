@@ -25,8 +25,8 @@
                         <label for="password">Senha</label>
                         <input class="card w-100" type="password" name="senha" id="senha"
                             placeholder="Digite sua senha">
-                            <% if (errors) { %>
-                                <label><%= errors.error %></label>
+                            <% if (error) { %>
+                                <p class="t-red mt-20"><%= error %></p> <br>
                               <% } %>
                         <br>
                         <button class="w-100 btn-primary" type="submit">

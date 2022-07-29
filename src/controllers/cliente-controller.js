@@ -56,7 +56,7 @@ const clienteController = {
         }
     },
     loginView: (_req, res) => {
-        return res.status(200).render('login', { errors: '' })
+        return res.status(200).render('login', { error: '' })
     },
     login: async (req, res) => {
         try {
@@ -64,12 +64,12 @@ const clienteController = {
             const result = await clienteRepository.buscaEmail(email)
 
             if (result instanceof Cliente === false) {
-                return res.render('login', { errors: 'email não encontrado' })
+                return res.render('login', { error: 'Email não encontrado' })
             }
 
             const resultSenha = await decrypt(senha, result.senha)
             if (!resultSenha) {
-                return res.render('login', { errors: 'senha incorreta' })
+                return res.render('login', { error: 'Senha incorreta' })
             }
 
             const user = { email }
