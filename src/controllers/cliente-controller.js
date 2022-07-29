@@ -73,9 +73,9 @@ const clienteController = {
             }
 
             const user = { email }
-            const token = senha
+            const token = jwt.sign({ email }, secret)
 
-            return res.status(200).render('pre-redirect', { data: [token, user] })
+            return res.status(200).render('pre-redirect-cliente', { data: [token, user] })
         } catch (error) {
             return res.status(500).render('cadastro', { error: error })
         }
