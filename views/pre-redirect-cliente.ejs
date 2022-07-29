@@ -25,6 +25,7 @@
     <script>
       localStorage.setItem('token', `<%= data[0] %>`)
       localStorage.setItem('user', `<%= data[1] %>`)
+      localStorage.setItem('nome', `<%= data[2] %>`)
       setTimeout(() => { window.location.pathname = "/" }, 2000)
     </script>
     <% } %>

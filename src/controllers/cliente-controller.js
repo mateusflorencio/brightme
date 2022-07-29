@@ -72,12 +72,11 @@ const clienteController = {
                 return res.render('login', { error: 'Senha incorreta' })
             }
 
-            const user = { email }
             const token = jwt.sign({ email }, secret)
 
-            return res.status(200).render('pre-redirect-cliente', { data: [token, user] })
+            return res.status(200).render('pre-redirect-cliente', { data: [token, email, result.nome] })
         } catch (error) {
-            return res.status(500).render('cadastro', { error: error })
+            return res.status(500).render('login', { error: error })
         }
     }
 }
