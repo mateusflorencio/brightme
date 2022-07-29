@@ -11,6 +11,9 @@ const secret = process.env.JWT_TOKEN
 const clienteRepository = new ClienteRepository()
 
 const clienteController = {
+    index: (_req, res) => {
+        res.redirect('user/conta')
+    },
     cadastroView: (_req, res) => {
         try {
             return res.status(200).render('cadastro', { error: '', errorValidacao: [] })
@@ -78,6 +81,9 @@ const clienteController = {
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
+    },
+    contaUsuario: async (_req, res) => {
+        res.status(200).render('conta-usuario')
     }
 }
 
