@@ -11,6 +11,7 @@ module.exports = {
         "password": devDbRootPassword,
         "database": devDbName,
         "host": devDbHost,
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "port": "3308"
     }
 }

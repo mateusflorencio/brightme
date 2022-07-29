@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: 2560px;
 }
 
 .content-banner {
@@ -47,7 +47,7 @@
   grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   grid-gap: 2rem;
   width: 100%;
-  max-width: 1440px;
+  max-width: 2560px;
   /* height: auto; */
   border-radius: 2rem;
   /* float:inline-end;  */

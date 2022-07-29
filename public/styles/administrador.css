@@ -110,4 +110,8 @@
   .modal__categoria {
     flex-direction: column;
   }
+
+  .modal__produto {
+    flex-direction: column;
+  }
 }

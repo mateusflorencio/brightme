@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      imgId: {
+      imageId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

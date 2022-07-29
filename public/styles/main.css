@@ -24,14 +24,14 @@
 /* SHORTCUTS */
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 2560px;
   margin: auto;
   padding: 0 4rem 0 4rem;
 }
 
 .container-menu {
   width: 100%;
-  max-width: 1440px;
+  max-width: 2560px;
   margin: auto;
   padding: 0 4rem 0 4rem;
   height: 15vh;

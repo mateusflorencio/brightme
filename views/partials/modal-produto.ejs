@@ -1,0 +1,34 @@
+<div class="modal" id="adicionarProduto">
+  <button class="btn t-red btn__fechar-modal" onclick="fecharModal('adicionarProduto')">x</button>
+  <div class="d-flex modal__produto">
+    <div>
+      <form method="post" action="/administrador/produto">
+        <label for="produto">Nome do produto</label>
+        <input name="produto" type="text" class="card"> <br>
+
+        <label for="preco">Preço</label>
+        <input name="preco" type="number" class="card"> <br>
+
+        <label for="titulo">Título</label>
+        <input name="titulo" type="text" class="card"> <br>
+
+        <label for="descricao">Descrição</label>
+        <input name="descricao" type="text" class="card"> <br>
+
+        <label for="categoria">Categoria</label>
+        <input name="categoria" type="text" class="card"> <br>
+
+        <label for="fabricante">Fabricante</label>
+        <input name="fabricante" type="text" class="card"> <br>
+
+        <label for="imagem">Imagem</label>
+        <input name="imagem" type="image" class="card"> <br>
+
+        <label for="estoque">Estoque</label>
+        <input name="estoque" type="number" class="card"> <br>
+
+        <button type="submit" class="bg-green btn t-white">Criar</button>
+      </form>
+    </div>
+  </div>
+</div>

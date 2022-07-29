@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING,
     categoriaId: DataTypes.INTEGER,
     fabricanteId: DataTypes.INTEGER,
-    imgId: DataTypes.INTEGER,
+    imageId: DataTypes.INTEGER,
     estoqueId: DataTypes.INTEGER,
     promocaoId: DataTypes.INTEGER,
     kitId: DataTypes.INTEGER
@@ -40,6 +40,6 @@ module.exports = (sequelize, DataTypes) => {
 
     Produto.hasMany(models.Image)
   };
-  
+
   return Produto;
 };
