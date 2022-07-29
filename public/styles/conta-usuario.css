@@ -1,39 +1,10 @@
 @import url(./main.css);
 
-.col-userPanel {
-  display: flex;
-  height: 60rem;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  flex-direction: column;
-}
-
-.title {
-  background-color: var(--main-rosa);
-  text-align: center;
-  color: white;
-}
-
-input {
-  width: 100%;
-  resize: none;
-  height: 3.5rem;
-}
-
-.btn-secondary {
-  color: #ffffff;
-  background: var(--main-grey-700);
-  height: 2.5rem;
-  width: 20%;
-  font-size: 1rem bold;
-  border-radius: 1rem;
-  border: none;
-  position: relative;
-  left: 76.5rem;
-}
-
-.requests {
-  position: relative;
-  left: 10rem;
+@media (max-width :1000px) {
+  .w-50 {
+    width: 100% !important;
+  }
+  html{
+    font-size: 1rem;
+  }
 }
