@@ -12,3 +12,11 @@ menuToggle.addEventListener("click", () => {
     menuSection.classList.toggle("on", show)
     show = !show
 })
+
+
+const nomeCliente = localStorage.getItem('nome')
+const divEntrar = document.querySelector('.entrar')
+if (nomeCliente) {
+    divEntrar.text = `Olá, ${nomeCliente} !`
+    divEntrar.href = '/user/conta'
+}
