@@ -1,70 +1,83 @@
-const { cpf } = require('cpf-cnpj-validator')
-const { validationResult } = require('express-validator')
-const { buscarCLiente, ClienteRepository } = require('../repository/index')
+const { cpfValidator, validationResult } = require('./validacoes')
+const { decrypt, encrypt } = require('../repository/util/encrypter')
+const { buscarCLiente, ClienteRepository } = require('../repository')
 const NewClienteDto = require('../models/dto/new-cliente-dto')
-const Error = require('./error')
+const jwt = require('jsonwebtoken')
+const db = require('../models/index')
+require('dotenv').config()
 
-var LocalStorage = require('node-localstorage').LocalStorage
-localStorage = new LocalStorage('./scratch')
+const Cliente = db.Cliente
+const secret = process.env.JWT_TOKEN
+const clienteRepository = new ClienteRepository()
 
 const clienteController = {
     cadastroView: (_req, res) => {
-        res.status(200).render('cadastro', { error: '' })
+        try {
+            return res.status(200).render('cadastro', { error: '', errorValidacao: [] })
+        } catch (error) {
+            return res.status(500).render('cadastro', { error: error, errorValidacao: [] })
+        }
     },
     cadastro: async (req, res) => {
         let { nome, sobrenome, senha, email, telefone, CPF } = req.body
-        CPF = CPF.replace(/\W/g, '')
-        telefone = telefone.replace(/\W/g, '')
-
-        const errorValidator = validationResult(req)
 
         try {
+            CPF = await CPF.replace(/\W/g, '')
+            telefone = await telefone.replace(/\W/g, '')
+
+            const errorValidator = validationResult(req)
             if (!errorValidator.isEmpty()) {
-                return res.status(400).render('cadastro', { error: errorValidator.errors })
+                return res.status(400).render('cadastro', { error: '', errorValidacao: errorValidator.errors })
             }
 
-            const CPFResutl = cpf.isValid(CPF)
+            const CPFResutl = cpfValidator(CPF)
             if (!CPFResutl) {
-                const errorCPF = new Error('CPF', 'Este CPF não é válido', '')
-                return res.status(400).render('cadastro', { error: [errorCPF] })
+                return res.status(400).render('cadastro', { error: 'cpf não é válido', errorValidacao: [] })
             }
 
             const buscarCLienteResult = await buscarCLiente(email, CPF, telefone)
             if (buscarCLienteResult) {
-                return res.status(400).render('cadastro', { error: buscarCLienteResult })
+                return res.status(400).render('cadastro', { error: buscarCLienteResult, errorValidacao: [] })
             }
-
-            const newCliente = new NewClienteDto(nome, sobrenome, senha, email,telefone, CPF)
-            const result = await ClienteRepository.cadastro(newCliente)
-
+            const hashedPassword = await encrypt(senha)
+            const newCliente = new NewClienteDto(nome, sobrenome, hashedPassword, email, telefone, CPF)
+            const result = await clienteRepository.cadastro(newCliente)
             if (!result) {
-               return res.status(500).render('cadastro', { error: new Error('cadastro', 'error ao criar novo usuário, por favor tente novamente', '') })
+                return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
             }
 
-            return res.status(201).render('index')
+            const user = { id: result.id, email }
+            const token = jwt.sign({ email }, secret)
 
-        } catch (err) {
-            const error = new Error('error service', err, '500')
-            console.log(err)
-            return res.status(500).render('cadastro', { error: error })
+            return res.status(201).render('pre-redirect-cliente', { data: [token, user] })
+        } catch (error) {
+            console.log(error)
+            return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
         }
     },
     loginView: (_req, res) => {
-        res.render('login', { errors: {} })
+        return res.status(200).render('login', { errors: '' })
     },
     login: async (req, res) => {
         try {
             const { email, senha } = req.body
-            const result = await clienteRepository.login(email, senha)
+            const result = await clienteRepository.buscaEmail(email)
 
-            if (result.error) {
-                return res.render('login', { errors: result })
+            if (result instanceof Cliente === false) {
+                return res.render('login', { errors: 'email não encontrado' })
             }
 
-            return res.status(200).redirect('/')
+            const resultSenha = await decrypt(senha, result.senha)
+            if (!resultSenha) {
+                return res.render('login', { errors: 'senha incorreta' })
+            }
 
+            const user = { email }
+            const token = senha
+
+            return res.status(200).render('pre-redirect', { data: [token, user] })
         } catch (error) {
-            res.status(500).render('error', { errors: error })
+            return res.status(500).render('cadastro', { error: error })
         }
     }
 }

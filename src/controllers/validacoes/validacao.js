@@ -1,4 +1,4 @@
-const { body } = require('express-validator')
+const { body , validationResult} = require('express-validator')
 
 const validacaoCadastro = () => {
   return  [
@@ -14,5 +14,5 @@ const validacaoCadastro = () => {
 
 
 module.exports = {
-  validacaoCadastro
+  validacaoCadastro, validationResult
 };

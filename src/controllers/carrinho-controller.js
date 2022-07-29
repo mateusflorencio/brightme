@@ -1,7 +1,5 @@
-const carrinhoController = {
+module.exports = carrinhoController = {
     index: (_req, res) => {
-        res.render('carrinho')
+        res.status(200).render('carrinho')
     }
 }
-
-module.exports = carrinhoController

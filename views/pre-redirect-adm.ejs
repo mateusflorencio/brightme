@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <title>Carregando</title>
+</head>
+
+<body>
+  <div class="w-100 bg-red h-100 all-center col">
+    <img
+      src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif"
+      alt="" width="60px" height="60px">
+    <br>
+    <p class="t-white" style="font-size:2rem ;">Estamos só verificando suas crendeciais !</p>
+  </div>
+
+
+
+
+  <% if (data) { %>
+    <script>
+      localStorage.setItem('token', `<%= data[0] %>`)
+      localStorage.setItem('user', `<%= data[1] %>`)
+      setTimeout(() => { window.location.pathname = "/administrador" }, 2000)
+    </script>
+    <% } %>
+
+</body>
+
+</html>

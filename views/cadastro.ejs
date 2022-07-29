@@ -17,11 +17,15 @@
 
             <div class="card bg-white">
                 <h1 class="title">Cadastre-se</h1>
-                <% if (error) { %>
-                   <% for(const n of error) { %>
+                <% if (errorValidacao) { %>
+                   <% for(const n of errorValidacao) { %>
                    <span class="t-red padding-left"> <%= n.param %> :  <%= n.msg %> </span>
                     <% } %>
                   <% } %>
+
+                  <% if (error) { %>
+                    <span class="t-red padding-left"> <%= error %> </span>
+                   <% } %>
                 <div>
                     <form method="POST" class="d-flex form__cadastro">
                         <div class="left">
@@ -30,7 +34,7 @@
 
                             <label for="senha" class="mt-40">Senha</label> <br>
                             <input class="card w-100" type="password" name="senha" id="senha"
-                                placeholder="Seu melhor numero"><br>
+                                placeholder="Minimo 6 caractere"><br>
 
                             <label for="confirmacaoSenha">Confirme sua senha</label>
                             <input class="card w-100" type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Repita seu senha" oninput="senhaEstaCorreta()">

@@ -7,14 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/error.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-    <script src="../../public/script/menu.js" defer></script>
+    <script src="../../script/menu.js" defer></script>
     <title>Erro</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
-    <div class="div-error h-100 w-100 bg-grey t-white all-center">
-        <p>Ops! Página não encontrada</p>
+    <div class="div-error w-100 all-center">
+        <p style="font-size:6rem;"> Ops! Página não encontrada </p>
+
+      <%  if(error){%>
+          <span>  <%=  error  %> </span>
+        <% }%>
 
     </div>
 
