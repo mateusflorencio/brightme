@@ -16,7 +16,10 @@ menuToggle.addEventListener("click", () => {
 
 const nomeCliente = localStorage.getItem('nome')
 const divEntrar = document.querySelector('.entrar')
+const divEntrarTogle = document.querySelector('.entrar__togle__menu')
 if (nomeCliente) {
     divEntrar.text = `Olá, ${nomeCliente} !`
     divEntrar.href = '/user/conta'
+    divEntrarTogle.text = `Olá, ${nomeCliente} !`
+    divEntrarTogle.href = '/user/conta'
 }
