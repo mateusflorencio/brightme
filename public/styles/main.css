@@ -42,6 +42,10 @@
   display: flex;
 }
 
+.space-between{
+  justify-content: space-between;
+}
+
 .col {
   flex-direction: column;
 }
@@ -257,136 +261,4 @@ li {
   border: 1px var(--main-grey-700) solid;
   border-radius: 0.5rem;
   padding: 0.3rem;
-}
-
-/* MEDIA QUERIES PARA A RESPONSIVIDADE */
-
-/* LAPTOP GRANDE */
-@media(max-width: 1440px) {
-  html {
-    font-size: 90%
-  }
-}
-
-/* LAPTOP PEQUENO */
-@media(max-width: 1024px) {
-  html {
-    font-size: 85%
-  }
-}
-
-/* TABLET */
-@media(max-width: 768px) {
-  html {
-    font-size: 65%
-  }
-}
-
-/* MEDIA QUERIE PARA DEIXAR O MENU RESPONSIVO. O MENU NÃO APARECE QUANDO O MAX-WIDTH FOR 694 PX*/
-
-@media (max-width: 694px) {
-  #nav_menu {
-    display: none;
-  }
-
-  html {
-    font-size: 60%
-  }
-
-  /* MENU SANDUÍCHE */
-  .one,
-  .two,
-  .three {
-    background-color: var(--main-white);
-    height: 0.4rem;
-    width: 100%;
-    margin: 0.7rem auto;
-    transition-duration: 0.3s;
-  }
-
-  .menu-toggle {
-    width: 4rem;
-    height: 3rem;
-    margin-left: -0.7rem;
-    margin-top: 1.5rem;
-    position: absolute;
-  }
-}
-
-/* PARA DEIXAR MENU SANDUÍCHE FULLSCREEN AO CLICAR */
-
-.menu-section.on {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--main-blue);
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* PARA O MENU APARECER NO NOVO MENU SANDUICHE */
-
-.menu-section.on #nav_menu {
-  display: block;
-}
-
-.menu-section.on .menu-toggle {
-  position: absolute;
-  right: 0;
-  top: 1.5rem;
-}
-
-.menu-section.on .menu-toggle .one {
-  transform: rotate(45deg) translate(0.7rem, 0.7rem);
-}
-
-.menu-section.on .menu-toggle .two {
-  opacity: 0;
-}
-
-.menu-section.on .menu-toggle .three {
-  transform: rotate(-45deg) translate(0.8rem, -1.1rem);
-}
-
-/* PARA COLOCAR O MENU RESPONSIVO NA VERTICAL */
-
-.menu-section.on #nav_menu ul {
-  text-align: center;
-  display: inline-block;
-}
-
-.menu-section.on #nav_menu ul a {
-  transition-duration: 0.5s;
-  font-size: 3rem;
-  line-height: 4rem;
-  display: block;
-}
-
-/* SMARTPHONE GRANDE */
-@media(max-width: 525px) {
-  html {
-    font-size: 35%
-  }
-}
-
-/* SMARTPHONE GRANDE */
-@media(max-width: 425px) {
-  html {
-    font-size: 30%
-  }
-}
-
-/* SMARTPHONE MÉDIO */
-@media(max-width: 375px) {
-
-  html,
-  .card .w-100,
-  .col-buy .card,
-  .t-grey-700 {
-    font-size: 25%
-  }
 }
