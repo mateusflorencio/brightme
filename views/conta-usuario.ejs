@@ -20,7 +20,7 @@
                     <div class="img__cliente">
                         <% if(data){ %>
                             <img src=" <%= data.image %> " alt="">
-                            <% } %>
+                           
                                 <div class="mt-sm">
                                     <form id="img__cliente" method="post" enctype="multipart/form-data">
                                         <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
@@ -32,10 +32,12 @@
                     </div>
                 </div>
                 <div class="info__cliente">
-                    <strong>Nome:</strong> Mateus Florêcio <br>
-                    <strong>Telefone:</strong> (11) 4002-8922 <br>
-                    <strong>Email:</strong> anyemail@gmail.com <br>
+                    <strong>Nome:</strong>  <%= data.cliente.nome %> <%= data.cliente.sobrenome %><br>
+                    <strong>Telefone:</strong> <label class="telefone"> <%= data.cliente.telefone %> </label> <br> 
+                    <strong>Email:</strong> <%= data.cliente.email %> <br>
+                    <strong>CPF:</strong>  <label class="cpf"> <%= data.cliente.cpf %> </label> <br>
                     <strong>Endereço:</strong> Rua jose maria, 8, Vila Maruitá, São Caetano, SP, 09999-999 <br>
+                    <% } %>
                 </div>
             </div>
             <br>
@@ -54,7 +56,6 @@
                 </ul>
             </div><br>
 
-            local
             <section class="conta__info d-flex">
                 <div class="forms w-50">
                     <form class="email">

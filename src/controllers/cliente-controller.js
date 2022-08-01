@@ -77,21 +77,37 @@ const clienteController = {
             }
 
             const token = jwt.sign({ email }, secret)
-            
-            return res.status(200).render('pre-redirect-cliente', { data: [token, email, result.nome, result.id] })
+            return res
+                .status(200)
+                .clearCookie('dados')
+                .cookie('dados', [email, token])
+                .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
     },
-    contaUsuario: async (_req, res) => {
+    contaUsuario: async (req, res) => {
         try {
-            const image = fs.readFileSync('./public/image/clientes/cliente11', (err, result) => {
+            const { dados } = req.cookies
+            const email = dados[0]
+
+            if (!email) {
+                res.redirect('user/login')
+            }
+
+            const cliente = await clienteRepository.buscaEmail(email)
+            if (cliente instanceof Cliente !== true) {
+                res.status(403).redirect('/user/login')
+            }
+
+            const path = `./public/image/clientes/cliente${cliente.id}`
+            const image = fs.readFileSync(path, (err, result) => {
                 if (err) {
                     console.log(err)
                 }
                 return result
             })
-            res.status(200).render('conta-usuario', { data: { image } })
+            res.status(200).render('conta-usuario', { data: { image, cliente } })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
