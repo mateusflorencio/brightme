@@ -1,10 +1,65 @@
 @import url(./main.css);
 
+.img__cliente__container {
+  width: 30%;
+  height: 190px;
+}
+
+.img__cliente {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.img__cliente img {
+  min-height: 10rem;
+  min-width: 10rem;
+  max-height: 10rem;
+  max-width: 10rem;
+  border-radius: 5rem;
+}
+
+input[type='file'] {
+  display: none
+}
+
+.selecao-arquivo {
+  font-size: 0.7rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.cliente {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width :1000px) {
   .w-50 {
     width: 100% !important;
   }
-  html{
+
+  html {
     font-size: 1rem;
+  }
+
+  .cliente {
+    flex-direction: column;
+  }
+
+  .info__cliente {
+    margin-top: 3rem;
+  }
+
+  .img__cliente__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }

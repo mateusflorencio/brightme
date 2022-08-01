@@ -1,3 +1,4 @@
+const fs = require('fs')
 const { cpfValidator, validationResult } = require('./validacoes')
 const { decrypt, encrypt } = require('../repository/util/encrypter')
 const { buscarCLiente, ClienteRepository } = require('../repository')
@@ -77,13 +78,23 @@ const clienteController = {
 
             const token = jwt.sign({ email }, secret)
 
-            return res.status(200).render('pre-redirect-cliente', { data: [token, email, result.nome] })
+            return res.status(200).render('pre-redirect-cliente', { data: [token, email, result.nome, result.id] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
     },
     contaUsuario: async (_req, res) => {
-        res.status(200).render('conta-usuario')
+        try {
+            const image = fs.readFileSync('./public/image/clientes/cliente11', (err, result) => {
+                if (err) {
+                    console.log(err)
+                }
+                return result
+            })
+            res.status(200).render('conta-usuario', { data: { image } })
+        } catch (error) {
+            return res.status(500).render('login', { error: error })
+        }
     }
 }
 

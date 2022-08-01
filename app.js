@@ -13,6 +13,7 @@ const produtoRouter = require('./src/routes/produto-route')
 const pagamentoRouter = require('./src/routes/pagamento-route')
 const clienteRouter = require('./src/routes/cliente-route')
 const sucessRouter = require('./src/routes/sucess')
+const systemRouter = require('./src/routes/system-route')
 
 
 const app = express()
@@ -41,6 +42,7 @@ app.use('/carrinho', carrinhoRouter)
 app.use('/produtos', produtoRouter)
 app.use('/pagamento', pagamentoRouter)
 app.use('/user', clienteRouter)
+app.use('/system', systemRouter)
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

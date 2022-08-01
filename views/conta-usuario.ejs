@@ -15,7 +15,30 @@
     <%- include('./partials/header') %>
         <br><br>
         <section class="container">
+            <div class="cliente card">
+                <div class="img__cliente__container">
+                    <div class="img__cliente">
+                        <% if(data){ %>
+                            <img src=" <%= data.image %> " alt="">
+                            <% } %>
+                                <div class="mt-sm">
+                                    <form id="img__cliente" method="post" enctype="multipart/form-data">
+                                        <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
+                                        <input onchange="changeImage()" id='selecao-arquivo' type='file'>
+                                        <button class="btn__submit" type="submit"></button>
+                                    </form>
+                                </div>
 
+                    </div>
+                </div>
+                <div class="info__cliente">
+                    <strong>Nome:</strong> Mateus Florêcio <br>
+                    <strong>Telefone:</strong> (11) 4002-8922 <br>
+                    <strong>Email:</strong> anyemail@gmail.com <br>
+                    <strong>Endereço:</strong> Rua jose maria, 8, Vila Maruitá, São Caetano, SP, 09999-999 <br>
+                </div>
+            </div>
+            <br>
             <div class="favoritos w-100 bg-rosa t-white">
                 <h3 class="pd-sm">Meus Favoritos</h3>
             </div>
@@ -31,7 +54,7 @@
                 </ul>
             </div><br>
 
-            <h3 class="bg-rosa t-white pd-sm">Informações da Conta</h3> <br>
+            local
             <section class="conta__info d-flex">
                 <div class="forms w-50">
                     <form class="email">
@@ -58,6 +81,7 @@
             <button onclick="encerrarSessao()" class="btn bg-red t-white pd-sm">Sair</button>
         </section> <br>
         <%- include('./partials/footer') %>
+
 </body>
 
 </html>
