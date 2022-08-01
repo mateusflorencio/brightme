@@ -11,9 +11,6 @@ const secret = process.env.JWT_TOKEN
 const clienteRepository = new ClienteRepository()
 
 const clienteController = {
-    index: (_req, res) => {
-        res.redirect('user/conta')
-    },
     cadastroView: (_req, res) => {
         try {
             return res.status(200).render('cadastro', { error: '', errorValidacao: [] })
@@ -76,14 +73,13 @@ const clienteController = {
             }
 
             const token = jwt.sign({ email }, secret)
-
             return res.status(200).render('pre-redirect-cliente', { data: [token, email, result.nome] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
     },
-    contaUsuario: async (_req, res) => {
-        res.status(200).render('conta-usuario')
+    contaUsuario: async (req, res) => {
+       return res.status(200).render('conta-usuario')
     }
 }
 
