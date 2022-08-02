@@ -25,10 +25,9 @@
     <div class="modal" id="deleteProduto">modalDeleteProduto <button class="btn t-red btn__fechar-modal"
         onclick="fecharModal('deleteProduto')">x</button> </div>
 
-  <div class="modal" id="adicionarProduto">modalAdicionarProduto <button class="btn t-red btn__fechar-modal"
-      onclick="fecharModal('adicionarProduto')">x</button></div>
 
       <%- include('./partials/modal-categoria') %>
+      <%- include('./partials/modal-fabricante') %>
 
         <!-- Inicio -->
         <div class="container__section mt-20 d-flex">
@@ -89,9 +88,11 @@
 
             <!--- Btn -->
             <div class="btn_add d-flex">
-              <button class="btn bg-blue t-white mg-1 w-100" onclick="abrirModal('adicionarProduto')">+ Produto</button>
+              <a href="/produtos/criar" class="btn bg-blue t-white mg-1 w-100 link">+ Produto</a>
               <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarCategoria')">+
                 Categoria</button>
+                <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarFabricante')">+
+                  Fabricante</button>
             </div>
 
             <!-- Ads -->

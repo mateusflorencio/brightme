@@ -12,6 +12,7 @@ routes.post('/login', admController.login)
 routes.get('/',ComAuthAdm, admController.painelAdministrativo)
 
 routes.post('/categoria', admController.criarCategoria)
+routes.post('/fabricante', admController.criarFabricante)
 
 
 

@@ -1,0 +1,26 @@
+<div class="modal" id="adicionarFabricante">
+  <button class="btn t-red btn__fechar-modal" onclick="fecharModal('adicionarFabricante')">x</button>
+  <div class="d-flex modal__fabricante">
+    <div>
+      <form method="post" action="/administrador/fabricante">
+        <label for="fabricante">Qual nome da Fabricante?</label> <br>
+        <input name="fabricante" type="text" class="input"> <br> <br>
+        <button type="submit" class="bg-green btn t-white">Criar</button>
+      </form>
+    </div>
+    <div>
+      <h2>Fabricantes Cadastradas</h2>
+      <ul class="mt-20"></ul>
+      <% if (data.fabricantes) { %>
+        <% for(const n of data.fabricantes) { %>
+
+          <li class="list">
+            <%= n.id %> : <%= n.nome %>
+          </li>
+
+          <% } %>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</div>
