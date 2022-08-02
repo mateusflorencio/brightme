@@ -50,15 +50,15 @@ const clienteController = {
                 return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
             }
 
-            const imgPadrao = fs.readFileSync('public/image/clientes/image-padrao.jpg','base64')
-            console.log(imgPadrao);
+            const imgPadrao = fs.readFileSync('public/image/clientes/image-padrao.jpg', 'base64')
+            console.log(imgPadrao)
             fs.writeFileSync(`public/image/clientes/cliente${result.id}`, `data:image/jpeg;base64,${imgPadrao}`)
 
             const token = jwt.sign({ email }, secret)
             return res
                 .status(200)
                 .clearCookie('dados')
-                .cookie('dados', [email, token])
+                .cookie('cliente', [email, token])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             console.log(error)
@@ -86,7 +86,7 @@ const clienteController = {
             return res
                 .status(200)
                 .clearCookie('dados')
-                .cookie('dados', [email, token])
+                .cookie('cliente', [email, token])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
@@ -94,28 +94,49 @@ const clienteController = {
     },
     contaUsuario: async (req, res) => {
         try {
-            const { dados } = req.cookies
-            const email = dados[0]
+            const { cliente } = req.cookies
+            const email = cliente[0]
 
             if (!email) {
                 res.redirect('user/login')
             }
 
-            const cliente = await clienteRepository.buscaEmail(email)
-            if (cliente instanceof Cliente !== true) {
+            const result = await clienteRepository.buscaEmail(email)
+            if (result instanceof Cliente !== true) {
                 res.status(403).redirect('/user/login')
             }
 
-            const path = `./public/image/clientes/cliente${cliente.id}`
+            const path = `./public/image/clientes/cliente${result.id}`
             const image = fs.readFileSync(path, (err, result) => {
                 if (err) {
                     console.log(err)
                 }
                 return result
             })
-            res.status(200).render('conta-usuario', { data: { image, cliente } })
+            res.status(200).render('conta-usuario', { data: { image, cliente: result } })
         } catch (error) {
             return res.status(500).render('login', { error: error })
+        }
+    },
+    deleteCliente: async (req, res) => {
+        const { id } = req.body
+        console.log(id);
+
+        try {
+            if (!id) {
+               return res.status(400).json('id no provide')
+            }
+
+            const result = await clienteRepository.delete(id)
+            
+            if (!result) {
+                return res.status(404).json('id not found')
+            }
+
+            return res.status(204).json('ok')
+
+        } catch (error) {
+            res.status(500).json({err:error})
         }
     }
 }

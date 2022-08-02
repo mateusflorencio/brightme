@@ -40,6 +40,11 @@ input[type='file'] {
   flex-direction: row;
 }
 
+.btn__footer{
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width :1000px) {
   .w-50 {
     width: 100% !important;

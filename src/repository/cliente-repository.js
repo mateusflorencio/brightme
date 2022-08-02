@@ -35,6 +35,14 @@ module.exports = class ClienteRepository {
       throw new Error(error)
     }
   }
+
+  async delete(id) {
+    try {
+      return await Cliente.destroy({ where: { id } })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }
 
 

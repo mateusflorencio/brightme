@@ -1,9 +1,9 @@
+
 function encerrarSessao() {
   localStorage.removeItem('nome')
   localStorage.removeItem('id')
   document.cookie.split(";")
     .forEach(function (c) {
-      console.log(c);
       document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/")
     })
   window.location.href = '/'
@@ -33,3 +33,20 @@ document.querySelector('.telefone').firstChild.nodeValue = markTelefone
 const cpf = document.querySelector('.cpf').firstChild.nodeValue.trim()
 const markCpf = `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}.${cpf.slice(9, 11)}`
 document.querySelector('.cpf').firstChild.nodeValue = markCpf
+
+
+function deleteConta() {
+  fetch('/user/conta/:15', {
+    method: 'delete',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ id: localStorage.getItem('id') })
+  }
+  ).then((res) => {
+    if (res.status === 204) {
+      encerrarSessao()
+    }
+  })
+}
