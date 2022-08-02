@@ -8,8 +8,7 @@
     "test:unit": "jest --watch -o --silent --noStackTrace --runInBand",
     "start": "node ./bin/www",
     "dev": "nodemon",
-    "debugger" : "nodemon  --inspect --trace-warnings ./bin/www"
-
+    "debugger": "nodemon  --inspect --trace-warnings ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -34,6 +33,7 @@
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "node-localstorage": "^2.2.1",
     "sequelize": "^6.21.3",
