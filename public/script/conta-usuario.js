@@ -36,7 +36,7 @@ document.querySelector('.cpf').firstChild.nodeValue = markCpf
 
 
 function deleteConta() {
-  fetch('/user/conta/:15', {
+  fetch('/user/conta', {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
