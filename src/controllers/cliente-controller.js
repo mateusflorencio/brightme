@@ -50,10 +50,16 @@ const clienteController = {
                 return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
             }
 
-            const user = { id: result.id, email }
-            const token = jwt.sign({ email }, secret)
+            const imgPadrao = fs.readFileSync('public/image/clientes/image-padrao.jpg','base64')
+            console.log(imgPadrao);
+            fs.writeFileSync(`public/image/clientes/cliente${result.id}`, `data:image/jpeg;base64,${imgPadrao}`)
 
-            return res.status(201).render('pre-redirect-cliente', { data: [token, user] })
+            const token = jwt.sign({ email }, secret)
+            return res
+                .status(200)
+                .clearCookie('dados')
+                .cookie('dados', [email, token])
+                .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             console.log(error)
             return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
