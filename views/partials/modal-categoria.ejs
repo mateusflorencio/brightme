@@ -11,8 +11,8 @@
     <div>
       <h2>Categorias Cadastradas</h2>
       <ul class="mt-20"></ul>
-      <% if (categoria) { %>
-        <% for(const n of categoria) { %>
+      <% if (data.categorias) { %>
+        <% for(const n of data.categorias) { %>
 
           <li class="list">
             <%= n.id %> : <%= n.nome %>
