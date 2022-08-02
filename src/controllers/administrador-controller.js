@@ -48,7 +48,7 @@ module.exports = AdministradorController = {
 
       const token = jwt.sign({ id }, secret)
 
-      return res.cookie('adm', [adm.id, adm.ROLE, token]).render('pre-redirect-adm', { data: ''})
+      return res.cookie('adm', [adm.id, adm.ROLE, token]).redirect('/administrador')
     } catch (error) {
       return res.status(500).render('adm-login', { error: error })
     }
