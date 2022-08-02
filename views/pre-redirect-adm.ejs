@@ -23,8 +23,6 @@
 
   <% if (data) { %>
     <script>
-      localStorage.setItem('token', `<%= data[0] %>`)
-      localStorage.setItem('user', `<%= data[1] %>`)
       setTimeout(() => { window.location.pathname = "/administrador" }, 2000)
     </script>
     <% } %>

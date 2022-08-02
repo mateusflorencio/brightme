@@ -10,32 +10,31 @@ localStorage = new LocalStorage('./scratch')
 const jwt = require("jsonwebtoken")
 const AdministradorRepository = require('../repository/administrador-repository')
 
-const admRepo = new AdministradorRepository()
-
 const ComAuthAdm = (req, res, next) => {
+  try {
+    const { adm } = req.cookies
 
-  const token = localStorage.getItem('token')
-
-  if (!token) {
-    return res.redirect('/administrador/login')
-  }
-
-  jwt.verify(token, secret, (err, decode) => {
-    if (err) {
+    if (!adm) {
       return res.redirect('/administrador/login')
     }
 
-    admRepo.buscarId(decode.id)
-      .then(response => {
-       if(response instanceof Administrador){
-        next()
+    const id = adm[0]
+    const role = adm[1]
+    const token = adm[2]
+
+    jwt.verify(token, secret, (err, decode) => {
+      if (err) {
+        return res.redirect('/administrador/login')
       }
-      res.redirect('/administrador/login')
-      }).catch(err =>{
-        res.redirect('/error')
-      })
+      if (decode.id != id) {
+        return res.redirect('/administrador/login')
+      }
+      next()
+    }
+    )
+  } catch (error) {
+    res.status(500).render('error', { error: error })
   }
-  )
 }
 
 module.exports = ComAuthAdm

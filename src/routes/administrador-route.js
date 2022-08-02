@@ -9,7 +9,7 @@ routes.post('/criar', admController.criarAdm)
 routes.get('/login', admController.loginView)
 routes.post('/login', admController.login)
 
-routes.get('/', admController.painelAdministrativo)
+routes.get('/',ComAuthAdm, admController.painelAdministrativo)
 
 routes.post('/categoria', admController.criarCategoria)
 

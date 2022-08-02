@@ -25,7 +25,7 @@ module.exports = AdministradorController = {
   criarAdm: async (req, res) => {
     const { nome, senha, ROLE } = req.body
     try {
-      const result = await AdministradorRepository.cadastro({ nome, senha, ROLE })
+      const result = await admRepo.cadastro({ nome, ROLE, senha })
       res.status(201).json(result)
     } catch (error) {
       res.status(500).json({ err: error })
@@ -47,9 +47,8 @@ module.exports = AdministradorController = {
       }
 
       const token = jwt.sign({ id }, secret)
-      const user = { id: adm.id, role: adm.role }
 
-      return res.render('pre-redirect-adm', { data: [token, user] })
+      return res.cookie('adm', [adm.id, adm.ROLE, token]).render('pre-redirect-adm', { data: ''})
     } catch (error) {
       return res.status(500).render('adm-login', { error: error })
     }
