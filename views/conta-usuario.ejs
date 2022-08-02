@@ -58,24 +58,26 @@
 
             <section class="conta__info d-flex">
                 <div class="forms w-50">
-                    <form class="email">
+                    <form class="email" method="put">
                         <!-- alterar email-->
                         <label for="email">Alterar e-mail</label><br>
                         <input class="w-100 input " type="email" name="email" id="email"
-                            placeholder="Insira seu novo e-mail">
-                        <button class="btn mt-sm" type="submit">
+                            placeholder="Insira seu novo e-mail" oninput="ativarBtnUpdateEmail()">
+                        <button class="btn mt-sm"id="btnUpdateEmail" disabled="disabled" onclick="atualizarCliente()">
                             Alterar e-mail
                         </button><br>
                     </form>
 
                     <form action="">
-                        <label for="password">Alterar senha</label><br>
-                        <input class="input w-100" type="password" name="password" id="password"
-                            placeholder="Insira sua nova senha"><br>
+                        <label for="senha">Alterar senha</label><br>
+                        <input class="input w-100" type="password" name="senha" id="senha"
+                            placeholder="Insira sua nova senha" oninput="sizeAlertPassword()"><br>
 
                         <input class="input w-100 mt-sm" type="password" id="passwordConfirm"
-                            placeholder="Insira sua nova senha outra vez"><br>
-                        <button class="btn mt-sm" type="submit">Alterar Senha</button><br>
+                            placeholder="Insira sua nova senha outra vez" oninput="senhaEstaCorreta()"><br>
+                            <p class="aviso__senha"></p>
+                            <p class="aviso__senha__size"></p>
+                        <button class="btn mt-sm" id="btnSubmitSenha" disabled="disabled" onclick="atualizarCliente()">Alterar Senha</button><br>
                     </form>
                 </div>
             </section>

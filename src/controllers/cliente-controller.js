@@ -118,17 +118,37 @@ const clienteController = {
             return res.status(500).render('login', { error: error })
         }
     },
+    atualizarCliente: async (req, res) => {
+        const { cliente } = req.cookies
+        const cookieEmail = cliente[0]
+        const { email, senha } = req.body
+        try {
+            if (!cliente) res.status(400).json('no provided')
+
+            const clienteRes = await clienteRepository.buscaEmail(cookieEmail)
+            if (clienteRes instanceof Cliente !== false) res.status(404)
+            if (email) await clienteRepository.updateEmail(clienteRes.id, email)
+
+            if (senha) {
+                const hashedPassword = await encrypt(senha)
+                await clienteRepository.updateSenha(clienteRes.id, hashedPassword)
+            }
+
+            return res.status(204).json('okay')
+        } catch (error) {
+            return res.status(500).json({ err: error })
+        }
+    },
     deleteCliente: async (req, res) => {
         const { id } = req.body
-        console.log(id);
 
         try {
             if (!id) {
-               return res.status(400).json('id no provide')
+                return res.status(400).json('id no provide')
             }
 
             const result = await clienteRepository.delete(id)
-            
+
             if (!result) {
                 return res.status(404).json('id not found')
             }
@@ -136,7 +156,7 @@ const clienteController = {
             return res.status(204).json('ok')
 
         } catch (error) {
-            res.status(500).json({err:error})
+            res.status(500).json({ err: error })
         }
     }
 }

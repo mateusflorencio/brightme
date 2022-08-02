@@ -43,6 +43,24 @@ module.exports = class ClienteRepository {
       throw new Error(error)
     }
   }
+
+  async updateEmail(id, email) {
+    try {
+      return await Cliente.update({ email }, { where: { id } }
+      )
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  async updateSenha(id, senha) {
+    try {
+      return await Cliente.update({ senha }, { where: { id } }
+      )
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }
 
 

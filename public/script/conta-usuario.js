@@ -45,8 +45,58 @@ function deleteConta() {
     body: JSON.stringify({ id: localStorage.getItem('id') })
   }
   ).then((res) => {
-    if (res.status === 204) {
+    if (res.status == 204) {
       encerrarSessao()
     }
   })
 }
+
+
+function ativarBtnUpdateEmail(){
+  document.querySelector('#btnUpdateEmail').disabled = ''
+}
+
+function atualizarCliente() {
+  const email = document.querySelector('#email').value
+  const senha = document.querySelector('#senha').value
+
+
+  fetch('/user/conta', {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'put',
+    body: JSON.stringify({ email, senha })
+  }).then((res) => {
+    if (res.status == 204) {
+      encerrarSessao()
+    }
+  }
+
+  )
+}
+
+
+
+function senhaEstaCorreta() {
+  const senha = document.getElementById('senha').value
+  const confirmacaoSenha = document.getElementById('passwordConfirm').value
+  const span = document.querySelector('.aviso__senha')
+
+  senha !== confirmacaoSenha ? span.innerHTML = '<p class="aviso__senha t-red">Senhas não confere !</p>' : span.innerHTML = ''
+
+}
+
+function sizeAlertPassword() {
+  const senha = document.getElementById('senha').value
+  const span = document.querySelector('.aviso__senha__size')
+  
+  span.innerHTML = '<p class="aviso__senha t-red">Senha deve ser maior que 6 caracteres</p>'
+  document.querySelector('#btnSubmitSenha').disabled = 'disabled'
+  if(senha.length >= 6){
+    span.innerHTML = ''
+    document.querySelector('#btnSubmitSenha').disabled = ''
+  }
+}
+
