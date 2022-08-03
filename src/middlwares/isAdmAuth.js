@@ -1,16 +1,9 @@
-const db = require('../models/index')
-const Administrador = db.Administrador
+const jwt = require("jsonwebtoken")
+const secret = process.env.JWT_TOKEN
 require("dotenv").config()
 
-const secret = process.env.JWT_TOKEN
 
-const LocalStorage = require('node-localstorage').LocalStorage
-localStorage = new LocalStorage('./scratch')
-
-const jwt = require("jsonwebtoken")
-const AdministradorRepository = require('../repository/administrador-repository')
-
-const ComAuthAdm = (req, res, next) => {
+const isAdmAuth = (req, res, next) => {
   try {
     const { adm } = req.cookies
 
@@ -37,4 +30,4 @@ const ComAuthAdm = (req, res, next) => {
   }
 }
 
-module.exports = ComAuthAdm
+module.exports = isAdmAuth
