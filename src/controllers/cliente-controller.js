@@ -65,10 +65,13 @@ const clienteController = {
             return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
         }
     },
-    loginView: (_req, res) => {
+    loginView: (req, res) => {
+        const { cliente } = req.cookies
+        if (cliente) res.redirect('/user/conta')
         return res.status(200).render('login', { error: '' })
     },
     login: async (req, res) => {
+
         try {
             const { email, senha } = req.body
             const result = await clienteRepository.buscaEmail(email)
