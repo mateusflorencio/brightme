@@ -42,6 +42,10 @@
   display: flex;
 }
 
+.d-none {
+  display: none;
+}
+
 .space-between{
   justify-content: space-between;
 }
