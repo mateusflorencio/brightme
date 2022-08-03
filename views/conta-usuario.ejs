@@ -20,24 +20,32 @@
                     <div class="img__cliente">
                         <% if(data){ %>
                             <img src=" <%= data.image %> " alt="">
-                           
-                                <div class="mt-sm">
-                                    <form id="img__cliente" method="post" enctype="multipart/form-data">
-                                        <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
-                                        <input onchange="changeImage()" id='selecao-arquivo' type='file'>
-                                        <button class="btn__submit" type="submit"></button>
-                                    </form>
-                                </div>
+
+                            <div class="mt-sm">
+                                <form id="img__cliente" method="post" enctype="multipart/form-data">
+                                    <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
+                                    <input id='selecao-arquivo' type='file'>
+                                    <button class="btn__submit" type="submit"></button>
+                                </form>
+                            </div>
 
                     </div>
                 </div>
                 <div class="info__cliente">
-                    <strong>Nome:</strong>  <%= data.cliente.nome %> <%= data.cliente.sobrenome %><br>
-                    <strong>Telefone:</strong> <label class="telefone"> <%= data.cliente.telefone %> </label> <br> 
-                    <strong>Email:</strong> <%= data.cliente.email %> <br>
-                    <strong>CPF:</strong>  <label class="cpf"> <%= data.cliente.cpf %> </label> <br>
-                    <strong>Endereço:</strong> Rua jose maria, 8, Vila Maruitá, São Caetano, SP, 09999-999 <br>
-                    <% } %>
+                    <strong>Nome:</strong>
+                    <%= data.cliente.nome %>
+                        <%= data.cliente.sobrenome %><br>
+                            <strong>Telefone:</strong> <label class="telefone">
+                                <%= data.cliente.telefone %>
+                            </label> <br>
+                            <strong>Email:</strong>
+                            <%= data.cliente.email %> <br>
+                                <strong>CPF:</strong> <label class="cpf">
+                                    <%= data.cliente.cpf %>
+                                </label> <br>
+                                <strong>Endereço:</strong> Rua jose maria, 8, Vila Maruitá, São Caetano, SP, 09999-999
+                                <br>
+                                <% } %>
                 </div>
             </div>
             <br>
@@ -63,7 +71,7 @@
                         <label for="email">Alterar e-mail</label><br>
                         <input class="w-100 input " type="email" name="email" id="email"
                             placeholder="Insira seu novo e-mail" oninput="ativarBtnUpdateEmail()">
-                        <button class="btn mt-sm"id="btnUpdateEmail" disabled="disabled" onclick="atualizarCliente()">
+                        <button class="btn mt-sm" id="btnUpdateEmail" disabled="disabled" onclick="atualizarCliente()">
                             Alterar e-mail
                         </button><br>
                     </form>
@@ -75,18 +83,21 @@
 
                         <input class="input w-100 mt-sm" type="password" id="passwordConfirm"
                             placeholder="Insira sua nova senha outra vez" oninput="senhaEstaCorreta()"><br>
-                            <p class="aviso__senha"></p>
-                            <p class="aviso__senha__size"></p>
-                        <button class="btn mt-sm" id="btnSubmitSenha" disabled="disabled" onclick="atualizarCliente()">Alterar Senha</button><br>
+                        <p class="aviso__senha"></p>
+                        <p class="aviso__senha__size"></p>
+                        <button class="btn mt-sm" id="btnSubmitSenha" disabled="disabled"
+                            onclick="atualizarCliente()">Alterar Senha</button><br>
                     </form>
                 </div>
             </section>
             <div class="btn__footer">
 
-            <button onclick="encerrarSessao()" class="btn bg-blue t-white pd-sm">Sair</button>
-            <button onclick="deleteConta()" class="btn bg-red t-white pd-sm">Apagar Conta</button>
-        </div>
+                <button onclick="encerrarSessao()" class="btn bg-blue t-white pd-sm">Sair</button>
+                <button onclick="deleteConta()" class="btn bg-red t-white pd-sm">Apagar Conta</button>
+            </div>
         </section> <br>
+
+
         <%- include('./partials/footer') %>
 
 </body>

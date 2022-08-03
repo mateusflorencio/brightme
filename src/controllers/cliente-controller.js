@@ -158,6 +158,22 @@ const clienteController = {
         } catch (error) {
             res.status(500).json({ err: error })
         }
+    },
+    atualizarImageCliente: (req, res) => {
+        const { img, id } = req.body
+
+        try {
+            const path = `./public/image/clientes/cliente${id}`
+
+            fs.writeFileSync(path, img, err => {
+                if (err) {
+                    return '500'
+                }
+            })
+            res.status(200)
+        } catch (error) {
+            res.status(500)
+        }
     }
 }
 
