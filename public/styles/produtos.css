@@ -1,5 +1,12 @@
 @import url(./main.css);
 
+.container-fluid {
+  padding: 2rem;
+  width: 100%;
+}
+.btn__filter{
+  display: none;
+}
 .rigth {
   width: 20%;
   margin-right: 2rem;
@@ -52,12 +59,44 @@
 
 /* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
 
-.options{
+.options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 1rem;
   width: 100%;
-  max-width: 1440px;
-  justify-content: center;
+  max-width: 75vw;
+  justify-items: center;
   align-items: center;
+}
+
+@media(max-width:910px) {
+
+  .container-fluid {
+    flex-direction: column;
+  }
+  .rigth{
+    display: none;
+  }
+
+  .rigth.on{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom: 20rem;
+  }
+
+  .btn__filter{
+    display: block;
+    z-index: 10;
+    position: absolute;
+    right: 1rem;
+    top: 11.5rem;
+    width: 6rem;
+    font-size: 1rem;
+  }
+
+  .options{
+    max-width: 100vw;
+  }
 }
