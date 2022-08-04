@@ -27,10 +27,10 @@
 }
 
 .image__prod{
-  max-width: 8rem;
+  max-width:90%;
+  max-height: 90%;
   position: relative;
 }
-
 .prod__price{
   font-size: 2rem;
 }
@@ -49,6 +49,18 @@
 
 .mg--rigth--sm{
   margin-right:  1rem;
+}
+
+.h--40{
+  height: 40%;
+}
+
+.h--50{
+  height: 60%;
+}
+
+.h--10{
+  height: 10%;
 }
 
 /* KITS PROMOCIONAIS e OS MAIS PEDIDOS */

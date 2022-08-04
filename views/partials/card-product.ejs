@@ -2,16 +2,21 @@
   <% for(const n of data.produtos) { %>
     <a href="produtos/produto/<%= n.id %>" class="link">
       <div class="card__prod all-center">
-        <img class="image__prod" src="../.<%= n.Images[0].url %>" alt="">
+        <div class="h--40 all-center">
+          <img class="image__prod" src="../.<%= n.Images[0].url %>" alt="">
+        </div>
 
-        <p class="mt-20 grey--80">
-         <strong><%= n.nome %></strong> 
-          <%= n.titulo %>
-        </p>
-
-        <p class="azul--60 mt-20">R$<strong class="prod__price"> <%= n.preco %>,00</strong>
-         
-        </p>
+        
+          <p class="grey--80 h--50"> <br>
+            <strong>
+              <%= n.nome %>
+            </strong> <br>
+            <%= n.titulo %>
+          </p> <br>
+          <p class="azul--60 h--10">R$<strong class="prod__price">
+              <%= n.preco %>,00
+            </strong></p>
+        
       </div>
     </a>
     <% }%>
