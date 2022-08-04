@@ -1,8 +1,8 @@
 const fs = require('fs')
 const { cpfValidator, validationResult } = require('./validacoes')
 const { decrypt, encrypt } = require('../repository/util/encrypter')
-const { buscarCLiente, ClienteRepository } = require('../repository')
-const NewClienteDto = require('../models/dto/new-cliente-dto')
+const { buscarCLiente, ClienteRepository, CarrinhoRepository } = require('../repository')
+const { NewCarrinhoDTO, NewClienteDTO } = require('../models/dto')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index')
 require('dotenv').config()
@@ -10,6 +10,7 @@ require('dotenv').config()
 const Cliente = db.Cliente
 const secret = process.env.JWT_TOKEN
 const clienteRepository = new ClienteRepository()
+const carrinhoRepository = new CarrinhoRepository()
 
 const clienteController = {
     index: (_req, res) => {
@@ -44,7 +45,7 @@ const clienteController = {
                 return res.status(400).render('cadastro', { error: buscarCLienteResult, errorValidacao: [] })
             }
             const hashedPassword = await encrypt(senha)
-            const newCliente = new NewClienteDto(nome, sobrenome, hashedPassword, email, telefone, CPF)
+            const newCliente = new NewClienteDTO(nome, sobrenome, hashedPassword, email, telefone, CPF)
             const result = await clienteRepository.cadastro(newCliente)
             if (!result) {
                 return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
@@ -65,9 +66,7 @@ const clienteController = {
             return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
         }
     },
-    loginView: (req, res) => {
-        const { cliente } = req.cookies
-        if (cliente) res.redirect('/user/conta')
+    loginView: (_req, res) => {
         return res.status(200).render('login', { error: '' })
     },
     login: async (req, res) => {
@@ -176,6 +175,34 @@ const clienteController = {
             res.status(200)
         } catch (error) {
             res.status(500)
+        }
+    },
+    carrinhoView: async (req, res) => {
+        const { cliente } = req.cookies
+
+        try {
+            const result = await clienteRepository.buscaEmail(cliente[0])
+            const cart = await carrinhoRepository.buscarTodosPorId(result.id)
+
+            if (!cart) return res.render('carrinho', { data: { carrinho: '', error: 'Seu carrinho está vazinho' } })
+
+            return res.render('carrinho', { data: { carrinho: cart, error: '' } })
+
+        } catch (error) {
+            return res.status(500).render('error', { error: error })
+        }
+    },
+    adicionarProdCarrinho: async (req, res) => {
+        const { produtoId, clienteId } = req.body
+
+        try {
+            const newCart = new NewCarrinhoDTO(clienteId, produtoId)
+            await carrinhoRepository.criarNovo(newCart)
+
+            res.status(201).json('ok')
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json('error')
         }
     }
 }
