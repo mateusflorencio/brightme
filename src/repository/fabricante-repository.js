@@ -25,6 +25,13 @@ module.exports = class FabricanteRepository {
     } catch (error) {
       throw new Error(error)
     }
+  }
 
+  async delete(id) {
+    try {
+      await Fabricante.destroy({ where: { id } })
+    } catch (error) {
+      throw new Error(error)
+    }
   }
 }

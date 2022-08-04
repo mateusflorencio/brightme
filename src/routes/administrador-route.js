@@ -11,8 +11,11 @@ routes.post('/login', admController.login)
 
 routes.get('/', isAdmAuth, admController.painelAdministrativo)
 
-routes.post('/categoria', admController.criarCategoria)
-routes.post('/fabricante', admController.criarFabricante)
+routes.post('/categoria', isAdmAuth, admController.criarCategoria)
+routes.post('/fabricante', isAdmAuth, admController.criarFabricante)
+
+routes.delete('/categoria/:id', isAdmAuth, admController.deleteCategoria)
+routes.delete('/fabricante/:id', isAdmAuth, admController.deleteFabricante)
 
 
 

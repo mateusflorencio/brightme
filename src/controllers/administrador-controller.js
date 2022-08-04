@@ -97,5 +97,27 @@ module.exports = AdministradorController = {
     } catch (error) {
       res.status(500).json(error)
     }
+  },
+  deleteCategoria: async (req, res) => {
+    const { id } = req.params
+
+    try {
+      await catRepo.delete(id)
+
+      res.status(204).json('ok')
+    } catch (error) {
+      res.status(500).json(error)
+    }
+  },
+  deleteFabricante: async (req, res) => {
+    const { id } = req.params
+
+    try {
+      await fabricanteRepo.delete(id)
+
+      res.status(204).json('ok')
+    } catch (error) {
+      res.status(500).json(error)
+    }
   }
 }

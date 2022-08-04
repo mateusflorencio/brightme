@@ -31,5 +31,27 @@ function deleteProd(any) {
     .then(() => location.reload())
 }
 
+function deleteFabricante(any) {
+  fetch(`/administrador/fabricante/${any.id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'delete'
+  })
+    .then(() => location.reload())
+}
+
+function deleteCategoria(any) {
+  fetch(`/administrador/categoria/${any.id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'delete'
+  })
+    .then(() => location.reload())
+}
+
 
 

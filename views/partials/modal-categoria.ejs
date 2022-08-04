@@ -14,13 +14,14 @@
       <% if (data.categorias) { %>
         <% for(const n of data.categorias) { %>
 
-          <li class="list">
-            <%= n.id %> : <%= n.nome %>
+          <li class="list mt-sm d-flex space-between">
+            <%= n.id %> : <%= n.nome %> <button id=" <%= n.id %>" onclick="deleteCategoria(this)"
+                  class="btn bg-red"><img src="./image/trash.svg" alt=""></button>
           </li>
 
           <% } %>
-        <% } %>
-      </ul>
+            <% } %>
+              </ul>
     </div>
   </div>
 </div>

@@ -25,6 +25,13 @@ module.exports = class CategoriaRepository {
     } catch (error) {
       throw new Error(error)
     }
+  }
 
+  async delete(id) {
+    try {
+      await Categoria.destroy({ where: { id } })
+    } catch (error) {
+      throw new Error(error)
+    }
   }
 }
