@@ -13,6 +13,14 @@ module.exports = class ProdutoRepository {
 
   async buscarTodos() {
     try {
+      return await Produto.findAll()
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  async buscarTodosComImage() {
+    try {
       return await Produto.findAll({ include: ['Images'] })
     } catch (error) {
       throw new Error(error)

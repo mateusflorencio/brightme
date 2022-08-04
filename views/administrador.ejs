@@ -26,7 +26,7 @@
         onclick="fecharModal('deleteProduto')">x</button> </div>
 
 
-      <%- include('./partials/modal-categoria') %>
+    <%- include('./partials/modal-categoria') %>
       <%- include('./partials/modal-fabricante') %>
 
         <!-- Inicio -->
@@ -91,37 +91,14 @@
               <a href="/produtos/criar" class="btn bg-blue t-white mg-1 w-100 link">+ Produto</a>
               <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarCategoria')">+
                 Categoria</button>
-                <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarFabricante')">+
-                  Fabricante</button>
+              <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarFabricante')">+
+                Fabricante</button>
             </div>
 
             <!-- Ads -->
             <div class="ads"><img src="" alt=""></div>
             <!-- Administracao de produtos -->
-            <div class="produtos__info w-100 bg-grey mt-20">
-              <div class="produto__info w-100 d-flex">
-                <h4>Produto 1</h4>
-                <p>20</p>
-                <div class="d-flex">
-                  <div class="bg-green w-100" onclick="abrirModal('editarProduto')"><img src="./image/pencil-square.svg"
-                      alt="">
-                  </div>
-                  <div class="bg-red w-100" onclick="abrirModal('deleteProduto')"><img src="./image/trash.svg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="produto__info w-100 d-flex">
-                <h4>Produto 1</h4>
-                <p>20</p>
-                <div class="d-flex">
-                  <div class="bg-green w-100" onclick="abrirModal('editarProduto')"><img src="./image/pencil-square.svg"
-                      alt="">
-                  </div>
-                  <div class="bg-red w-100" onclick="abrirModal('deleteProduto')"><img src="./image/trash.svg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%- include('./partials/adm-lista-produtos') %>
           </section>
 
         </div>

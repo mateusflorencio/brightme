@@ -39,7 +39,7 @@ const produtoController = {
                 await imgRepo.criar(img)
             }
 
-            res.redirect('/')
+            res.redirect('/administrador')
         } catch (error) {
             console.log(error)
             res.status(500).render('error', { error: error })
