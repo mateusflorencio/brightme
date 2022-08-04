@@ -11,7 +11,7 @@ module.exports = class CategoriaRepository {
     }
   }
 
-  async buscarTodasCategorias() {
+  async buscarTodos() {
     try {
       return await Categoria.findAll()
     } catch (error) {
