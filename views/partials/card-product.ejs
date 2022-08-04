@@ -1,23 +1,17 @@
 <% if(data.produtos) {%>
   <% for(const n of data.produtos) { %>
-
-
-
     <a href="produtos/produto/<%= n.id %>" class="link">
-      <div class="promo-cards card all-center">
-        <div class="promo-card-image"><img src="../.<%= n.Images[0].url %>" w height="100vh" alt="">
-        </div>
-        <div class="promo-card-title">
-          <%= n.nome %>
-        </div>
-        <!-- <div class="promo-card-title">
+      <div class="card__prod all-center">
+        <img class="image__prod" src="../.<%= n.Images[0].url %>" alt="">
+
+        <p class="mt-20 grey--80">
+         <strong><%= n.nome %></strong> 
           <%= n.titulo %>
-        </div> -->
-        <div class="promo-card-price d-flex">
-          <div class="promo-card-price bg-grey t-white">-</div>
-          <div class="promo-card-price  bg-green t-white">R$<%= n.preco %>,00</div>
-          <div class="promo-card-price bg-grey  t-white">+</div>
-        </div>
+        </p>
+
+        <p class="azul--60 mt-20">R$<strong class="prod__price"> <%= n.preco %>,00</strong>
+         
+        </p>
       </div>
     </a>
     <% }%>

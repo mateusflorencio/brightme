@@ -12,8 +12,9 @@ const produtoController = {
         try {
             const produtos = await prodRepo.buscarTodosComImage()
             const categorias = await cateRepo.buscarTodos()
+            const fabricantes = await fabRepo.buscarTodos()
             // res.json(produtos)
-            return res.render('produtos', { data: { produtos: produtos, categorias: categorias } })
+            return res.render('produtos', { data: { produtos: produtos, categorias: categorias, fabricantes: fabricantes } })
         } catch (error) {
             res.render('error', { error: error })
         }
@@ -24,7 +25,7 @@ const produtoController = {
         try {
             const produto = await prodRepo.buscarIdComImagens(id)
             // res.json(produto)
-           return res.render('produto', { data: { produto: produto } })
+            return res.render('produto', { data: { produto: produto } })
         } catch (error) {
             res.render('error', { error: error })
         }

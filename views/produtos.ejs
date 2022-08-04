@@ -19,34 +19,32 @@
     <section class="mt-40 container-fluid d-flex">
 
       <section class="rigth card">
-        <h3>Tipo </h3>
-        <div class="d-flex mt-20">
-          <div class="selection"></div>Kit
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Álcool
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Essências
-        </div>
-        <h3 class="mt-20">Preço</h3>
+        <h3>Categoria </h3>
+        <% if(data.categorias) {%>
+          <% for(const n of data.categorias) { %>
+            <div class="d-flex mt-sm"><input class="mg--rigth--sm" type="checkbox" name="<%= n.id %>">
+              <%= n.nome %>
+            </div>
 
-        <input type="number" name="preco-min" id="" class="mt-20 card input-price" placeholder="min">
-        <input type="number" name="preco-max" id="" class="mt-20 card input-price" placeholder="max">
+            <% }%>
+              <% }%>
+                <br>
+                <h3>Fabricantes </h3>
+                <% if(data.fabricantes) {%>
+                  <% for(const n of data.fabricantes) { %>
+                    <div class="d-flex mt-sm"><input class="mg--rigth--sm" type="checkbox" name="<%= n.id %>">
+                      <%= n.nome %>
+                    </div>
 
-        <h3 class="mt-20">Aroma</h3>
-        <div class="d-flex mt-20">
-          <div class="selection"></div>Alecrim
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Laranja
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Lavanda
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Menta
-        </div>
+                    <% }%>
+                      <% }%>
+
+
+                        <h3 class="mt-20">Preço</h3>
+
+                        <input type="number" name="preco-min" id="" class="mt-20 input" placeholder="min">
+                        <input type="number" name="preco-max" id="" class="mt-20 input" placeholder="max">
+
       </section>
       <section class="left ">
         <h2>Produtos</h2>
@@ -59,18 +57,17 @@
     <section class="container mt-40">
       <div class="d-flex all-center">
         <div class="selection-page">
+          < </div>
+            <div class="selection-page active">1</div>
+            <div class="selection-page">2</div>
+            <div class="selection-page">3</div>
+            <div class="selection-page">
+              > </div>
         </div>
-        <div class="selection-page active">1</div>
-        <div class="selection-page">2</div>
-        <div class="selection-page">3</div>
-        <div class="selection-page">
-          > </div>
-      </div>
     </section>
     <div class="mt-40"></div>
 
     <%- include('./partials/footer') %>
-      <div class="bg__filter__mobile"></div>
 </body>
 
 </html>
