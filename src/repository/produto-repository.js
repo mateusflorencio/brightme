@@ -11,6 +11,14 @@ module.exports = class ProdutoRepository {
     }
   }
 
+  async buscarIdComImagens(id) {
+    try {
+      return await Produto.findOne({ where: { id }, include:["Images"] })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
   async buscarTodos() {
     try {
       return await Produto.findAll()

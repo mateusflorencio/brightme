@@ -2,28 +2,44 @@ const { CategoriaRepository, FabricanteRepository, ProdutoRepository, ImageRepos
 const { newImageDTO, newProdutoDTO } = require('../models/dto')
 const path = require('path')
 
-const cateRrepo = new CategoriaRepository()
+const cateRepo = new CategoriaRepository()
 const fabRepo = new FabricanteRepository()
 const prodRepo = new ProdutoRepository()
 const imgRepo = new ImageRepository()
 
 const produtoController = {
     listaTodosOsProdutos: async (_req, res) => {
-        const result = await prodRepo.buscarTodos()
-        res.json(result)
+        try {
+            const produtos = await prodRepo.buscarTodosComImage()
+            const categorias = await cateRepo.buscarTodos()
+            // res.json(produtos)
+            return res.render('produtos', { data: { produtos: produtos, categorias: categorias } })
+        } catch (error) {
+            res.render('error', { error: error })
+        }
     },
-    showProduto: (req, res) => {
+    showProduto: async (req, res) => {
         const { id } = req.params
+
+        try {
+            const produto = await prodRepo.buscarIdComImagens(id)
+            // res.json(produto)
+           return res.render('produto', { data: { produto: produto } })
+        } catch (error) {
+            res.render('error', { error: error })
+        }
         res.status(200).render('produto', { produto: id })
     },
     criarView: async (_req, res) => {
-        const cat = await cateRrepo.buscarTodasCategorias()
+        const cat = await cateRepo.buscarTodos()
         const fab = await fabRepo.buscarTodos()
         return res.render('add-produto', { data: { categorias: cat, fabricantes: fab } })
     },
     cadastrar: async (req, res) => {
         const { nome, titulo, descricao, preco, categoriaId, fabricanteId, qtdEstoque, sizeFiles } = req.body
         try {
+
+            if (!sizeFiles) return res.status(500).render('error', { error: 'todos os campos são obrigatórios' })
 
             const prod = new newProdutoDTO(nome, preco, titulo, descricao, categoriaId, fabricanteId, qtdEstoque)
             const resNewCliente = await prodRepo.criar(prod)
@@ -33,7 +49,8 @@ const produtoController = {
             }
 
             for (let i = 1; i <= sizeFiles; i++) {
-                const pathImages = path.resolve(__dirname, '..', '..', 'public', 'image', 'produtos', `prod${resNewCliente.id}-${i}`)
+
+                const pathImages = `./image/produtos/prod${resNewCliente.id}-${i}.jpg`
                 const img = new newImageDTO(pathImages, resNewCliente.id)
                 await imgRepo.criar(img)
             }
@@ -53,7 +70,7 @@ const produtoController = {
 
             return res.status(204).json('ok')
         } catch (error) {
-            console.log(error);
+            console.log(error)
             res.status(500).json(error)
         }
     }

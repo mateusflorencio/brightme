@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,100 +10,83 @@
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <script src="../../public/script/menu.js" defer></script>
+    <script src="../../script/menu.js" defer></script>
 
     <title>Alcool em gel</title>
 </head>
 <%- include('./partials/header') %>
 
     <body>
-        <% if(produto){ %>
-            <%= produto %>
-                <% } %>
-                    <section class="container mt-40">
-                        <h1>Alcool 70º</h1>
-                        <br>
 
 
-            <!-- COLUNA 1 -->
-            <div class="container-display">
-                <div class="col-images">
-                    <div class="div-img-product-main card">
-                        <img class="img-product-main" src="./image/imagens-descricao-produto/liquido.jpg" alt="">
-                    </div>
-                    <div class="div-picture-produts d-flex">
-                        <img class="picture-produts-item card"
-                            src="./image/imagens-descricao-produto/Duo_gel_liquido.jpeg" alt="">
-                        <img class="picture-produts-item card"
-                            src="./image/imagens-descricao-produto/Duo_gel_liquido_3.jpeg" alt="">
-                        <img class="picture-produts-item card"
-                            src="./image/imagens-descricao-produto/Duo_gel_liquido_2.jpeg" alt="">
-                    </div>
-                </div>
-                <!-- COLUNA 2 -->
-                <section class="col-info">
+        <section class="container__fluid">
+            <% if(data.produto){ %>
+                <h1>
+                    <%= data.produto.titulo %>
+                </h1>
+                <br>
 
 
-                                <div class="star">
-                                    <em class="bi bi-star-fill"></em>
-                                    <em class="bi bi-star-fill"></em>
-                                    <em class="bi bi-star-fill"></em>
-                                    <em class="bi bi-star-fill"></em>
-                                    <em class="bi bi-star-fill"></em>
-                                </div>
+                <!-- COLUNA 1 -->
+                <div class="container-display">
+                    <section class="col-images">
+                        <div class="div-img-product-main card">
+                            <img class="img-product-main" src="../.<%= data.produto.Images[0].url %>" alt="">
+                        </div>
+                        <div class="div-picture-produts d-flex">
+                            <img class="picture-produts-item card" src="../../image/produtos/prod33-1.jpg" alt="">
 
-                                <h2 class="mt-20">ÁLCOOL EM GEL 70º COM ÓLEOS ESSENCIAIS</h2>
+                        </div>
+                    </section>
+                    <!-- COLUNA 2 -->
+                    <section class="col-info">
 
 
-                    <h4 class="mt-20">Elimina 99,9% de vírus, fungos e bactérias</h3><br>
-                        <p>
-                            O grande diferencial do gel higienizante da Brightme é que ele não deixa sua
-                            pele ressecada. Ele
-                            possui extrato de aloe vera e glicerina, que hidrata suas mãos com um frescor agradável, além de hidratar a sua pele.
-                        </p>
-
-                </section>
-                <!-- COLUNA 3 -->
-                <section class="col-buy card">
-
-                    <h2>R$xx,xx</h2>
-                    <p class="t-grey-700" style="font-size: 1.2rem;">Diversas formas de pagamentos disponíveis</p>
-
-                    <div class="mt-40">
-                        <button class="w-100 btn-primary">
-                            Comprar
-                        </button>
-                        <button class="w-100 btn-secondary mt-20">
-                            Adicionar
-                        </button>
-                    </div>
-                    <form class="mt-40">
-                        <label for="frete">Calcule o Frete</label><br>
-                        <div class="d-flex"><input class="card" style="height:3.5rem; margin-right: 1rem;" type="text"
-                                name="frete" id="frete" placeholder="Insira o CEP">
-                            <button class="btn" style="width:4rem; height: 4.5rem;" type="submit">OK</button>
+                        <div class="star">
+                            <em class="bi bi-star-fill"></em>
+                            <em class="bi bi-star-fill"></em>
+                            <em class="bi bi-star-fill"></em>
+                            <em class="bi bi-star-fill"></em>
+                            <em class="bi bi-star-fill"></em>
                         </div>
 
+                        <h2 class="mt-20">
+                            <%= data.produto.nome %>
+                        </h2>
 
-                                </form>
-                            </section>
+                        <br>
+                        <p>
+                            <%= data.produto.descricao %>
+                        </p>
 
+                    </section>
+                    <!-- COLUNA 3 -->
+                    <section class="col-buy card">
 
-            </div>
-            <br>
-            <!-- VOCÊ PODE GOSTAR DE -->
-            <h2 class="mt-40">Você também pode gostar de......</h2>
-            <br>
-            <div class="options grid">
-                <%- include('./partials/card-product') %>
-                    <%- include('./partials/card-product') %>
-                        <%- include('./partials/card-product') %>
-            </div>
+                        <h2>R$<%= data.produto.preco %>,00</h2> <br>
+                        <p class="t-grey-700">Diversas formas de pagamentos disponíveis
+                        </p>
+                        <% } %>
+                            <br> <br>
+
+                            <button class="w-100 btn bg-rosa t-white">
+                                Comprar
+                            </button> <br>
+                            <button class="w-100 btn bg-grey-700 t-white">
+                                Adicionar
+                            </button>
+
+                            <form class="mt-40">
+                                <label for="frete">Calcule o Frete</label><br>
+                                <div class="d-flex"><input class="input" type="text" name="frete" id="frete"
+                                        placeholder="Insira o CEP">
+                                    <button class="btn" type="submit">OK</button>
+                                </div>
+                            </form>
+                    </section>
+                </div>
         </section>
-        <br>
-        <br>
         <%- include('./partials/footer') %>
-
     </body>
 
 </html>

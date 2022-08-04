@@ -1,11 +1,24 @@
-<a href="produto" class="link">
-  <div class="promo-cards card all-center">
-    <div class="promo-card-image"><img src="./image/imagens-descricao-produto/em-gel.jpg" w height="100vh" alt=""></div>
-    <div class="promo-card-title">Kit com essências exclusivas</div>
-    <div class="promo-card-price d-flex">
-      <div class="promo-card-price bg-grey t-white">-</div>
-      <div class="promo-card-price  bg-green t-white">R$XX,XX</div>
-      <div class="promo-card-price bg-grey  t-white">+</div>
-    </div>
-  </div>
-</a>
+<% if(data.produtos) {%>
+  <% for(const n of data.produtos) { %>
+
+
+
+    <a href="produtos/produto/<%= n.id %>" class="link">
+      <div class="promo-cards card all-center">
+        <div class="promo-card-image"><img src="../.<%= n.Images[0].url %>" w height="100vh" alt="">
+        </div>
+        <div class="promo-card-title">
+          <%= n.nome %>
+        </div>
+        <!-- <div class="promo-card-title">
+          <%= n.titulo %>
+        </div> -->
+        <div class="promo-card-price d-flex">
+          <div class="promo-card-price bg-grey t-white">-</div>
+          <div class="promo-card-price  bg-green t-white">R$<%= n.preco %>,00</div>
+          <div class="promo-card-price bg-grey  t-white">+</div>
+        </div>
+      </div>
+    </a>
+    <% }%>
+      <% }%>

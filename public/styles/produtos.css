@@ -1,5 +1,8 @@
 @import url(./main.css);
 
+.promo-cards.card{
+  height:20rem !important;
+}
 .container-fluid {
   padding: 2rem;
   width: 100%;
@@ -11,7 +14,7 @@
   width: 20%;
   margin-right: 2rem;
   max-height: 50rem;
-  margin-top: 5.5rem;
+  margin-top: 6.2rem;
 }
 
 .input-price {
