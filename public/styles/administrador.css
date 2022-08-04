@@ -107,7 +107,7 @@
     top: auto;
   }
 
-  .modal__categoria {
+  .modal__categoria, .modal__fabricante {
     flex-direction: column;
   }
 }
