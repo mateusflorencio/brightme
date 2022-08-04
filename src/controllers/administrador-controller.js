@@ -56,7 +56,7 @@ module.exports = AdministradorController = {
   },
   painelAdministrativo: async (_req, res) => {
     try {
-      const categorias = await catRepo.buscarTodasCategorias()
+      const categorias = await catRepo.buscarTodos()
       const fabricante = await fabricanteRepo.buscarTodos()
       const produtos = await prodRepo.buscarTodos()
 
