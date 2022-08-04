@@ -34,4 +34,12 @@ module.exports = class ProdutoRepository {
       throw new Error(error)
     }
   }
+
+  async delete(id) {
+    try {
+      return await Produto.destroy({ where: { id } })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }

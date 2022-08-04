@@ -27,4 +27,15 @@ module.exports = class ImageRepository {
       throw new Error(error)
     }
   }
+
+  async deleteComProduto(produtoId) {
+    try {
+      await Image.destroy({ where: { produtoId } })
+
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+
 }

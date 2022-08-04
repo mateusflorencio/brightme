@@ -19,3 +19,17 @@ function encerrarSessao() {
     })
   window.location.pathname = '/'
 }
+
+function deleteProd(any) {
+  fetch(`/produtos/delete/${any.id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'delete'
+  })
+    .then(() => location.reload())
+}
+
+
+

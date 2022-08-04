@@ -15,100 +15,93 @@
 <body>
   <%- include('./partials/header') %>
 
+            <!-- Inicio -->
+            <div class="container__section mt-20 d-flex">
+              <!-- listage de pedidos -->
+              <section class="rigth">
+                <label class="titulo-large">Pedidos</label>
+                <div class="lista__order mt-20">
+                  <ul>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                    <li class="list">
+                      <h5>2545664654</h5>
+                      <p>Kit com 4 gel laranja</p>
+                      <p>Pago</p>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section class="left">
 
-    <!-- Modals-->
+                <!--- Btn -->
+                <div class="btn_add d-flex">
+                  <a href="/produtos/criar" class="btn bg-blue t-white mg-1 w-100 link">+ Produto</a>
+                  <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarCategoria')">+
+                    Categoria</button>
+                  <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarFabricante')">+
+                    Fabricante</button>
+                </div>
+
+                <!-- Ads -->
+                <div class="ads"><img src="" alt=""></div>
+                <!-- Administracao de produtos -->
+                <%- include('./partials/adm-lista-produtos') %>
+              </section>
+
+            </div>
+            <div class="all-center mt-20">
+              <button class="sair bg-red btn t-white" onclick="encerrarSessao()">Sair</button>
+            </div>
+
+            <br>
+
+             <!-- Modals-->
     <div class="fundoModal"></div>
 
-    <div class="modal" id="editarProduto">modalEditarProduto <button class="btn t-red btn__fechar-modal"
-        onclick="fecharModal('editarProduto')">x</button></div>
+    <%- include('./partials/modal-editar-produto') %>
+        <%- include('./partials/modal-categoria') %>
+          <%- include('./partials/modal-fabricante') %>
 
-    <div class="modal" id="deleteProduto">modalDeleteProduto <button class="btn t-red btn__fechar-modal"
-        onclick="fecharModal('deleteProduto')">x</button> </div>
-
-
-    <%- include('./partials/modal-categoria') %>
-      <%- include('./partials/modal-fabricante') %>
-
-        <!-- Inicio -->
-        <div class="container__section mt-20 d-flex">
-          <!-- listage de pedidos -->
-          <section class="rigth">
-            <label class="titulo-large">Pedidos</label>
-            <div class="lista__order mt-20">
-              <ul>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-                <li class="list">
-                  <h5>2545664654</h5>
-                  <p>Kit com 4 gel laranja</p>
-                  <p>Pago</p>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <section class="left">
-
-            <!--- Btn -->
-            <div class="btn_add d-flex">
-              <a href="/produtos/criar" class="btn bg-blue t-white mg-1 w-100 link">+ Produto</a>
-              <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarCategoria')">+
-                Categoria</button>
-              <button class="btn bg-green t-white mg-1  w-100" onclick="abrirModal('adicionarFabricante')">+
-                Fabricante</button>
-            </div>
-
-            <!-- Ads -->
-            <div class="ads"><img src="" alt=""></div>
-            <!-- Administracao de produtos -->
-            <%- include('./partials/adm-lista-produtos') %>
-          </section>
-
-        </div>
-        <div class="all-center mt-20">
-          <button class="sair bg-red btn t-white" onclick="encerrarSessao()">Sair</button>
-        </div>
-
-        <br>
-
-        <%- include('./partials/footer') %>
+            <%- include('./partials/footer') %>
 </body>
 
 </html>

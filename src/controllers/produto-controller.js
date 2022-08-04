@@ -1,6 +1,5 @@
 const { CategoriaRepository, FabricanteRepository, ProdutoRepository, ImageRepository } = require('../repository')
 const { newImageDTO, newProdutoDTO } = require('../models/dto')
-const fs = require('fs')
 const path = require('path')
 
 const cateRrepo = new CategoriaRepository()
@@ -43,6 +42,19 @@ const produtoController = {
         } catch (error) {
             console.log(error)
             res.status(500).render('error', { error: error })
+        }
+    },
+    delete: async (req, res) => {
+        const { id } = req.params
+
+        try {
+            await prodRepo.delete(id)
+            await imgRepo.deleteComProduto(id)
+
+            return res.status(204).json('ok')
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error)
         }
     }
 }

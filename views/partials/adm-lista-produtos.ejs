@@ -31,7 +31,8 @@
         <div class="d-flex">
           <div class="bg-green w-100" onclick="abrirModal('editarProduto')"><img src="./image/pencil-square.svg" alt="">
           </div>
-          <div class="bg-red w-100" onclick="abrirModal('deleteProduto')"><img src="./image/trash.svg" alt="">
+          <div class="bg-red w-100" id=" <%= prod.id %>" onclick="deleteProd(this)"><img
+              src="./image/trash.svg" alt="">
           </div>
         </div>
       </div>
