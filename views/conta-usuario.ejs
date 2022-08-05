@@ -24,7 +24,7 @@
                             <div class="mt-sm">
                                 <form id="img__cliente" method="post" enctype="multipart/form-data">
                                     <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
-                                    <input id='selecao-arquivo' type='file'>
+                                    <input required id='selecao-arquivo' type='file'>
                                     <button class="btn__submit" type="submit"></button>
                                 </form>
                             </div>
@@ -69,7 +69,7 @@
                     <form class="email" method="put">
                         <!-- alterar email-->
                         <label for="email">Alterar e-mail</label><br>
-                        <input class="w-100 input " type="email" name="email" id="email"
+                        <input required class="w-100 input " type="email" name="email" id="email"
                             placeholder="Insira seu novo e-mail" oninput="ativarBtnUpdateEmail()">
                         <button class="btn mt-sm" id="btnUpdateEmail" disabled="disabled" onclick="atualizarCliente()">
                             Alterar e-mail
@@ -78,10 +78,10 @@
 
                     <form action="">
                         <label for="senha">Alterar senha</label><br>
-                        <input class="input w-100" type="password" name="senha" id="senha"
+                        <input required class="input w-100" type="password" name="senha" id="senha"
                             placeholder="Insira sua nova senha" oninput="sizeAlertPassword()"><br>
 
-                        <input class="input w-100 mt-sm" type="password" id="passwordConfirm"
+                        <input required class="input w-100 mt-sm" type="password" id="passwordConfirm"
                             placeholder="Insira sua nova senha outra vez" oninput="senhaEstaCorreta()"><br>
                         <p class="aviso__senha"></p>
                         <p class="aviso__senha__size"></p>

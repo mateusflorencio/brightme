@@ -25,19 +25,19 @@
         <form action="" method="post" enctype="multipart/form-data">
 
             <label for="nome">Nome Produto</label> <br>
-            <input type="text" name="nome" id="" class="input w-100"><br> <br>
+            <input required type="text" name="nome" id="" class="input w-100"><br> <br>
 
             <label for="titulo">Titulo Produto</label> <br>
-            <input type="text" name="titulo" id="" class="input w-100"><br> <br>
+            <input required type="text" name="titulo" id="" class="input w-100"><br> <br>
 
             <label for="descricao">Descricão</label> <br>
-            <textarea class="w-100 input" name="descricao" id="" cols="30" rows="10"></textarea> <br><br>
+            <textarea required class="w-100 input" name="descricao" id="" cols="30" rows="10"></textarea> <br><br>
 
             <label for="preco">Preço</label> <br>
-            <input type="number" class=" input" name="preco"> <br><br>
+            <input required type="number" class=" input" name="preco"> <br><br>
 
             <label for="categoriaId">Selecione a Categoria</label> <br>
-            <select name="categoriaId" id="">
+            <select required name="categoriaId" id="">
                 <% if(data.categorias) { %>
                     <% for(const i of data.categorias) { %>
                         <option value=" <%=i.id %> ">
@@ -48,7 +48,7 @@
             </select> <br><br>
 
             <label for="fabricanteId">Selecione a Fabricante</label> <br>
-            <select name="fabricanteId" id="">
+            <select required name="fabricanteId" id="">
                 <% if(data.fabricantes) { %>
                     <% for(const i of data.fabricantes) { %>
                         <option value=" <%=i.id %> ">
@@ -59,10 +59,10 @@
             </select> <br><br>
 
             <label for="qtdEstoque">Quantos produtos em estoque?</label> <br>
-            <input type="number" class="input" name="qtdEstoque"> <br><br>
+            <input required type="number" class="input" name="qtdEstoque"> <br><br>
 
             <label for="image">Imagens do Produto</label> <br>
-            <input id="images" type="file" name="image" onchange="getSize()" multiple maxlength="3" id=""> <br><br>
+            <input required id="images" type="file" name="image" onchange="getSize()" multiple maxlength="3" id=""> <br><br>
             <input type="number" class="d-none" name="sizeFiles" id="sizeFiles">
 
             <button class="btn bg-green w-100 t-white " type="submit">Cadastrar Produto</button> <br><br>
