@@ -26,34 +26,39 @@
                     <div class="w-100 mt-20 col d-flex">
 
                         <% if(data.produtos) {%>
+
                             <% for(const n of data.produtos) { %>
                                 <div class="space-between d-flex mt-sm">
-                                    <div class="cart__img__container">
-                                        <img style="width: 5rem; height: 5rem;" class="cart__img" src="../.<%= n.Images[0].url %>"
-                                            alt=" <%= n.nome %>">
+                                    <div class="cart__img__container all-center">
+                                        <img style="width: 5rem; height: 5rem;" class="cart__img"
+                                            src="../.<%= n.Images[0].url %>" alt=" <%= n.nome %>">
                                     </div>
 
-                                    <div class="cart__title__container">
-                                        <strong><%= n.nome %></strong> <br>
+                                    <div class="cart__title__container pd-sm">
+                                        <strong>
+                                            <%= n.nome %>
+                                        </strong> <br>
                                         <%= n.titulo %>
                                     </div>
 
-                                    <div class="cart__preco__container">
-                                        <p class="">R$<strong class="prod__price">
-                                                <%= n.preco %>,00
-                                            </strong></p>
+                                    <div class="cart__preco__container all-center">
+                                        <strong class="">R$ <%= n.preco %>,00 </strong>
                                     </div>
 
-                                    <button id="<%= n.id %>" class="btn" onclick="deleteItemCart(this)">
+                                    <button id="<%= n.id %>" class="btn all-center mg-sm"
+                                        onclick="deleteItemCart(this)">
                                         x
                                     </button>
                                 </div>
+                                <div class="bg-grey w-100" style="height:1px;"></div>
                                 <% }%>
                                     <% }%>
                     </div>
                     <% if(data.produtos) {%>
-                        <strong class="mt-20"> Total:  <%= data.produtos.length %></strong>
-                            <% }%>
+                        <strong class="mt-20"> Total: <%= data.produtos.length %></strong>
+                        <% }%>
+
+
                 </div>
 
                 <div class="right card">
@@ -73,16 +78,19 @@
                     <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
                         rel="noopener noreferrer" class="link link__cep mt-sm">Não sei meu cep !</a>
 
-                    <strong class="mt-20"> Frete R$XX,XX</strong>
+                    <strong class="mt-20"> Frete Grátis</strong>
                     <strong class="mt-sm"> Desconto R$XX,XX</strong>
-                    <strong class="mt-sm"> Total R$XX,XX</strong>
+                    <% if(data.total) {%>
+                        <strong class="mt-sm"> Total : R$<%= data.total %>,00</strong>
+                        <% }%>
 
-                    <button class="btn bg-green t-white mt-20 w-100"><a class="link t-white" href="/finalizar">
-                            finalizar
-                            compra</a></button>
-                    <button class=" btn bg-rosa t-white mt-20 w-100"><a class="link t-white" href="/produtos"> continuar
-                            comprando
-                        </a></button>
+                            <button class="btn bg-green t-white mt-20 w-100"><a class="link t-white" href="/finalizar">
+                                    finalizar
+                                    compra</a></button>
+                            <a class="link t-white btn bg-rosa w-100 mt-sm" href="/produtos">
+                                continuar
+                                comprando
+                            </a>
                 </div>
                 </div>
 

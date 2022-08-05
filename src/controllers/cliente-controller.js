@@ -184,11 +184,14 @@ const clienteController = {
             const email = cliente[2].email
             const clienteRes = await clienteRepository.buscaEmail(email)
             const prods = []
+            let total = 0
             for (const cart of clienteRes.carrinho) {
-                prods.push(await prodRepository.buscarIdComImagens(cart.produtoId))
+                const res = await prodRepository.buscarIdComImagens(cart.produtoId)
+                prods.push(res)
+                total += res.preco
             }
 
-            return res.render('carrinho', { data: { produtos: prods } })
+            return res.render('carrinho', { data: { produtos: prods, total: total } })
 
         } catch (error) {
             return res.status(500).render('error', { error: error })
