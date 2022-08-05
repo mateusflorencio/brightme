@@ -28,6 +28,10 @@
   font-size: .7rem;
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 @media(max-width:840px) {
 
   .container__main{
