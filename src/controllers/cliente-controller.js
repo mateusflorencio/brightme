@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { cpfValidator, validationResult } = require('./validacoes')
 const { decrypt, encrypt } = require('../repository/util/encrypter')
-const { buscarCLiente, ClienteRepository, CarrinhoRepository } = require('../repository')
+const { buscarCLiente, ClienteRepository, CarrinhoRepository, ProdutoRepository } = require('../repository')
 const { NewCarrinhoDTO, NewClienteDTO } = require('../models/dto')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index')
@@ -11,6 +11,7 @@ const Cliente = db.Cliente
 const secret = process.env.JWT_TOKEN
 const clienteRepository = new ClienteRepository()
 const carrinhoRepository = new CarrinhoRepository()
+const prodRepository = new ProdutoRepository()
 
 const clienteController = {
     index: (_req, res) => {
@@ -88,7 +89,7 @@ const clienteController = {
             return res
                 .status(200)
                 .clearCookie('dados')
-                .cookie('cliente', [email, token])
+                .cookie('cliente', [email, token, result])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
@@ -179,14 +180,14 @@ const clienteController = {
     },
     carrinhoView: async (req, res) => {
         const { cliente } = req.cookies
-
         try {
-            const result = await clienteRepository.buscaEmail(cliente[0])
-            const cart = await carrinhoRepository.buscarTodosPorId(result.id)
-
-            if (!cart) return res.render('carrinho', { data: { carrinho: '', error: 'Seu carrinho está vazinho' } })
-
-            return res.render('carrinho', { data: { carrinho: cart, error: '' } })
+            const carts = cliente[2].carrinho
+            const prods = []
+            for (const cart of carts) {
+                prods.push(await prodRepository.buscarIdComImagens(cart.produtoId))
+            }
+            
+            return res.render('carrinho', { data: { produtos: prods } })
 
         } catch (error) {
             return res.status(500).render('error', { error: error })
@@ -194,14 +195,21 @@ const clienteController = {
     },
     adicionarProdCarrinho: async (req, res) => {
         const { produtoId, clienteId } = req.body
-
+        let { cliente } = req.cookies
         try {
             const newCart = new NewCarrinhoDTO(clienteId, produtoId)
-            await carrinhoRepository.criarNovo(newCart)
+            const result = await carrinhoRepository.criarNovo(newCart)
 
-            res.status(201).json('ok')
+            const carrinho = cliente[2].carrinho
+            carrinho.push(result.dataValues)
+            const clienteWithProduct = Object.assign({}, cliente[2], { carrinho: carrinho })
+            cliente.pop()
+            cliente.push(clienteWithProduct)
+
+            return res.status(201)
+                .clearCookie('cliente')
+                .cookie('cliente', cliente).json('ok')
         } catch (error) {
-            console.log(error)
             return res.status(500).json('error')
         }
     }

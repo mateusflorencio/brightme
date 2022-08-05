@@ -7,119 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/carrinho.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-    <script src="../../public/script/menu.js" defer></script>
+    <script src="../../script/menu.js" defer></script>
     <title>Carrinho</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
-        <section class="promo container">
-            <h3 class="promo-title mt-40">Que tal aproveitar essas promoções</h3>
-            <div class="d-flex mt-40">
-                <%- include('./partials/card-product') %>
-                    <%- include('./partials/card-product') %>
-                        <%- include('./partials/card-product') %>
-                            <%- include('./partials/card-product') %>
-                                <%- include('./partials/card-product') %>
-            </div>
-        </section>
-        <section class="container mt-40">
-            <div class="d-flex">
-                <h4 class="">Meu carrinho</h4>
-                <div class="line-cart bg-rosa all-center"></div>
-            </div>
-            <div class="d-flex mt-40">
+
+        <main class="container mt-40">
+
+            <h1>Meu carrinho</h1>
+            <br>
+            <section class="d-flex space-between container__main">
                 <div class="left d-flex card">
-                    <h3>Itens</h3>
-                    <div class="d-flex w-100 div-cart mt-20 ">
-                        <div class=""><img class="card" src="./image/imagens-descricao-produto/em-gel.jpg" height="100"
-                                alt="">
-                        </div>
-                        <div class="div-title-card "> Álcool com essências de Rosas</div>
-                        <div class="promo-card-price d-flex">
-                            <div class="promo-card-price bg-grey t-white">-</div>
-                            <div class=" promo-card-price  bg-green t-white">R$XX,XX</div>
-                            <div class="promo-card-price bg-grey  t-white">+</div>
-                        </div>
-                        <div>
-                            R$XX,XX
-                        </div>
-                    </div>
+                    <h3>Items</h3>
 
-                    <div class="d-flex w-100 div-cart mt-20 ">
-                        <div class=""><img class="card" src="./image/imagens-descricao-produto/em-gel.jpg" height="100"
-                                alt="">
-                        </div>
-                        <div class="div-title-card "> Álcool com essências de Rosas</div>
-                        <div class="promo-card-price d-flex">
-                            <div class="promo-card-price bg-grey t-white">-</div>
-                            <div class=" promo-card-price  bg-green t-white">R$XX,XX</div>
-                            <div class="promo-card-price bg-grey  t-white">+</div>
-                        </div>
-                        <div>
-                            R$XX,XX
-                        </div>
-                    </div>
-                    <div class="d-flex w-100 div-cart mt-20 ">
-                        <div class=""><img class="card" src="./image/imagens-descricao-produto/em-gel.jpg" height="100"
-                                alt="">
-                        </div>
-                        <div class="div-title-card "> Álcool com essências de Rosas</div>
-                        <div class="promo-card-price d-flex">
-                            <div class="promo-card-price bg-grey t-white">-</div>
-                            <div class=" promo-card-price  bg-green t-white">R$XX,XX</div>
-                            <div class="promo-card-price bg-grey  t-white">+</div>
-                        </div>
-                        <div>
-                            R$XX,XX
-                        </div>
-                    </div>
+                    <div class="w-100 mt-20 col d-flex">
 
+                        <% if(data.produtos) {%>
+                            <% for(const n of data.produtos) { %>
+                                <div class="space-between d-flex mt-sm">
+                                    <div class="cart__img__container">
+                                        <img style="width: 5rem; height: 5rem;" class="cart__img" src="../.<%= n.Images[0].url %>"
+                                            alt=" <%= n.nome %>">
+                                    </div>
+
+                                    <div class="cart__title__container">
+                                        <strong><%= n.nome %></strong> <br>
+                                        <%= n.titulo %>
+                                    </div>
+
+                                    <div class="cart__preco__container">
+                                        <p class="">R$<strong class="prod__price">
+                                                <%= n.preco %>,00
+                                            </strong></p>
+                                    </div>
+
+                                    <button class="btn">
+                                        x
+                                    </button>
+                                </div>
+                                <% }%>
+                                    <% }%>
+                    </div>
+                    <% if(data.produtos) {%>
+                        <strong class="mt-20"> Total:  <%= data.produtos.length %></strong>
+                            <% }%>
                 </div>
+
                 <div class="right card">
                     <h4 class="">Resumo do Pedido</h4>
-                    <div class="mt-20">Cupon</div>
-                    <div class="d-flex mt-20">
-                        <input class="input-cupom d-flex" placeholder="insira seu cupon aqui" type="text"
-                            name="busca-cep" id="busca-cep">
-                        <button onclick="" class="btn"> ok</button>
+
+                    <label for="" class="mt-20">Cupon</label>
+                    <div class="d-flex space-between mt-sm containner__input">
+                        <input class="input" placeholder="insira seu cupon aqui" type="text">
+                        <button onclick="" class="btn"> aplicar</button>
                     </div>
+
+                    <label class="mt-20">Insira seu cep</label>
+                    <div class="d-flex space-between mt-sm containner__input">
+                        <input class="input" type="text" name="cep" id="cep" placeholder="Insira seu cep aqui">
+                        <button onclick="" class="btn"> aplicar</button>
+                    </div>
+                    <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
+                        rel="noopener noreferrer" class="link link__cep mt-sm">Não sei meu cep !</a>
+
                     <strong class="mt-20"> Frete R$XX,XX</strong>
-                    <strong class="mt-20"> Desconto R$XX,XX</strong>
-                    <strong class="mt-20"> Total R$XX,XX</strong>
-                    <button class="btn bg-green t-white mt-40 w-100"><a class="link t-white" href="/finalizar">
+                    <strong class="mt-sm"> Desconto R$XX,XX</strong>
+                    <strong class="mt-sm"> Total R$XX,XX</strong>
+
+                    <button class="btn bg-green t-white mt-20 w-100"><a class="link t-white" href="/finalizar">
                             finalizar
                             compra</a></button>
-                    <button class=" btn-primary mt-20 w-100"><a class="link t-white" href="/produtos"> continuar
+                    <button class=" btn bg-rosa t-white mt-20 w-100"><a class="link t-white" href="/produtos"> continuar
                             comprando
                         </a></button>
                 </div>
-            </div>
-            <div>
-                <h3 class="mt-40">Calcule frete e prazo da entrega</h3>
+                </div>
 
-                <input class="card h-35 mt-20" type="text" name="cep" id="cep" placeholder="Insira seu cep aqui">
-                <br>
-                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
-                    rel="noopener noreferrer" class="link">Não sei meu cep !</a>
 
-            </div>
-            </div>
-        </section>
-        <section class="promo container">
-            <h3 class="promo-title mt-40"> Você tambem pode gostar...</h3>
+            </section>
+            <br>
+            <section>
 
-            <div class="d-flex mt-40">
-                <%- include('./partials/card-product') %>
-                    <%- include('./partials/card-product') %>
-                        <%- include('./partials/card-product') %>
-                            <%- include('./partials/card-product') %>
-                                <%- include('./partials/card-product') %>
+            </section>
+        </main>
+
+        <br>
+        <%- include('./partials/footer') %>
             </div>
-        </section>
-        <div class="mt-40">
-            <%- include('./partials/footer') %>
-        </div>
 
 </body>
 

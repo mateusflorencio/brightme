@@ -6,7 +6,7 @@ module.exports = class ClienteRepository {
 
   async buscaEmail(email) {
     try {
-      return await Cliente.findOne({ where: { email } })
+      return await Cliente.findOne({ where: { email }, include:['carrinho'] })
     } catch (error) {
       throw new Error(error)
     }
