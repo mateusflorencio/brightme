@@ -24,14 +24,23 @@
   flex-direction: column;
   padding: 1rem;
   align-items: center;
+  border: 1px solid #ffffff00;
+  border-radius: 1rem;
 }
 
-.image__prod{
-  max-width:90%;
+.card__prod:hover{
+  transition: 0.2s ease-in-out;
+  border: 1px solid #a6a6a64c;
+  border-radius: 1rem;
+  
+}
+.image__prod {
+  max-width: 90%;
   max-height: 90%;
   position: relative;
 }
-.prod__price{
+
+.prod__price {
   font-size: 2rem;
 }
 
@@ -39,28 +48,29 @@
   background-color: var(--main-grey);
 }
 
-.grey--80{
+.grey--80 {
   color: #4f4f4f;
 }
 
-.azul--60{
+.azul--60 {
   color: #002877;
 }
 
-.mg--rigth--sm{
-  margin-right:  1rem;
+.mg--rigth--sm {
+  margin-right: 1rem;
 }
 
-.h--40{
-  height: 40%;
+.h--40 {
+  min-height: 40% !important;
+  max-height: 40%;
 }
 
-.h--50{
+.h--60 {
   height: 60%;
 }
 
-.h--10{
-  height: 10%;
+.h--10 {
+  min-height: 10%;
 }
 
 /* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
