@@ -181,12 +181,13 @@ const clienteController = {
     carrinhoView: async (req, res) => {
         const { cliente } = req.cookies
         try {
-            const carts = cliente[2].carrinho
+            const email = cliente[2].email
+            const clienteRes = await clienteRepository.buscaEmail(email)
             const prods = []
-            for (const cart of carts) {
+            for (const cart of clienteRes.carrinho) {
                 prods.push(await prodRepository.buscarIdComImagens(cart.produtoId))
             }
-            
+
             return res.render('carrinho', { data: { produtos: prods } })
 
         } catch (error) {
@@ -212,7 +213,18 @@ const clienteController = {
         } catch (error) {
             return res.status(500).json('error')
         }
-    }
+    },
+    deleteOneProdCarrinhoId: async (req, res) => {
+        const { id } = req.body
+
+        try {
+            await carrinhoRepository.deleteOneProdId(id)
+
+            return res.status(204).json('ok')
+        } catch (error) {
+            res.status(500).json({ err: error })
+        }
+    },
 }
 
 module.exports = clienteController

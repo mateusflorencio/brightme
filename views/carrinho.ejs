@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../styles/carrinho.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
     <script src="../../script/menu.js" defer></script>
+    <script src="../../script/carrinho.js" defer></script>
     <title>Carrinho</title>
 </head>
 
@@ -43,7 +44,7 @@
                                             </strong></p>
                                     </div>
 
-                                    <button class="btn">
+                                    <button id="<%= n.id %>" class="btn" onclick="deleteItemCart(this)">
                                         x
                                     </button>
                                 </div>
