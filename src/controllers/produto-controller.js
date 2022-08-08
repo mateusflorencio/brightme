@@ -1,5 +1,5 @@
 const { CategoriaRepository, FabricanteRepository, ProdutoRepository, ImageRepository } = require('../repository')
-const { newImageDTO, newProdutoDTO } = require('../models/dto')
+const { NewImageDTO, NewProdutoDTO } = require('../models/dto')
 const path = require('path')
 
 const cateRepo = new CategoriaRepository()
@@ -42,7 +42,7 @@ const produtoController = {
 
             if (!sizeFiles) return res.status(500).render('error', { error: 'todos os campos são obrigatórios' })
 
-            const prod = new newProdutoDTO(nome, preco, titulo, descricao, categoriaId, fabricanteId, qtdEstoque)
+            const prod = new NewProdutoDTO(nome, preco, titulo, descricao, categoriaId, fabricanteId, qtdEstoque)
             const resNewCliente = await prodRepo.criar(prod)
 
             if (!resNewCliente) {
@@ -52,7 +52,7 @@ const produtoController = {
             for (let i = 1; i <= sizeFiles; i++) {
 
                 const pathImages = `./image/produtos/prod${resNewCliente.id}-${i}.jpg`
-                const img = new newImageDTO(pathImages, resNewCliente.id)
+                const img = new NewImageDTO(pathImages, resNewCliente.id)
                 await imgRepo.criar(img)
             }
 
