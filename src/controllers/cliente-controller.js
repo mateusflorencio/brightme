@@ -117,7 +117,10 @@ const clienteController = {
                 }
                 return result
             })
-            res.status(200).render('conta-usuario', { data: { image, cliente: result } })
+
+            const pedidos = await pedidoRepository.buscarTodosClienteId(result.id)
+            
+            res.status(200).render('conta-usuario', { data: { image, cliente: result, pedidos: pedidos } })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
@@ -232,7 +235,7 @@ const clienteController = {
     adicionarPedido: async (req, res) => {
         const cliente = req.cookies.cliente[2]
         try {
-            
+
             const produtos = await pedidoRepository.criar(cliente.carrinho, cliente.id)
             await carrinhoRepository.deleteCarrinhoCliId(cliente.id)
             return res.status('OK').json(produtos)

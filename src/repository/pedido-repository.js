@@ -20,6 +20,14 @@ module.exports = class PedidoRepository {
     }
   }
 
+  async buscarTodosClienteId(clienteId) {
+    try {
+      return await Pedido.findAll({ where: { clienteId }, include: [{ model: Produto, as: 'produtos', through: { attributes: [] } }] })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
   async criar(carrinho, clienteId) {
     try {
       console.log(carrinho)
@@ -31,7 +39,7 @@ module.exports = class PedidoRepository {
         const prod = await Produto.findOne({ where: { id: item.produtoId } })
         await pedido.addProduto(prod)
       }
-      
+
       return pedido
 
     } catch (error) {

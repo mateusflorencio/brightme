@@ -58,12 +58,44 @@
                 <h3 class="bg-rosa t-white pd-sm">Meus pedidos</h3>
 
                 <ul class="mt-20">
-                    <li>Pedido Nº 12345</li>
-                    <li>Pedido Nº 51902</li>
-                    <li>Pedido Nº 33343</li>
+                    <% if(data.pedidos) { %>
+                        <% for(const n of data.pedidos) { %>
+                            <li>
+                                <div class="t-red bg-grey">
+                                    <%= n.status %>
+                                </div>
+                            </li>
+                            <li class="d-flex space-between mt-sm">
+                                <div>
+                                    Id : <%= n.id %>
+                                </div>
+                                <div>
+                                    ClienteId : <%= n.clienteId %>
+                                </div>
+
+                                <div class="col d-flex">
+                                    <% for(const prod of n.produtos) { %>
+
+                                        <div>
+                                            <%= prod.nome %>
+                                        </div>
+                                        <% } %>
+                                </div>
+
+                                <div>
+                                    qtd : <%= n.produtos.length %>
+                                </div>
+
+                                <div>
+                                    <%= n.total %>
+                                </div>
+                            </li>
+
+                            <% } %>
+                                <% } %>
                 </ul>
             </div><br>
-
+            <h3 class="bg-rosa t-white pd-sm">Modificar conta</h3> <br>
             <section class="conta__info d-flex">
                 <div class="forms w-50">
                     <form class="email" method="put">
