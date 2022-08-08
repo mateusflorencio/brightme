@@ -51,4 +51,13 @@ module.exports = class CarrinhoRepository {
       throw new Error(error)
     }
   }
+
+  async deleteCarrinhoCliId(clienteId) {
+    try {
+     const res =  await Carrinho.destroy({ where: { clienteId } })
+     return res
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }

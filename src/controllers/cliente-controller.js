@@ -234,6 +234,7 @@ const clienteController = {
         try {
             
             const produtos = await pedidoRepository.criar(cliente.carrinho, cliente.id)
+            await carrinhoRepository.deleteCarrinhoCliId(cliente.id)
             return res.status('OK').json(produtos)
         } catch (error) {
             res.status(500)
