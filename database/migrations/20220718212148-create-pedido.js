@@ -15,15 +15,13 @@ module.exports = {
         defaultValue: 'Aguardando Pagamento'
       },
       subtotal: {
-        type: Sequelize.DOUBLE,
-        allowNull: false
+        type: Sequelize.DOUBLE
       },
       cupomId: {
         type: Sequelize.INTEGER
       },
       total: {
-        type: Sequelize.DOUBLE,
-        allowNull: false
+        type: Sequelize.DOUBLE
       },
       frete: {
         type: Sequelize.DOUBLE
