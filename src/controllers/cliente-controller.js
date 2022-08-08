@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { cpfValidator, validationResult } = require('./validacoes')
 const { decrypt, encrypt } = require('../repository/util/encrypter')
-const { buscarCLiente, ClienteRepository, CarrinhoRepository, ProdutoRepository } = require('../repository')
+const { buscarCLiente, ClienteRepository, CarrinhoRepository, PedidoRepository, ProdutoRepository } = require('../repository')
 const { NewCarrinhoDTO, NewClienteDTO } = require('../models/dto')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index')
@@ -12,6 +12,7 @@ const secret = process.env.JWT_TOKEN
 const clienteRepository = new ClienteRepository()
 const carrinhoRepository = new CarrinhoRepository()
 const prodRepository = new ProdutoRepository()
+const pedidoRepository = new PedidoRepository()
 
 const clienteController = {
     index: (_req, res) => {
@@ -60,7 +61,7 @@ const clienteController = {
             return res
                 .status(200)
                 .clearCookie('dados')
-                .cookie('cliente', [email, token])
+                .cookie('cliente', [email, token, result])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
             console.log(error)
@@ -228,6 +229,16 @@ const clienteController = {
             res.status(500).json({ err: error })
         }
     },
+    adicionarPedido: async (req, res) => {
+        const cliente = req.cookies.cliente[2]
+        try {
+            
+            const produtos = await pedidoRepository.criar(cliente.carrinho, cliente.id)
+            return res.status('OK').json(produtos)
+        } catch (error) {
+            res.status(500)
+        }
+    }
 }
 
 module.exports = clienteController

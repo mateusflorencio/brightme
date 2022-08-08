@@ -4,9 +4,17 @@ const { encrypt } = require('./util/encrypter')
 
 module.exports = class ClienteRepository {
 
+  async buscaId(id) {
+    try {
+      return await Cliente.findOne({ where: { id }, include:['carrinho', 'pedidos'] })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
   async buscaEmail(email) {
     try {
-      return await Cliente.findOne({ where: { email }, include:['carrinho'] })
+      return await Cliente.findOne({ where: { email }, include:['carrinho', 'pedidos'] })
     } catch (error) {
       throw new Error(error)
     }

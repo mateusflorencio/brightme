@@ -11,3 +11,9 @@ deleteItemCart = (any) => {
     body: JSON.stringify({ id: any.id })
   }).then(() => location.reload())
 }
+
+document.getElementById('comprar').addEventListener('click', () => {
+  fetch('/user/pedido/novo-pedido',{
+    method: 'post',
+  })
+})

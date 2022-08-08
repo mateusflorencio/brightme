@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       Cliente.hasOne(models.Image)
       Cliente.hasMany(models.Carrinho, {as: 'carrinho'})
       Cliente.hasOne(models.Endereco, { as: 'endereco' })
-      Cliente.hasOne(models.OrdemDeServico, { as: 'os' })
+     Cliente.hasMany(models.Pedido, { as: 'pedidos' })
     }
   }
 
