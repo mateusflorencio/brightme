@@ -13,7 +13,8 @@ deleteItemCart = (any) => {
 }
 
 document.getElementById('comprar').addEventListener('click', () => {
-  fetch('/user/pedido/novo-pedido',{
+  fetch('/user/pedido/novo-pedido', {
     method: 'post',
   })
+  window.location.href = 'system/finalizar'
 })

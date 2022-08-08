@@ -1,7 +1,7 @@
 const db = require('../models/index')
 const Administrador = db.Administrador
 const jwt = require('jsonwebtoken')
-const { AdministradorRepository, CategoriaRepository, ClienteRepository, FabricanteRepository, ProdutoRepository } = require('../repository')
+const { AdministradorRepository, CategoriaRepository, ClienteRepository, FabricanteRepository, PedidoRepository, ProdutoRepository } = require('../repository')
 require('dotenv').config()
 
 const secret = process.env.JWT_TOKEN
@@ -11,6 +11,7 @@ const cliRepo = new ClienteRepository()
 const admRepo = new AdministradorRepository()
 const fabricanteRepo = new FabricanteRepository()
 const prodRepo = new ProdutoRepository()
+const pedRepo = new PedidoRepository()
 
 module.exports = AdministradorController = {
   //só cria através do insominia ou postman
@@ -23,7 +24,7 @@ module.exports = AdministradorController = {
       return res.status(500).json(error)
     }
   },
-  buscarClienteId: async(req, res) =>{
+  buscarClienteId: async (req, res) => {
     const { id } = req.params
 
     const result = await cliRepo.buscaId(id)
@@ -68,12 +69,13 @@ module.exports = AdministradorController = {
       const categorias = await catRepo.buscarTodos()
       const fabricante = await fabricanteRepo.buscarTodos()
       const produtos = await prodRepo.buscarTodos()
+      const pedidos = await pedRepo.buscarTodos()
 
       if (!categorias || !fabricante) {
         return res.status(500).render('administrador', { data: 'Error. Tente novamente' })
       }
 
-      return res.status(200).render('administrador', { data: { fabricantes: fabricante, categorias: categorias, produtos: produtos } })
+      return res.status(200).render('administrador', { data: { fabricantes: fabricante, categorias: categorias, produtos: produtos, pedidos: pedidos } })
 
     } catch (error) {
       res.status(500).render('error', { error: error })

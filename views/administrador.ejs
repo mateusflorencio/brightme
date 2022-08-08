@@ -23,51 +23,43 @@
         <label class="titulo-large">Pedidos</label>
         <div class="lista__order mt-20">
           <ul>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
-            <li class="list">
-              <h5>2545664654</h5>
-              <p>Kit com 4 gel laranja</p>
-              <p>Pago</p>
-            </li>
+
+            <% if(data.pedidos) { %>
+              <% for(const n of data.pedidos) { %>
+                <li > 
+                  <div class="t-red bg-grey">
+                    <%= n.status %>
+                  </div>
+                </li>
+                <li class="d-flex space-between mt-sm">
+                  <div>
+                    Id : <%= n.id %>
+                  </div>
+                  <div>
+                    ClienteId : <%= n.clienteId %>
+                  </div>
+
+                  <div class="col d-flex">
+                    <% for(const prod of n.produtos) { %>
+
+                      <div>
+                        <%= prod.nome %>
+                      </div>
+                      <% } %>
+                  </div>
+
+                  <div>
+                    qtd : <%= n.produtos.length %>
+                  </div>
+
+                  <div>
+                    <%= n.total %>
+                  </div>
+                </li>
+
+                <% } %>
+                  <% } %>
+
           </ul>
         </div>
       </section>
