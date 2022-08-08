@@ -3,6 +3,7 @@ const { isAdmAuth, } = require('../middlwares')
 const routes = require('express').Router()
 
 routes.get('/buscar-adm/:id', admController.buscarAdm)
+routes.get('/buscar-cliente/:id', admController.buscarClienteId)
 routes.post('/criar', admController.criarAdm)
 
 

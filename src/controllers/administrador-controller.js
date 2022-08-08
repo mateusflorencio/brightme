@@ -1,12 +1,13 @@
 const db = require('../models/index')
 const Administrador = db.Administrador
 const jwt = require('jsonwebtoken')
-const { AdministradorRepository, CategoriaRepository, FabricanteRepository, ProdutoRepository } = require('../repository')
+const { AdministradorRepository, CategoriaRepository, ClienteRepository, FabricanteRepository, ProdutoRepository } = require('../repository')
 require('dotenv').config()
 
 const secret = process.env.JWT_TOKEN
 
 const catRepo = new CategoriaRepository()
+const cliRepo = new ClienteRepository()
 const admRepo = new AdministradorRepository()
 const fabricanteRepo = new FabricanteRepository()
 const prodRepo = new ProdutoRepository()
@@ -21,6 +22,14 @@ module.exports = AdministradorController = {
     } catch (error) {
       return res.status(500).json(error)
     }
+  },
+  buscarClienteId: async(req, res) =>{
+    const { id } = req.params
+
+    const result = await cliRepo.buscaId(id)
+
+    res.json(result)
+
   },
   //só cria através do insominia ou postman
   criarAdm: async (req, res) => {
