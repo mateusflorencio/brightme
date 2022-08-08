@@ -1,8 +1,7 @@
-const id = localStorage.getItem('id')
+const clienteId = localStorage.getItem('id')
 
 function addToCart(any) {
   const produtoId = any.id
-  const clienteId = id
   document.querySelector('strong.d-none').classList.remove('d-none')
 
   fetch('/user/carrinho/adicionar', {

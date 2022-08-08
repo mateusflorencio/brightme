@@ -57,14 +57,14 @@ const clienteController = {
             console.log(imgPadrao)
             fs.writeFileSync(`public/image/clientes/cliente${result.id}`, `data:image/jpeg;base64,${imgPadrao}`)
 
+            const cliente = await clienteRepository.buscaId(result.id)
             const token = jwt.sign({ email }, secret)
             return res
                 .status(200)
                 .clearCookie('dados')
-                .cookie('cliente', [email, token, result])
+                .cookie('cliente', [email, token, cliente])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
-            console.log(error)
             return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
         }
     },
