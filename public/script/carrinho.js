@@ -16,5 +16,5 @@ document.getElementById('comprar').addEventListener('click', () => {
   fetch('/user/pedido/novo-pedido', {
     method: 'post',
   })
-  window.location.href = 'system/finalizar'
+  window.location.href = '/system/pagamento'
 })

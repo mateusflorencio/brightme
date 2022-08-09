@@ -5,59 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/pagamento.css">
+    <link rel="stylesheet" href="../../styles/pagamento.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-    <script src="../../public/script/menu.js" defer></script>
-    
+    <script src="../../script/menu.js" defer></script>
+
     <title>Finalize sua compra</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
-        <section class="container all-center d-flex">
-            <div class="left">
-                <form action="">
-                    <h3 class="">Confirme seus dados</h3>
-                    <div class="mt-20"></div>
-                    <label class="mt-40">Nome completo</label>
-                    <input class=" input-finalizar-lg" type="text" name="nome" id="nome"
-                        placeholder="Digite seu nome completo">
-                    <div class="mt-20"></div>
-                    <label for="email" class="mt-40">Email</label>
-                    <input class=" input-finalizar-lg" type="text" name="email" id="email"
-                        placeholder="Digite seu melhor email ">
-                    <div class="mt-20"></div>
-                    <label for="telefone" class="mt-40">Celular com DDD</label>
-                    <input class=" input-finalizar-lg" type="text" name="telefone" id="telefone"
-                        placeholder="Seu melhor numero">
-                    <div class="d-flex">
-                        <div class="mt-20 mr-20">
-                            <label for="cep">Email</label>
-                            <input class="input-finalizar-sm " type="text" name="cep" id="cep" placeholder="CEP">
-                        </div>
-                        <div class="mt-20">
-                            <label for="numero">Email</label>
-                            <input class="input-finalizar-sm " type="text" name="numero" id="numero" placeholder="N°">
-                        </div>
-                    </div>
-                    <div class="mt-20"></div>
-                    <label for="endereco" class="mt-40">Celular com DDD</label>
-                    <input class=" input-finalizar-lg" type="text" name="endereco" id="endereco" placeholder="endereco">
-                    <div class="d-flex">
-                        <div class="mt-20 mr-20">
-                            <label for="cidade">Cidade</label>
-                            <input class="input-finalizar-sm " type="text" name="cidade" id="cidade"
-                                placeholder="Cidade">
-                        </div>
-                        <div class="mt-20">
-                            <label for="uf">UF</label>
-                            <input class="input-finalizar-sm " type="text" name="uf" id="uf" placeholder="uf">
-                        </div>
-                    </div>
-                </form>
+        <section class="container all-center mt-20 d-flex">
+            <div class="card mg-sm w-50">
+                <h3>Pedido</h3>
+
+                <% if(data.pedidos) { %>
+                    <% for(const n of data.pedidos) { %>
+                       
+                        <li class="d-flex space-between mt-sm">
+                            
+                            <div class="col d-flex">
+                                <% for(const prod of n.produtos) { %>
+
+                                    <div>
+                                        <%= prod.nome %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div>
+                                qtd : <%= n.produtos.length %>
+                            </div>
+
+                            <div>
+                                <%= n.total %>
+                            </div>
+                        </li>
+
+                        <% } %>
+                            <% } %>
+                            <br><br>
+
+                                <form action="">
+                                    <h3 class="">Confirme seus dados</h3> <br>
+                                    <label for="CEP">CEP</label> <br>
+                                    <input class="w-100 input" type="text" name="CEP" id="CEP" placeholder="CEP"> <br>
+
+                                    <label for="Rua" class="mt-40">Rua</label> <br>
+                                    <input class="w-100 input" type="text" name="Rua" id="Rua" placeholder="Rua"> <br>
+
+                                    <label for="Rua" class="mt-40">Rua</label> <br>
+                                    <input class="w-100 input" type="text" name="Rua" id="Rua" placeholder="Rua"> <br>
+
+
+
+
+
+
+                                    <label for="cidade">Cidade</label> <br>
+                                    <input class=" w-100 input" type="text" name="cidade" id="cidade"
+                                        placeholder="Cidade"> <br>
+
+
+                                    <label for="uf">UF</label> <br>
+                                    <input class="w-100 input" type="text" name="uf" id="uf" placeholder="uf"> <br>
+                                </form>
             </div>
-            <div class="right"></div>
-        </section>
+            <div class="card mg-sm h-100 w-50 all-center t-green">Pagamento Seguro</div>
+        </section> <br>
         <%- include('./partials/footer') %>
 </body>
 
