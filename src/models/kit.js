@@ -24,9 +24,5 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Kit',
   });
 
-  Kit.associate = (models) => {
-    Kit.hasMany(models.Produto, { as: 'produtos'})
-  };
-
   return Kit;
 };
