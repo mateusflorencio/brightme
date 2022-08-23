@@ -53,7 +53,7 @@ const clienteController = {
                 return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
             }
 
-            const imgPadrao = fs.readFileSync('public/image/clientes/image-padrao.jpg', 'base64')
+            const imgPadrao = fs.readFileSync('public/image/padrao/image-padrao.jpg', 'base64')
             console.log(imgPadrao)
             fs.writeFileSync(`public/image/clientes/cliente${result.id}`, `data:image/jpeg;base64,${imgPadrao}`)
 
