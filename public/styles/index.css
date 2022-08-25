@@ -9,45 +9,29 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
 }
 
-.content-banner {
-  margin: 3rem;
-  width: 100%;
-}
-
-.banner-text {
+.banner__text {
   text-align: justify;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
-  right: 5rem;
   width: 50%;
 }
 
-.banner-button {
-  margin-top: 0;
+.banner__button {
+  padding: 1.5rem;
+  width: 10rem;
+  font-size: 1rem;
 }
 
 /* PORTIFOLIO */
 
-.all-center{
-  padding: 1rem;
-  font-size: 1.2rem;
-}
-
-.portifolio-section {
-  display: grid;
-  /* width: 100%;
-  max-width: 1440px; */
-}
-
 .portifolio-box{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 2rem;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1000px;
   /* height: auto; */
   border-radius: 2rem;
   /* float:inline-end;  */
@@ -156,12 +140,13 @@
 .container-cards-blog {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card-content {
   width: 30rem;
   height: auto;
+  margin: 20px;
 }
 
 .card-img-blog {
@@ -178,21 +163,48 @@
 
 .about {
   margin-top: 7rem;
-  height: 55vh;
 }
 
-.about-rigth {
+.about-left {
   padding: 0 2rem 0 2rem;
   width: 50%;
   margin-top: 2rem;
 }
 
-.about-left {
+.about-rigth {
   background-image: url(../image/imagens-descricao-produto/quem\ somos.jpeg);
-  position: absolute;
   background-size: cover;
+  position: relative;
   width: 100%;
-  max-width: 50vw;
-  height: 55vh;
+  max-height: 100%;
   right: 0%;
+}
+
+@media (max-width:940px) {
+
+  .about__container{
+    flex-direction: column;
+  }
+
+  .about-left {
+    width: 100%;
+  }
+
+  .about-rigth{
+    height: 20rem;
+    width: 100%;
+  }
+
+  .container-cards-blog{
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media (max-width:530px) {
+  .banner__button, .banner__text{
+    width: 100%;
+  }
+
 }

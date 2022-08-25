@@ -60,8 +60,6 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 - mt-20 : margin-top: 20px
 - mt-40 : margin-top: 40px
 - item-list
-- w-100 : width: 100%
-- h-100 : heigth: 100%
 
 # Back-End 🛠️
 
@@ -73,32 +71,41 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 #### Home
 
 '/'
+### Blog
 
-#### Sucesso de compra
-
-'/sucess'
+'/blog'
 
 #### Pagina de listagem de produtos e filtro
 
 '/produtos'
-### Pagina de produto
-'/produto'
-
-### Conta do usuário
-'/conta'
-
+### Pagina do produto
+'/produtos/produto/:id'
+### Carrinho
+'/carrinho'
 ### Pagamento
 '/pagamento'
 
-### Login
-'/login'
+#### Sucesso de compra
+'/sucess'
+### Conta do usuário
+'/user/conta'
+### Login Cliente
+'/user/login'
+### Cadastro Cliente
+'/user/cadastro'
 
-### BLog
+### Login Administrador
+'/administrador/login'
 
-'/blog'
+### Cadastro Administrador
+'/administrador/criar' <br>
+**A priore só pelo postman ou insominia**
 
-### Carrinho
-'/carrinho'
+### Página Administrador
+'/administrador'
+
+<br>
+
 # Banco de Dados 🎲
 ## Mysql será utilizado como banco de dado
 Abaixo esta a modelagem inicial do banco de dados. <br> <br>
@@ -125,8 +132,15 @@ Abaixo esta a modelagem inicial do banco de dados. <br> <br>
 13. [x] ordemPedido
 14. [x] cupom
 
-### Para fácil visualização do banco o _localhost:8080_ pode ser acessado.
+<br>
 
+# Docker  🐋
+
+Inserir credenciais no .env como exemplificado no .env.example <br>
+Para construir a imagem e rodar no docker em desenvolvimento usar: <br>
+* **docker-compose -f docker-compose.dev.yml up -d** 
+### Para fácil visualização do banco o _localhost:8080_ pode ser acessado.
+<br>
 
 # RESPONSIVIDADE
 

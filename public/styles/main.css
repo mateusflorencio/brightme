@@ -24,7 +24,7 @@
 /* SHORTCUTS */
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1000px;
   margin: auto;
   padding: 0 4rem 0 4rem;
 }
@@ -42,6 +42,18 @@
   display: flex;
 }
 
+.d-none {
+  display: none;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.col {
+  flex-direction: column;
+}
+
 .all-center {
   display: flex;
   align-items: center;
@@ -55,6 +67,13 @@
   width: 100% !important;
 }
 
+.w-50 {
+  width: 50% !important;
+}
+
+.h-100 {
+  height: 100vh;
+}
 
 /* BACKGROUND */
 
@@ -126,15 +145,22 @@
 /* BUTTONS */
 .btn {
   border: none;
+  list-style: none;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  font-size: 1rem;
-  border-radius: 1rem;
-  height: 4rem;
+  font-size: 0.7rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.btn:hover {
+  transition: 0.5s ease-in-out;
+  font-size: 0.8rem;
+
 }
 
 .btn-primary {
@@ -186,7 +212,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 2rem;
-  }
+}
 
 
 /* LIST */
@@ -210,17 +236,27 @@ li {
   cursor: pointer;
 }
 
-/* MARGINS */
-.m-10 {
-  margin: 1rem;
+/* MARGINS  e PADDINGS */
+
+
+.pd-sm {
+  padding: 0.5rem;
+}
+
+.mg-sm {
+  margin: 0.5rem;
+}
+
+.mt-sm {
+  margin-top: 0.5rem;
 }
 
 .mt-20 {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 
 .mt-40 {
-  margin-top: 4rem;
+  margin-top: 4rem !important;
 }
 
 .m-menu {
@@ -231,130 +267,8 @@ li {
   margin-right: 1rem;
 }
 
-/* MEDIA QUERIES PARA A RESPONSIVIDADE */
-
-/* LAPTOP GRANDE */
-@media(max-width: 1440px){
-  html{
-    font-size: 90%
-  }
-}
-
-/* LAPTOP PEQUENO */
-@media(max-width: 1024px){
-  html{
-    font-size: 85%
-  }
-}
-
-/* TABLET */
-@media(max-width: 768px){
-  html{
-    font-size: 65%
-  }
-}
-
-/* MEDIA QUERIE PARA DEIXAR O MENU RESPONSIVO. O MENU NÃO APARECE QUANDO O MAX-WIDTH FOR 694 PX*/
-
-@media (max-width: 694px){
-  #nav_menu {
-    display: none;
-  }
-
-  html{
-    font-size: 60%
-  }
-
-/* MENU SANDUÍCHE */
-  .one,
-  .two,
-  .three {
-    background-color: var(--main-white) ;
-    height: 0.4rem;
-    width: 100%;
-    margin: 0.7rem auto;
-    transition-duration: 0.3s;
-  }
-
-  .menu-toggle{
-    width: 4rem;
-    height: 3rem;
-    margin-left: -0.7rem;
-    margin-top: 1.5rem;
-    position: absolute;
-  }
-}
-
-/* PARA DEIXAR MENU SANDUÍCHE FULLSCREEN AO CLICAR */
-
-.menu-section.on {
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--main-blue);
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* PARA O MENU APARECER NO NOVO MENU SANDUICHE */
-
-.menu-section.on #nav_menu{
-  display: block;
-}
-
-.menu-section.on .menu-toggle{
-  position: absolute;
-  right:0;
-  top: 1.5rem;
-}
-
-.menu-section.on .menu-toggle .one{
-  transform: rotate(45deg) translate(0.7rem, 0.7rem);
-}
-
-.menu-section.on .menu-toggle .two{
-  opacity: 0;
-  }
-
-.menu-section.on .menu-toggle .three{
-    transform: rotate(-45deg) translate(0.8rem, -1.1rem);
-  }
-
-/* PARA COLOCAR O MENU RESPONSIVO NA VERTICAL */
-
-.menu-section.on #nav_menu ul{
-  text-align: center;
-  display: inline-block;
-}
-
-.menu-section.on #nav_menu ul a{
-  transition-duration: 0.5s;
-  font-size: 3rem;
-  line-height: 4rem;
-  display: block;
-}
-
-/* SMARTPHONE GRANDE */ */
-@media(max-width: 525px){
-  html{
-    font-size: 35%
-  }
-}
-
-/* SMARTPHONE GRANDE */ */
-@media(max-width: 425px){
-  html{
-    font-size: 30%
-  }
-}
-
-/* SMARTPHONE MÉDIO */
-@media(max-width: 375px){
-  html, .card .w-100, .col-buy .card, .t-grey-700 {
-    font-size: 25%
-  }
+.input {
+  border: 1px var(--main-grey-700) solid;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
 }

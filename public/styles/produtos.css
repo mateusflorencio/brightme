@@ -1,29 +1,88 @@
 @import url(./main.css);
 
+
+.container-fluid {
+  padding: 2rem;
+  width: 100%;
+}
+
+.btn__filter {
+  display: none;
+}
+
 .rigth {
   width: 20%;
   margin-right: 2rem;
   max-height: 50rem;
-  margin-top: 5.5rem;
+  margin-top: 6.2rem;
 }
 
-.input-price {
-  height: 3.5rem;
-}
-
-.selection {
-  border: 0.1rem solid var(--main-grey);
-  border-radius: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-
-  margin-right: 1rem;
-
-  cursor: pointer;
-
+.card__prod {
+  width: 15rem;
+  height: 25rem;
   display: flex;
+  flex-direction: column;
+  padding: 1rem;
   align-items: center;
-  justify-content: center;
+  border: 1px solid #ffffff00;
+  border-radius: 1rem;
+}
+
+.card__prod:hover{
+  transition: 0.2s ease-in-out;
+  border: 1px solid #a6a6a64c;
+  border-radius: 1rem;
+  
+}
+.image__prod {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+.prod__price {
+  font-size: 2rem;
+}
+
+.active {
+  background-color: var(--main-grey);
+}
+
+.grey--80 {
+  color: #4f4f4f;
+}
+
+.azul--60 {
+  color: #002877;
+}
+
+.mg--rigth--sm {
+  margin-right: 1rem;
+}
+
+.h--40 {
+  min-height: 40% !important;
+  max-height: 40%;
+}
+
+.h--60 {
+  height: 60%;
+}
+
+.h--10 {
+  min-height: 10%;
+}
+
+/* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 75vw;
+  justify-items: center;
+  align-items: center;
 }
 
 .selection-page {
@@ -46,18 +105,37 @@
   color: var(--main-white);
 }
 
-.active {
-  background-color: var(--main-grey);
-}
 
-/* KITS PROMOCIONAIS e OS MAIS PEDIDOS */
+@media(max-width:910px) {
 
-.options{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 1rem;
-  width: 100%;
-  max-width: 1440px;
-  justify-content: center;
-  align-items: center;
+  .container-fluid {
+    flex-direction: column;
+  }
+
+  .rigth {
+    display: none;
+  }
+
+  .rigth.on {
+    display: flex;
+    position: absolute;
+    width: 80%;
+    background: rgb(255, 255, 255);
+    z-index: 10;
+    right: 4rem;
+  }
+
+  .btn__filter {
+    display: block;
+    z-index: 5;
+    position: absolute;
+    right: 1rem;
+    top: 11.5rem;
+    width: 6rem;
+    font-size: 1rem;
+  }
+
+  .options {
+    max-width: 100vw;
+  }
 }

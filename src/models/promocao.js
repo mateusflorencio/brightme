@@ -21,10 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Promocao',
   });
-
-Promocao.associate = (models) => {
-        Promocao.hasMany(models.Produto, { as: 'produto'})
-  }
   
   return Promocao;
 };

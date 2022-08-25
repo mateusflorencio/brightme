@@ -1,8 +1,7 @@
 @import url(./main.css);
 
 .left {
-  width: 65rem;
-  margin-right: 2rem;
+  width: 59%;
 }
 
 .div-cart {
@@ -21,23 +20,34 @@
 }
 
 .right {
-  width: 35rem;
+  width: 39%;
 }
 
-.input-cupom {
-  border: 0.1rem var(--main-grey) solid;
-  border-radius: 2rem;
-  margin-right: 1rem;
-  font-size: 1rem;
-  padding: 1rem;
-
-  width: 32rem;
-  height: 4rem;
-
-  display: flex;
-  align-items: center;
+.link__cep {
+  color: rgb(101, 101, 101);
+  font-size: .7rem;
 }
 
-.h-35 {
-  height: 35rem;
+.pointer{
+  cursor: pointer;
+}
+
+@media(max-width:840px) {
+
+  .container__main{
+    flex-direction: column;
+  }
+
+  .left{
+    width: 100%;
+    margin-bottom:2rem;
+  }
+
+  .right{
+    width: 100%;
+  }
+
+  .containner__input{
+      justify-content: left;
+  }
 }

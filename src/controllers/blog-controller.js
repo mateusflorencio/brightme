@@ -1,7 +1,5 @@
-const blogController = {
+module.exports = blogController = {
     index: (_req, res) => {
-        res.render('blog')
+        res.status(200).render('blog')
     }
 }
-
-module.exports = blogController

@@ -80,7 +80,7 @@
   font-size: 2rem;
 }
 
-.modal__categoria {
+.modal__categoria, .modal__fabricante {
   justify-content: space-around;
 }
 
@@ -107,7 +107,7 @@
     top: auto;
   }
 
-  .modal__categoria {
+  .modal__categoria, .modal__fabricante {
     flex-direction: column;
   }
 }

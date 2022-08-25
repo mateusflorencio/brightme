@@ -1,10 +1,7 @@
 @import url(./main.css);
 
 body {
-  background-image: url(../image/imagens-descricao-produto/Duo_gel_liquido_3.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  flex-direction: column;
+  background: var(--main-blue);
 }
 
 .title {
@@ -12,28 +9,19 @@ body {
   margin-bottom: 0.1rem;
 }
 
-.util {
-  justify-content: right;
-}
-
 .container-form {
   display: flex;
-  height: 40rem;
-  width: 30rem;
-  background: var(--main-grey);
-  opacity: 0.9;
+  width: 25rem;
+  background: var(--main-white);
   margin-top: 2rem;
   margin-bottom: 5rem;
-}
-
-input[type="email"],
-input[type="password"],
-textarea {
-  height: 3.5rem;
-  margin-top: 1rem;
 }
 
 .forgot {
   font-size: 1rem;
   cursor: pointer;
+}
+
+.errors{
+  position: absolute;
 }

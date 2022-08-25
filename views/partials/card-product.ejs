@@ -1,11 +1,24 @@
-<a href="produto" class="link">
-  <div class="promo-cards card all-center">
-    <div class="promo-card-image"><img src="./image/imagens-descricao-produto/em-gel.jpg" w height="100vh" alt=""></div>
-    <div class="promo-card-title">Kit com essências exclusivas</div>
-    <div class="promo-card-price d-flex">
-      <div class="promo-card-price bg-grey t-white">-</div>
-      <div class="promo-card-price  bg-green t-white">R$XX,XX</div>
-      <div class="promo-card-price bg-grey  t-white">+</div>
-    </div>
-  </div>
-</a>
+<% if(data.produtos) {%>
+  <% for(const n of data.produtos) { %>
+    <a href="produtos/produto/<%= n.id %>" class="link">
+      <div class="card__prod">
+        <div class="h--40 all-center w-100">
+          <img class="image__prod" src="../.<%= n.Images[0].url %>" alt="">
+        </div>
+
+        
+          <p class="grey--80 h--60"> <br>
+            <strong>
+              <%= n.nome %>
+            </strong> <br>
+            <%= n.titulo %>
+          </p> <br>
+
+          <p class="azul--60 h--10">R$<strong class="prod__price">
+              <%= n.preco %>,00
+            </strong></p>
+        
+      </div>
+    </a>
+    <% }%>
+      <% }%>

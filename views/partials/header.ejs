@@ -1,34 +1,36 @@
-<header class="header">
-    <div class="container space-around w-100 d-flex">
-        <div class="brand all-center">
-            <div class="col-logo w-100">
-            <a href="/"><img class = "brand-img all-center" src="../image/logos-bg.png" alt="logo"></a>
+<header class="header bg-rosa">
+    <div class="container w-100 d-flex menu space-between h-100">
+        <div class="">
+            <a href="/"><img class="brand-img" src="../../image/logos-bg.png" alt="logo"></a>
         </div>
-    </div>
 
-<!-- Adicionada nova div para a construção do menu sanduíche. É importante para que o menu sanduíche só apareça quando o tamanho da tela for menor que o valor que estipulamos. Veja no @media querie -->
+        <!-- Adicionada nova div para a construção do menu sanduíche. É importante para que o menu sanduíche só apareça quando o tamanho da tela for menor que o valor que estipulamos. Veja no @media querie -->
 
-<div class = "menu-section">
-    <div class = "menu-toggle">
-        <div class = "one"></div>
-        <div class = "two"></div>
-        <div class = "three"></div>
-</div>
-<!-- Fim do código para o menu sanduíche -->
+        <div class="menu-section">
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+            <!-- Fim do código para o menu sanduíche -->
 
-<!-- Tirei o "Entrar" dentro do quadradinho. Coloquei o "Entrar" e o "Carrinho" na mesma lista do nav para que pudessem aparecer dentro do menu sanduíche também. Adicionei os caminhos do href para que eu pudesse verificar o.css melhor" -->
+            <!-- Tirei o "Entrar" dentro do quadradinho. Coloquei o "Entrar" e o "Carrinho" na mesma lista do nav para que pudessem aparecer dentro do menu sanduíche também. Adicionei os caminhos do href para que eu pudesse verificar o.css melhor" -->
+            <nav id="nav_menu" class="d-flex">
+                <ul class="list_menu d-flex">
+                    <li><a href="/produtos" class="item_list t-white m-menu all-center">Álcool 70º</a></li>
+                    <li><a href="/produtos" class="item_list t-white m-menu all-center">Kits</a></li>
+                    <li><a href="/blog" class="item_list t-white m-menu all-center">Blog</a></li>
+                    <li><a href="/user/carrinho"
+                            class="item_list t-white m-menu all-center carrinho__togle__menu">Carrinho</a></li>
+                    <li><a href="/user/login" class="item_list t-white m-menu all-center entrar">Entrar</a></li>
+                    <li><a href="/user/carrinho" class=" m-menu img-cart"><img height="15rem" src="../../image/cart.png"
+                                alt=""></a></li>
+                    <li><a href="/user/login" class="item_list t-white m-menu all-center entrar__togle__menu">Entrar</a></li>
 
-        <nav id="nav_menu" class="d-flex">
-            <ul class="list_menu d-flex">
-                <li><a href="/produto" class="item_list t-white m-menu all-center">Álcool 70º</a></li>
-                <li><a href="/produtos" class="item_list t-white m-menu all-center">Kits</a></li>
-                <li><a href="" class="item_list t-white m-menu all-center">Sobre Nós</a></li>
-                <li><a href="blog" class="item_list t-white m-menu all-center">Blog</a></li>
-                <li><a href="/user/login" class="item_list t-white m-menu all-center">Entrar</a></li>
-                <li><a href="/carrinho" class="cart m-menu all-center"><img height="15rem" src="../image/cart.png" alt=""></a></li>
-            </li>
-        </nav>
-    </div>
+
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
 

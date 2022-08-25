@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,44 +17,48 @@
 
             <div class="card bg-white">
                 <h1 class="title">Cadastre-se</h1>
-                <% if (error) { %>
-                   <% for(const n of error) { %>
+                <% if (errorValidacao) { %>
+                   <% for(const n of errorValidacao) { %>
                    <span class="t-red padding-left"> <%= n.param %> :  <%= n.msg %> </span>
                     <% } %>
                   <% } %>
+
+                  <% if (error) { %>
+                    <span class="t-red padding-left"> <%= error %> </span>
+                   <% } %>
                 <div>
                     <form method="POST" class="d-flex form__cadastro">
                         <div class="left">
                             <label for="email" class="mt-40">Seu melhor email</label> <br>
-                            <input class="card w-100" id="email" type="email" name="email"> <br>
+                            <input required class="card w-100" id="email" type="email" name="email"> <br>
 
                             <label for="senha" class="mt-40">Senha</label> <br>
-                            <input class="card w-100" type="password" name="senha" id="senha"
-                                placeholder="Seu melhor numero"><br>
+                            <input required class="card w-100" type="password" name="senha" id="senha"
+                                placeholder="Minimo 6 caractere"><br>
 
                             <label for="confirmacaoSenha">Confirme sua senha</label>
-                            <input class="card w-100" type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Repita seu senha" oninput="senhaEstaCorreta()">
+                            <input required class="card w-100" type="password" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Repita seu senha" oninput="senhaEstaCorreta()">
                             <p class="aviso__senha"></p>
                             <br>
                         </div>
 
                         <div class="rigth">
                             <label for="nome" class="mt-40 w-100">Nome</label> <br>
-                            <input class="card w-100" type="text" name="nome" id="nome"> <br>
+                            <input required class="card w-100" type="text" name="nome" id="nome"> <br>
 
                             <label for="sobrenome" class="mt-40">Sobrenome</label><br>
-                            <input class="card w-100 bg-white" type="text" name="sobrenome" id="sobrenome"><br>
+                            <input required class="card w-100 bg-white" type="text" name="sobrenome" id="sobrenome"><br>
                             <div class="d-flex w-100">
                                 <div class="w-100">
                                     <label for="CPF">CPF</label>
-                                    <input class="card w-100" type="text" name="CPF" id="cpf" maxlength="14"
+                                    <input required class="card w-100" type="text" name="CPF" id="cpf" maxlength="14"
                                         oninput="criarMascaraCpf()" placeholder="123.456.789-00">
                                     <p class="aviso__senha t-red"></p>
                                     <br>
                                 </div>
                                 <div class=" padding-left w-100">
                                     <label for="telefone">Telefone</label>
-                                    <input class="card w-100" type="text" name="telefone" id="telefone"
+                                    <input required class="card w-100" type="text" name="telefone" id="telefone"
                                         maxlength="14" oninput="criarMascaraTelefone()" placeholder="(11)99999-9999"> <br>
                                 </div>
                             </div>

@@ -1,47 +1,74 @@
 const db = require('../models/index')
 const Cliente = db.Cliente
-const { encrypt, senhaEstaCerta } = require('./util/encrypter')
+const { encrypt } = require('./util/encrypter')
 
+module.exports = class ClienteRepository {
 
+  async buscaId(id) {
+    try {
+      return await Cliente.findOne({ where: { id }, include:['carrinho', 'pedidos'] })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 
-const ClienteRepository = {
   async buscaEmail(email) {
-    const result = await Cliente.findOne({ where: { email } })
-    return result
-  },
+    try {
+      return await Cliente.findOne({ where: { email }, include:['carrinho', 'pedidos'] })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 
   async buscarTelefone(telefone) {
-    const result = await Cliente.findOne({ where: { telefone } })
-    return result
-  },
+    try {
+      return await Cliente.findOne({ where: { telefone } })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 
   async buscarCpf(cpf) {
-    const result = await Cliente.findOne({ where: { cpf } })
-    return result
-  },
-
-  async login(email, senha) {
-    const cliente = await this.findByEmail(email)
-    console.log(cliente)
-
-    if (!cliente) {
-      return { error: 'email not found' }
+    try {
+      return await Cliente.findOne({ where: { cpf } })
+    } catch (error) {
+      throw new Error(error)
     }
-
-    const senhaEstaCertaResult = await senhaEstaCerta(senha, cliente.senha)
-    if (!senhaEstaCertaResult) {
-      return { error: 'senha incorreta' }
-    }
-    return true
-  },
+  }
 
   async cadastro(obj) {
-    const hashedPassword = await encrypt(obj.senha)
-    const cliente = await Cliente.create(Object.assign({}, obj, { senha: hashedPassword }))
-    return cliente
+    try {
+      return await Cliente.create(obj)
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  async delete(id) {
+    try {
+      return await Cliente.destroy({ where: { id } })
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  async updateEmail(id, email) {
+    try {
+      return await Cliente.update({ email }, { where: { id } }
+      )
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+
+  async updateSenha(id, senha) {
+    try {
+      return await Cliente.update({ senha }, { where: { id } }
+      )
+    } catch (error) {
+      throw new Error(error)
+    }
   }
 }
-
-module.exports = ClienteRepository
 
 

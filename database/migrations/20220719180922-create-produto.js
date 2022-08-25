@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ativo: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       nome: {
         type: Sequelize.STRING
@@ -29,16 +29,7 @@ module.exports = {
       fabricanteId: {
         type: Sequelize.INTEGER
       },
-      imgId: {
-        type: Sequelize.INTEGER
-      },
-      estoqueId: {
-        type: Sequelize.INTEGER
-      },
-      promocaoId: {
-        type: Sequelize.INTEGER
-      },
-      kitId: {
+      qtdEstoque: {
         type: Sequelize.INTEGER
       },
       createdAt: {

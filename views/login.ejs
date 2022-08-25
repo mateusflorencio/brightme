@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,31 +14,32 @@
 
 <body>
     <%- include('./partials/header') %>
-        <section class="container util mt-40 d-flex h-100" >
-            <section class="left">
+        <section class="container all-center mt-40 d-flex h-100" >
+           
                 <div class="card container-form">
                     <h1 class="title">Entre na sua conta</h1>
-                    <form class="loginFillOut" method="post">
+                    <form class="loginFillOut mt-20" method="post">
+                        
                         <label for="email">E-mail</label>
-                        <input class="card w-100" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                        <input class="input w-100" type="email" name="email" id="email" placeholder="Digite seu e-mail">
                         <div class="mt-20"></div>
-                        <label for="password">Senha</label>
-                        <input class="card w-100" type="password" name="senha" id="senha"
+
+                        <label for="senha">Senha</label>
+                        <input class="input w-100" type="password" name="senha" id="senha"
                             placeholder="Digite sua senha">
-                            <% if (errors) { %>
-                                <label><%= errors.error %></label>
+                            <% if (error) { %>
+                                <p class="t-red errors mt-20"><%= error %></p> <br>
                               <% } %>
                         <br>
-                        <button class="w-100 btn-primary" type="submit">
+                        <button class="w-100 btn bg-rosa t-white mt-20" type="submit">
                             Entrar
                         </button>
                         <a href="cadastro" class="link btn bg-blue t-white mt-20" type="submit">
                             Cadastre-se
                         </a>
                     </form>
-                    <p class="mt-20 forgot">Esqueci a minha senha</p>
+                    <a class="mt-20 forgot link" href="forgot-password">Esqueci a minha senha</a>
                 </div>
-            </section>
         </section>
 
 

@@ -4,23 +4,24 @@
     <div>
       <form method="post" action="/administrador/categoria">
         <label for="categoria">Qual nome da Categoria?</label>
-        <input name="categoria" type="text" class="card"> <br>
-        <button type="submit" class="bg-green btn t-white">Criar</button>
+        <input name="categoria" type="text" class="input w-100"> <br>
+        <button type="submit" class="bg-green btn t-white mt-20">Criar</button>
       </form>
     </div>
     <div>
       <h2>Categorias Cadastradas</h2>
       <ul class="mt-20"></ul>
-      <% if (categoria) { %>
-        <% for(const n of categoria) { %>
+      <% if (data.categorias) { %>
+        <% for(const n of data.categorias) { %>
 
-          <li class="list">
-            <%= n.id %> : <%= n.nome %>
+          <li class="list mt-sm d-flex space-between">
+            <%= n.id %> : <%= n.nome %> <button id=" <%= n.id %>" onclick="deleteCategoria(this)"
+                  class="btn bg-red"><img src="./image/trash.svg" alt=""></button>
           </li>
 
           <% } %>
-        <% } %>
-      </ul>
+            <% } %>
+              </ul>
     </div>
   </div>
 </div>

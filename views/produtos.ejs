@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -8,64 +8,56 @@
   <title>Veja todos os nosso produtos</title>
   <link rel="stylesheet" href="../../styles/produtos.css">
   <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-  <script src="../../public/script/menu.js" defer></script>
+  <script src="../../script/menu.js" defer></script>
+  <script src="../../script/produtos.js" defer></script>
 
 </head>
 
 <body>
   <%- include('./partials/header') %>
+    <button id="btnFilterMobile" class="btn btn__filter">Filtro</button>
+    <section class="mt-40 container-fluid d-flex">
 
-    <section class="container mt-40 d-flex">
-      <section class="rigth filter card">
-        <h3>Tipo </h3>
-        <div class="d-flex mt-20">
-          <div class="selection"></div>Kit
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Álcool
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Essências
-        </div>
-        <h3 class="mt-20">Preço</h3>
+      <section class="rigth card">
+        <h3>Categoria </h3>
+        <% if(data.categorias) {%>
+          <% for(const n of data.categorias) { %>
+            <div class="d-flex mt-sm"><input class="mg--rigth--sm" type="checkbox" name="<%= n.id %>">
+              <%= n.nome %>
+            </div>
 
-        <input type="number" name="preco-min" id="" class="mt-20 card input-price" placeholder="min">
-        <input type="number" name="preco-max" id="" class="mt-20 card input-price" placeholder="max">
+            <% }%>
+              <% }%>
+                <br>
+                <h3>Fabricantes </h3>
+                <% if(data.fabricantes) {%>
+                  <% for(const n of data.fabricantes) { %>
+                    <div class="d-flex mt-sm"><input class="mg--rigth--sm" type="checkbox" name="<%= n.id %>">
+                      <%= n.nome %>
+                    </div>
 
-        <h3 class="mt-20">Aroma</h3>
-        <div class="d-flex mt-20">
-          <div class="selection"></div>Alecrim
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Laranja
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Lavanda
-        </div>
-        <div class="d-flex">
-          <div class="selection"></div>Menta
-        </div>
+                    <% }%>
+                      <% }%>
+
+
+                        <h3 class="mt-20">Preço</h3>
+
+                        <input type="number" name="preco-min" id="" class="mt-20 input" placeholder="min">
+                        <input type="number" name="preco-max" id="" class="mt-20 input" placeholder="max">
+
       </section>
       <section class="left ">
-        <h2>Kits promocionais</h2>
+        <h2>Produtos</h2>
         <div class="options mt-40">
           <%- include('./partials/card-product') %>
-            <%- include('./partials/card-product') %>
-              <%- include('./partials/card-product') %>
         </div>
-        <h2 class="mt-40">Os mais pedidos</h2>
-        <div class="options mt-20">
-          <%- include('./partials/card-product') %>
-            <%- include('./partials/card-product') %>
-              <%- include('./partials/card-product') %>
 
-        </div>
       </section>
     </section>
     <section class="container mt-40">
       <div class="d-flex all-center">
         <div class="selection-page">
-          </div>
+          < </div>
             <div class="selection-page active">1</div>
             <div class="selection-page">2</div>
             <div class="selection-page">3</div>
@@ -74,6 +66,7 @@
         </div>
     </section>
     <div class="mt-40"></div>
+
     <%- include('./partials/footer') %>
 </body>
 

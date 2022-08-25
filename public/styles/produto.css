@@ -1,29 +1,21 @@
 @import url(./main.css);
 
+.container__fluid{
+  padding: 3rem;
+}
+
 .container-display {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 1440px;
 }
 
 /* COLUNA 1 */
 
-.col-images {
-  height:100%;
-}
 
-.div-img-product-main {
-  width: 15rem;
-  height: 34rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .img-product-main {
-  position: absolute;
-  max-height: 25rem;
+  max-width: 25vw;
 }
 
 .div-picture-product {
@@ -32,6 +24,8 @@
 
 .picture-produts-item {
   width: 4rem;
+  height: 100%;
+  max-height: 4rem;
   padding: 0.2rem;
 
   margin-top: 1rem;
@@ -53,17 +47,31 @@
 }
 
 /* COLUNA 3 */
-.col-buy.card {
+.col-buy {
 height: 85%;
+width: 30%;
 }
 
-/* VOCÊ TAMBÉM PODE GOSTAR DE */
+@media (max-width:880px){
+  .container-display{
+    display: flex;
+    flex-direction: column;
+  }
 
-.options{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 2rem;
-  width: 100%;
-  max-width: 1440px;
+  .img-product-main{
+   max-width: 80vw;
+  }
 
+  .col-buy{
+   width: 100%;
+   margin-top: 2rem;
+  }
+
+  .col-info {
+    height: 100%;
+    padding: 0;
+
+   margin-top: 2rem;
+
+}
 }

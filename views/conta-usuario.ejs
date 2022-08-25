@@ -1,66 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/conta-usuario.css">
+    <link rel="stylesheet" href="../../styles/conta-usuario.css">
     <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
-    <script src="../../public/script/menu.js" defer></script>
-    <title>Nome usuario</title>
+    <script src="../../script/conta-usuario.js" defer></script>
+    <title>Conta Usuário</title>
 </head>
 
 <body>
     <%- include('./partials/header') %>
+        <br><br>
         <section class="container">
-            <section class="col-userPanel card">
-                <div class="favorites">
-                    <p class="title">Meus Favoritos</p>
-                </div>
-                <br>
-                <div class="myRequests">
-                    <p class="title">Meus Pedidos</p>
-                    <br>
-                    <p class="latestRequests">
-                    <ul class="requests">
-                        <li>Pedido Nº 12345</li>
-                        <li>Pedido Nº 51902</li>
-                        <li>Pedido Nº 33343</li>
-                    </ul>
-                    </p>
-                </div>
-                <br>
-                <div class="infoAccount">
-                    <p class="title">Informações da Conta</p>
-                    <br>
-                    <form class="emailChange">
-                        <label for="email">Alterar e-mail</label><br>
-                        <div class="input-newEmail"></div><input type="email" name="email" id="email"
-                            placeholder="Insira seu novo e-mail"><br>
+            <div class="cliente card">
+                <div class="img__cliente__container">
+                    <div class="img__cliente">
+                        <% if(data){ %>
+                            <img src=" <%= data.image %> " alt="">
 
-                        <button class="btn-register btn-secondary" type="submit">
+                            <div class="mt-sm">
+                                <form id="img__cliente" method="post" enctype="multipart/form-data">
+                                    <label for='selecao-arquivo' class="selecao-arquivo">Trocar Image</label>
+                                    <input required id='selecao-arquivo' type='file'>
+                                    <button class="btn__submit" type="submit"></button>
+                                </form>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="info__cliente">
+                    <strong>Nome:</strong>
+                    <%= data.cliente.nome %>
+                        <%= data.cliente.sobrenome %><br>
+                            <strong>Telefone:</strong> <label class="telefone">
+                                <%= data.cliente.telefone %>
+                            </label> <br>
+                            <strong>Email:</strong>
+                            <%= data.cliente.email %> <br>
+                                <strong>CPF:</strong> <label class="cpf">
+                                    <%= data.cliente.cpf %>
+                                </label> <br>
+                                <strong>Endereço:</strong> Rua jose maria, 8, Vila Maruitá, São Caetano, SP, 09999-999
+                                <br>
+                                <% } %>
+                </div>
+            </div>
+            <br>
+            <div class="favoritos w-100 bg-rosa t-white">
+                <h3 class="pd-sm">Meus Favoritos</h3>
+            </div>
+            <br>
+
+            <div class="pedidos w-100">
+                <h3 class="bg-rosa t-white pd-sm">Meus pedidos</h3>
+
+                <ul class="mt-20">
+                    <% if(data.pedidos) { %>
+                        <% for(const n of data.pedidos) { %>
+                            <li>
+                                <div class="t-red bg-grey">
+                                    <%= n.status %>
+                                </div>
+                            </li>
+                            <li class="d-flex space-between mt-sm">
+                                <div>
+                                    Id : <%= n.id %>
+                                </div>
+                                <div>
+                                    ClienteId : <%= n.clienteId %>
+                                </div>
+
+                                <div class="col d-flex">
+                                    <% for(const prod of n.produtos) { %>
+
+                                        <div>
+                                            <%= prod.nome %>
+                                        </div>
+                                        <% } %>
+                                </div>
+
+                                <div>
+                                    qtd : <%= n.produtos.length %>
+                                </div>
+
+                                <div>
+                                    <%= n.total %>
+                                </div>
+                            </li>
+
+                            <% } %>
+                                <% } %>
+                </ul>
+            </div><br>
+            <h3 class="bg-rosa t-white pd-sm">Modificar conta</h3> <br>
+            <section class="conta__info d-flex">
+                <div class="forms w-50">
+                    <form class="email" method="put">
+                        <!-- alterar email-->
+                        <label for="email">Alterar e-mail</label><br>
+                        <input required class="w-100 input " type="email" name="email" id="email"
+                            placeholder="Insira seu novo e-mail" oninput="ativarBtnUpdateEmail()">
+                        <button class="btn mt-sm" id="btnUpdateEmail" disabled="disabled" onclick="atualizarCliente()">
                             Alterar e-mail
                         </button><br>
-                        <label for="passwordChange">Alterar senha</label><br>
-                        <div class="input-newPassword"></div><input type="password" name="password" id="password"
-                            placeholder="Insira sua nova senha"><br>
-                        <div class="input-newPasswordAgain"></div><input type="password" name="password" id="password"
-                            placeholder="Insira sua nova senha outra vez"><br>
-                        <button class="btn-register btn-secondary" type="submit">
-                            Alterar senha
-                        </button><br>
-                        <form class="addressChange">
-                            <label for="address">Alterar endereço</label><br>
-                            <div class="input-newAddress"></div><input type="textt" name="address" id="address"
-                                placeholder="Insira seu novo endereço"><br>
-                            <button class="btn-register btn-secondary" type="submit">
-                                Alterar endereço
-                            </button><br>
+                    </form>
+
+                    <form action="">
+                        <label for="senha">Alterar senha</label><br>
+                        <input required class="input w-100" type="password" name="senha" id="senha"
+                            placeholder="Insira sua nova senha" oninput="sizeAlertPassword()"><br>
+
+                        <input required class="input w-100 mt-sm" type="password" id="passwordConfirm"
+                            placeholder="Insira sua nova senha outra vez" oninput="senhaEstaCorreta()"><br>
+                        <p class="aviso__senha"></p>
+                        <p class="aviso__senha__size"></p>
+                        <button class="btn mt-sm" id="btnSubmitSenha" disabled="disabled"
+                            onclick="atualizarCliente()">Alterar Senha</button><br>
+                    </form>
                 </div>
             </section>
-        </section>
+            <div class="btn__footer">
+
+                <button onclick="encerrarSessao()" class="btn bg-blue t-white pd-sm">Sair</button>
+                <button onclick="deleteConta()" class="btn bg-red t-white pd-sm">Apagar Conta</button>
+            </div>
+        </section> <br>
+
+
         <%- include('./partials/footer') %>
+
 </body>
 
 </html>

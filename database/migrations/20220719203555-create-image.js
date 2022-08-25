@@ -11,7 +11,10 @@ module.exports = {
       url: {
         type: Sequelize.STRING
       },
-      relacaoId: {
+      produtoId: {
+        type: Sequelize.INTEGER
+      },
+      clienteId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

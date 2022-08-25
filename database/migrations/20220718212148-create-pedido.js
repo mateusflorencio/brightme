@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Pedidos', {
@@ -8,20 +8,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      produtoId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+      clienteId: Sequelize.INTEGER,
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'Aguardando Pagamento'
       },
       subtotal: {
-        type: Sequelize.DOUBLE,
-        allowNull: false
+        type: Sequelize.DOUBLE
       },
       cupomId: {
         type: Sequelize.INTEGER
       },
       total: {
-        type: Sequelize.DOUBLE,
-        allowNull: false
+        type: Sequelize.DOUBLE
       },
       frete: {
         type: Sequelize.DOUBLE
@@ -34,9 +34,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Pedidos');
+    await queryInterface.dropTable('Pedidos')
   }
-};
+}

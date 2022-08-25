@@ -1,0 +1,43 @@
+<div class="produtos__info w-100   mt-20">
+
+  <div class="produto__info bg-grey w-100 d-flex">
+    <p> id </p>
+    <h4> Nome </h4>
+    <p> Preço </p>
+    <p> Estoque </p>
+    <div class="d-flex">
+      <div class="bg-grey w-100">
+      </div>
+      <div class="bg-grey w-100">
+      </div>
+    </div>
+  </div>
+
+  <% if(data.produtos) { %>
+    <% for(const prod of data.produtos) { %>
+
+      <div class="produto__info w-100 d-flex">
+        <p>
+          <%= prod.id %>
+        </p>
+        <h4>
+          <%= prod.nome %>
+        </h4>
+        <p> R$ <%= prod.preco %>
+        </p>
+        <p>
+          <%= prod.qtdEstoque %>
+        </p>
+        <div class="d-flex">
+          <div class="bg-green w-100" onclick="abrirModal('editarProduto')"><img src="./image/pencil-square.svg" alt="">
+          </div>
+          <div class="bg-red w-100" id=" <%= prod.id %>" onclick="deleteProd(this)"><img
+              src="./image/trash.svg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <% } %>
+        <% } %>
+
+</div>

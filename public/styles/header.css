@@ -1,33 +1,100 @@
 /* MENU */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 1440px;
-  margin: auto;
-  padding: -0.10rem;
-  height: 15vh;
-  background: var(--main-rosa);
-}
-
-.brand, .col-logo{
-  height: 15vh;
+  height: 70px;
 }
 
 .brand-img {
-  width: 35vh;
+  height: 60px;
 }
 
-.list_menu{
+.list_menu {
   font-size: 1.2rem;
+  align-items: center;
+  height: 70px;
 }
 
-#nav_menu{
-  width: 100%;
+
+.carrinho__togle__menu , .entrar__togle__menu{
+  opacity: 0;
+  display: none;
+  position: absolute;
 }
 
-.space-around {
-  display: flex;
-  justify-content: space-around;
+@media (max-width: 940px) {
+  html {
+    font-size: 80%;
+  }
+
+  #nav_menu {
+    display: none;
+  }
+
+  /* MENU SANDUÍCHE */
+  .one,
+  .two,
+  .three {
+    background-color: var(--main-white);
+    height: 0.4rem;
+    width: 100%;
+    margin: 0.7rem auto;
+    transition-duration: 0.3s;
+  }
+
+  .menu-toggle {
+    width: 4rem;
+    height: 3rem;
+    position: absolute;
+    right: 4rem;
+    top: 0.2rem;
+  }
+
+  .menu-section.on .menu-toggle .one {
+    transform: rotate(45deg) translate(0.7rem, 0.7rem);
+  }
+
+  .menu-section.on .menu-toggle .two {
+    opacity: 0;
+  }
+
+  .menu-section.on .menu-toggle .three {
+    transform: rotate(-45deg) translate(0.7rem, -1rem);
+  }
+
+  .menu-section.on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-blue);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-section.on #nav_menu {
+    display: block;
+  }
+
+  .menu-section.on #nav_menu ul {
+    text-align: center;
+    display: inline-block;
+  }
+
+  .menu-section.on #nav_menu ul a {
+    font-size: 3rem;
+    line-height: 4rem;
+    display: block;
+  }
+
+  .img-cart, .entrar {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .carrinho__togle__menu, .entrar__togle__menu {
+    opacity: 100%;
+    position: relative;
+  }
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../styles/produto.css">
+    <link rel="shortcut icon" href="../../image/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="../../script/menu.js" defer></script>
+    <script src="../script/add-produto.js" defer></script>
+
+    <title>Novo Produto</title>
+</head>
+<%- include('./partials/header') %>
+    <section class="container"> <br>
+        <div class="space-between d-flex">  <h2>Adicionar Produto</h2> 
+        <a class="link btn bg-rosa t-white " href="/administrador">Voltar</a> </div>
+        <br>
+        <label class="t-red">Todos os campos são obrigatórios</label> <br>
+
+        <form action="" method="post" enctype="multipart/form-data">
+
+            <label for="nome">Nome Produto</label> <br>
+            <input required type="text" name="nome" id="" class="input w-100"><br> <br>
+
+            <label for="titulo">Titulo Produto</label> <br>
+            <input required type="text" name="titulo" id="" class="input w-100"><br> <br>
+
+            <label for="descricao">Descricão</label> <br>
+            <textarea required class="w-100 input" name="descricao" id="" cols="30" rows="10"></textarea> <br><br>
+
+            <label for="preco">Preço</label> <br>
+            <input required type="number" class=" input" name="preco"> <br><br>
+
+            <label for="categoriaId">Selecione a Categoria</label> <br>
+            <select required name="categoriaId" id="">
+                <% if(data.categorias) { %>
+                    <% for(const i of data.categorias) { %>
+                        <option value=" <%=i.id %> ">
+                            <%= i.nome %>
+                        </option>
+                        <% } %>
+                            <% } %>
+            </select> <br><br>
+
+            <label for="fabricanteId">Selecione a Fabricante</label> <br>
+            <select required name="fabricanteId" id="">
+                <% if(data.fabricantes) { %>
+                    <% for(const i of data.fabricantes) { %>
+                        <option value=" <%=i.id %> ">
+                            <%= i.nome %>
+                        </option>
+                        <% } %>
+                            <% } %>
+            </select> <br><br>
+
+            <label for="qtdEstoque">Quantos produtos em estoque?</label> <br>
+            <input required type="number" class="input" name="qtdEstoque"> <br><br>
+
+            <label for="image">Imagens do Produto</label> <br>
+            <input required id="images" type="file" name="image" onchange="getSize()" multiple maxlength="3" id=""> <br><br>
+            <input type="number" class="d-none" name="sizeFiles" id="sizeFiles">
+
+            <button class="btn bg-green w-100 t-white " type="submit">Cadastrar Produto</button> <br><br>
+        </form>
+    </section>
+    <%- include('./partials/footer') %>
+
+        </body>
+
+</html>

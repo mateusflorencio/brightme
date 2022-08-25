@@ -262,3 +262,8 @@ dist
 
 #schatch
 scratch
+
+
+public/image/clientes
+public/image/produtos
+src/middlwares/multer-log.txt

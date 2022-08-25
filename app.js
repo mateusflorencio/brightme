@@ -8,11 +8,11 @@ const methodOverride = require('method-override')
 const administradorRouter = require('./src/routes/administrador-route')
 const indexRouter = require('./src/routes/index-route')
 const blogRouter = require('./src/routes/blog-route')
-const carrinhoRouter = require('./src/routes/carrinho-route')
 const produtoRouter = require('./src/routes/produto-route')
 const pagamentoRouter = require('./src/routes/pagamento-route')
 const clienteRouter = require('./src/routes/cliente-route')
 const sucessRouter = require('./src/routes/sucess')
+const systemRouter = require('./src/routes/system-route')
 
 
 const app = express()
@@ -37,10 +37,10 @@ app.use('/', indexRouter)
 app.use('/administrador', administradorRouter)
 app.use('/sucess', sucessRouter)
 app.use('/blog', blogRouter)
-app.use('/carrinho', carrinhoRouter)
 app.use('/produtos', produtoRouter)
 app.use('/pagamento', pagamentoRouter)
 app.use('/user', clienteRouter)
+app.use('/system', systemRouter)
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

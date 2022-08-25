@@ -1,42 +1,84 @@
-const AdministradorRepository = require('../repository/administrador-repository')
-const CategoriaRepository = require('../repository/categoria-repository')
-const Error = require('./error')
+const db = require('../models/index')
+const Administrador = db.Administrador
+const jwt = require('jsonwebtoken')
+const { AdministradorRepository, CategoriaRepository, ClienteRepository, FabricanteRepository, PedidoRepository, ProdutoRepository } = require('../repository')
+require('dotenv').config()
+
+const secret = process.env.JWT_TOKEN
 
 const catRepo = new CategoriaRepository()
+const cliRepo = new ClienteRepository()
+const admRepo = new AdministradorRepository()
+const fabricanteRepo = new FabricanteRepository()
+const prodRepo = new ProdutoRepository()
+const pedRepo = new PedidoRepository()
 
 module.exports = AdministradorController = {
-  loginView(_req, res) {
-    res.status(200).render('adm-login', { error: '' })
-  },
-  async login(req, res) {
-    const { id, senha } = req.body
+  //só cria através do insominia ou postman
+  buscarAdm: async (req, res) => {
+    const { id } = req.params
     try {
-      const result = await AdministradorRepository.login(id, senha)
-      if (result.error || !result) {
-        return res.status(404).render('adm-login', { error: 'Id ou senha inválido' })
-      }
-      return res.status(200).redirect('/administrador')
+      const adm = await AdministradorRepository.buscarId(id)
+      return adm instanceof Administrador ? res.status(200).json(adm.id) : res.status(404).json(adm)
     } catch (error) {
-      res.status(500).render('administrador', { error: error })
+      return res.status(500).json(error)
     }
   },
-  async index(_req, res) {
-    try {
+  buscarClienteId: async (req, res) => {
+    const { id } = req.params
 
-      const data = await catRepo.buscarTodasCategorias()
-      const categorias = []
-      if (!data) {
-        return res.status(500).render('administrador', { data: 'Error ao buscar categoria. Tente novamente' })
+    const result = await cliRepo.buscaId(id)
+
+    res.json(result)
+
+  },
+  //só cria através do insominia ou postman
+  criarAdm: async (req, res) => {
+    const { nome, senha, ROLE } = req.body
+    try {
+      const result = await admRepo.cadastro({ nome, ROLE, senha })
+      res.status(201).json(result)
+    } catch (error) {
+      res.status(500).json({ err: error })
+    }
+  },
+  loginView: (_req, res) => {
+    res.status(200).render('adm-login', { error: '' })
+  },
+  login: async (req, res) => {
+    const { id, senha } = req.body
+    try {
+      const adm = await admRepo.buscarId(id)
+
+      if (adm instanceof Administrador === false) {
+        return res.status(404).render('adm-login', { error: 'adm not found' })
+      }
+      if (senha !== adm.senha) {
+        return res.status(404).render('adm-login', { error: 'senha incorreta' })
       }
 
-      data.map((v, i) => {
-        categorias.push(data[i].dataValues)
-      })
+      const token = jwt.sign({ id }, secret)
 
-      return res.status(200).render('administrador', { categoria: categorias })
+      return res.cookie('adm', [adm.id, adm.ROLE, token]).redirect('/administrador')
+    } catch (error) {
+      return res.status(500).render('adm-login', { error: error })
+    }
+  },
+  painelAdministrativo: async (_req, res) => {
+    try {
+      const categorias = await catRepo.buscarTodos()
+      const fabricante = await fabricanteRepo.buscarTodos()
+      const produtos = await prodRepo.buscarTodos()
+      const pedidos = await pedRepo.buscarTodos()
+
+      if (!categorias || !fabricante) {
+        return res.status(500).render('administrador', { data: 'Error. Tente novamente' })
+      }
+
+      return res.status(200).render('administrador', { data: { fabricantes: fabricante, categorias: categorias, produtos: produtos, pedidos: pedidos } })
 
     } catch (error) {
-      res.status(500).render('error')
+      res.status(500).render('error', { error: error })
     }
   },
   criarCategoria: async (req, res) => {
@@ -45,22 +87,48 @@ module.exports = AdministradorController = {
     try {
       const result = await catRepo.criarNovaCategoria(categoria)
       if (result.error) {
-        return res.status(500).json(result.error._msg)
+        return res.status(500).json(result)
       }
-      console.log(result)
       return res.status(201).redirect('/administrador')
 
     } catch (error) {
       res.status(500).json(error)
     }
   },
-  async criarAdm(req, res) {
-    const { nome, senha, ROLE } = req.body
+  criarFabricante: async (req, res) => {
+    const { fabricante } = req.body
+
     try {
-      const result = await AdministradorRepository.cadastro({ nome, senha, ROLE })
-      res.status(201).json(result)
+      const result = await fabricanteRepo.criar(fabricante)
+      if (result.error) {
+        return res.status(500).json(result)
+      }
+      return res.status(201).redirect('/administrador')
+
     } catch (error) {
-      res.status(500).json({ err: error })
+      res.status(500).json(error)
+    }
+  },
+  deleteCategoria: async (req, res) => {
+    const { id } = req.params
+
+    try {
+      await catRepo.delete(id)
+
+      res.status(204).json('ok')
+    } catch (error) {
+      res.status(500).json(error)
+    }
+  },
+  deleteFabricante: async (req, res) => {
+    const { id } = req.params
+
+    try {
+      await fabricanteRepo.delete(id)
+
+      res.status(204).json('ok')
+    } catch (error) {
+      res.status(500).json(error)
     }
   }
 }
