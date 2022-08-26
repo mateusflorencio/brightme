@@ -6,12 +6,12 @@ const FabricanteRepository = require('./fabricante-repository')
 const ImageRepository = require('./imagem-repository')
 const PedidoRepository = require('./pedido-repository')
 const ProdutoRepository = require('./produto-repository')
-const { buscarCLiente } = require('./protocols-cliente')
+const { buscarCliente } = require('./protocols-cliente')
 
 
 module.exports = {
   AdministradorRepository,
-  buscarCLiente,
+  buscarCliente,
   CategoriaRepository,
   CarrinhoRepository,
   ClienteRepository,

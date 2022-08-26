@@ -1,7 +1,7 @@
 const ClienteRepository = require('./cliente-repository')
 
 const clienteRepository = new ClienteRepository()
-async function buscarCLiente(email, CPF, telefone) {
+async function buscarCliente(email, CPF, telefone) {
 
   const result = []
 
@@ -23,5 +23,5 @@ async function buscarCLiente(email, CPF, telefone) {
 }
 
 module.exports = {
-  buscarCLiente
+  buscarCliente
 }

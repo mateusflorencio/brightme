@@ -1,10 +1,11 @@
 const fs = require('fs')
 const { cpfValidator, validationResult } = require('./validacoes')
 const { decrypt, encrypt } = require('../repository/util/encrypter')
-const { buscarCLiente, ClienteRepository, CarrinhoRepository, PedidoRepository, ProdutoRepository } = require('../repository')
+const { buscarCliente, ClienteRepository, CarrinhoRepository, PedidoRepository, ProdutoRepository } = require('../repository')
 const { NewCarrinhoDTO, NewClienteDTO } = require('../models/dto')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index')
+const { addClienteToDB } = require('../services/add-cliente-to-db')
 require('dotenv').config()
 
 const Cliente = db.Cliente
@@ -26,46 +27,34 @@ const clienteController = {
         }
     },
     cadastro: async (req, res) => {
-        let { nome, sobrenome, senha, email, telefone, CPF } = req.body
+        const { nome, sobrenome, senha, email } = req.body
+        let { CPF, telefone } = req.body
 
         try {
             CPF = await CPF.replace(/\W/g, '')
             telefone = await telefone.replace(/\W/g, '')
 
             const errorValidator = validationResult(req)
-            if (!errorValidator.isEmpty()) {
-                return res.status(400).render('cadastro', { error: '', errorValidacao: errorValidator.errors })
-            }
+            if (!errorValidator.isEmpty()) (res.status(400).render('cadastro', { error: '', errorValidacao: errorValidator.errors }))
 
-            const CPFResutl = cpfValidator(CPF)
-            if (!CPFResutl) {
-                return res.status(400).render('cadastro', { error: 'cpf não é válido', errorValidacao: [] })
-            }
+            const cpfIsValid = cpfValidator(CPF)
+            if (!cpfIsValid) (res.status(400).render('cadastro', { error: 'Insira um CPF válido', errorValidacao: [] }))
 
-            const buscarCLienteResult = await buscarCLiente(email, CPF, telefone)
-            if (buscarCLienteResult) {
-                return res.status(400).render('cadastro', { error: buscarCLienteResult, errorValidacao: [] })
-            }
-            const hashedPassword = await encrypt(senha)
-            const newCliente = new NewClienteDTO(nome, sobrenome, hashedPassword, email, telefone, CPF)
-            const result = await clienteRepository.cadastro(newCliente)
-            if (!result) {
-                return res.status(500).render('cadastro', { error: 'error ao cadastrar usuário', errorValidacao: [] })
-            }
+            //
+            const clienteJaExiste = await buscarCliente(email, CPF, telefone)
+            if (clienteJaExiste) (res.status(400).render('cadastro', { error: clienteJaExiste, errorValidacao: [] }))
 
-            const imgPadrao = fs.readFileSync('public/image/padrao/image-padrao.jpg', 'base64')
-            console.log(imgPadrao)
-            fs.writeFileSync(`public/image/clientes/cliente${result.id}`, `data:image/jpeg;base64,${imgPadrao}`)
+            await addClienteToDB({ nome, sobrenome, senha, email, telefone, CPF })
 
             const cliente = await clienteRepository.buscaId(result.id)
             const token = jwt.sign({ email }, secret)
             return res
-                .status(200)
-                .clearCookie('dados')
+                .status(201)
+                .clearCookie('cliente')
                 .cookie('cliente', [email, token, cliente])
                 .render('pre-redirect-cliente', { data: [result.nome, result.id] })
         } catch (error) {
-            return res.status(500).render('error', { error: `catch : ${error}`, errorValidacao: [] })
+            return res.status(500).render('error', { error: `${error}`, errorValidacao: [] })
         }
     },
     loginView: (_req, res) => {
@@ -119,7 +108,7 @@ const clienteController = {
             })
 
             const pedidos = await pedidoRepository.buscarTodosClienteId(result.id)
-            
+
             res.status(200).render('conta-usuario', { data: { image, cliente: result, pedidos: pedidos } })
         } catch (error) {
             return res.status(500).render('login', { error: error })
