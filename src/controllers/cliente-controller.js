@@ -64,23 +64,18 @@ const clienteController = {
 
         try {
             const { email, senha } = req.body
-            const result = await clienteRepository.buscaEmail(email)
 
-            if (result instanceof Cliente === false) {
-                return res.render('login', { error: 'Email não encontrado' })
-            }
+            const cliente = await clienteRepository.buscaEmail(email)
+            if (cliente instanceof Cliente === false) (res.render('login', { error: 'Email não encontrado' }))
 
-            const resultSenha = await decrypt(senha, result.senha)
-            if (!resultSenha) {
-                return res.render('login', { error: 'Senha incorreta' })
-            }
+            if (await decrypt(senha, cliente.senha)) (res.render('login', { error: 'Senha incorreta' }))
 
             const token = jwt.sign({ email }, secret)
             return res
                 .status(200)
-                .clearCookie('dados')
-                .cookie('cliente', [email, token, result])
-                .render('pre-redirect-cliente', { data: [result.nome, result.id] })
+                .clearCookie('cliente')
+                .cookie('cliente', [email, token, cliente])
+                .render('pre-redirect-cliente', { data: [cliente.nome, result.id] })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
