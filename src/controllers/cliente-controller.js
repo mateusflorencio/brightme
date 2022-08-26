@@ -46,13 +46,13 @@ const clienteController = {
 
             await addClienteToDB({ nome, sobrenome, senha, email, telefone, CPF })
 
-            const cliente = await clienteRepository.buscaId(result.id)
+            const cliente = await clienteRepository.buscaEmail(email)
             const token = jwt.sign({ email }, secret)
             return res
                 .status(201)
                 .clearCookie('cliente')
                 .cookie('cliente', [email, token, cliente])
-                .render('pre-redirect-cliente', { data: [result.nome, result.id] })
+                .render('pre-redirect-cliente', { data: [cliente.nome, cliente.id] })
         } catch (error) {
             return res.status(500).render('error', { error: `${error}`, errorValidacao: [] })
         }
@@ -85,9 +85,7 @@ const clienteController = {
             const { cliente } = req.cookies
             const email = cliente[0]
 
-            if (!email) {
-                res.redirect('user/login')
-            }
+            if (!email) (res.redirect('user/login'))
 
             const result = await clienteRepository.buscaEmail(email)
             if (result instanceof Cliente !== true) {
@@ -102,9 +100,9 @@ const clienteController = {
                 return result
             })
 
-            const pedidos = await pedidoRepository.buscarTodosClienteId(result.id)
-
-            res.status(200).render('conta-usuario', { data: { image, cliente: result, pedidos: pedidos } })
+            return res
+                .status(200)
+                .render('conta-usuario', { data: { image, cliente: result, pedidos: result.pedidos } })
         } catch (error) {
             return res.status(500).render('login', { error: error })
         }
