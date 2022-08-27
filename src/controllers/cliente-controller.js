@@ -6,6 +6,7 @@ const { NewCarrinhoDTO, NewClienteDTO } = require('../models/dto')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index')
 const { addClienteToDB } = require('../services/add-cliente-to-db')
+const { sanitize } = require('./helpers/sanitize')
 require('dotenv').config()
 
 const Cliente = db.Cliente
@@ -28,21 +29,20 @@ const clienteController = {
     },
     cadastro: async (req, res) => {
         const { nome, sobrenome, senha, email } = req.body
-        let { CPF, telefone } = req.body
+        const [CPF, telefone] = sanitize(req.body.CPF, req.body.telefone)
 
         try {
-            CPF = await CPF.replace(/\W/g, '')
-            telefone = await telefone.replace(/\W/g, '')
 
             const errorValidator = validationResult(req)
-            if (!errorValidator.isEmpty()) (res.status(400).render('cadastro', { error: '', errorValidacao: errorValidator.errors }))
+            if (!errorValidator.isEmpty()) { return res.status(400).render('cadastro', { error: '', errorValidacao: errorValidator.errors }) }
 
             const cpfIsValid = cpfValidator(CPF)
-            if (!cpfIsValid) (res.status(400).render('cadastro', { error: 'Insira um CPF válido', errorValidacao: [] }))
+            if (!cpfIsValid) { return res.status(400).render('cadastro', { error: 'Insira um CPF válido', errorValidacao: [] }) }
+
 
             //
             const clienteJaExiste = await buscarCliente(email, CPF, telefone)
-            if (clienteJaExiste) (res.status(400).render('cadastro', { error: clienteJaExiste, errorValidacao: [] }))
+            if (clienteJaExiste) { return res.status(400).render('cadastro', { error: clienteJaExiste, errorValidacao: [] }) }
 
             await addClienteToDB({ nome, sobrenome, senha, email, telefone, CPF })
 
