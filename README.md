@@ -80,10 +80,12 @@ A Fonte escolhida foi a POPPINS, por ser uma fonte extremamente versatil e agrá
 '/produtos'
 ### Pagina do produto
 '/produtos/produto/:id'
+### Pagina criar produto
+'/produtos/criar'
 ### Carrinho
-'/carrinho'
+'/user/carrinho'
 ### Pagamento
-'/pagamento'
+'/system/pagamento'
 
 #### Sucesso de compra
 '/sucess'
