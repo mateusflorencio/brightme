@@ -38,9 +38,7 @@ const clienteController = {
 
             const cpfIsValid = cpfValidator(CPF)
             if (!cpfIsValid) { return res.status(400).render('cadastro', { error: 'Insira um CPF válido', errorValidacao: [] }) }
-
-
-            //
+            
             const clienteJaExiste = await buscarCliente(email, CPF, telefone)
             if (clienteJaExiste) { return res.status(400).render('cadastro', { error: clienteJaExiste, errorValidacao: [] }) }
 
@@ -99,7 +97,6 @@ const clienteController = {
                 }
                 return result
             })
-
             return res
                 .status(200)
                 .render('conta-usuario', { data: { image, cliente: result, pedidos: result.pedidos } })
